@@ -45,6 +45,14 @@
             {% endfor %}
                 </section>
         {% endif %}
+
+
+        {% block content %}
+        {% endblock content %}
         
+
+        {% block postloadjs %}
+        {% endblock %}
+
     </body>
 </html>
