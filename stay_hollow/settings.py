@@ -71,6 +71,22 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_LOGIN_METHODS = {"email"}
+
+ACCOUNT_SIGNUP_FIELDS = [
+    'first_name*', 'last_name*', 'email*', 'password1*', 'password2*'
+    ]
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 WSGI_APPLICATION = 'stay_hollow.wsgi.application'
 
