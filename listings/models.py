@@ -1,17 +1,15 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 
-class Property(models.Model):
-    AMENITY_CHOICES = [
-        ("wifi", "Free Wi-Fi"),
-        ("parking", "Parking"),
-        ("pool", "Swimming Pool"),
-        ("pet_friendly", "Pet Friendly"),
-        ("kitchen", "Fully Equipped Kitchen"),
-        ("tv", "Smart TV"),
-        ("fireplace", "Fireplace"),
-    ]
 
+class Amenity(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Property(models.Model):
     property_name = models.CharField(max_length=200)
     location = models.CharField(max_length=100)
     price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
@@ -22,6 +20,7 @@ class Property(models.Model):
         folder="property_images"
     )
 
+    amenities = models.ManyToManyField(Amenity, blank=True, related_name="properties")
     is_featured = models.BooleanField(default=False, help_text="Mark yes for property to be featured on Homepage")
     created_at = models.DateTimeField(auto_now_add=True)
 
