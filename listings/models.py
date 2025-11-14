@@ -20,6 +20,8 @@ class Property(models.Model):
         folder="property_images"
     )
 
+    description = models.TextField(blank=True, null=True)
+
     amenities = models.ManyToManyField(Amenity, blank=True, related_name="properties")
     is_featured = models.BooleanField(default=False, help_text="Mark yes for property to be featured on Homepage")
     created_at = models.DateTimeField(auto_now_add=True)
