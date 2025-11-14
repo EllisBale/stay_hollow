@@ -4,9 +4,9 @@
 {% block content %}
   <div class="container my-5">
   <h1 class="text-center mb-4">Our Properties</h1>
-  <div class="row">
+  <div class="row justify-content-center">
     {% for property in properties %}
-      <div class="col-md-4 mb-4">
+      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex">
         <div class="card shadow-sm">
           <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
           <div class="card-body">
