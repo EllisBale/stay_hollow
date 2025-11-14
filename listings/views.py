@@ -8,4 +8,4 @@ def property_list(request):
     """
 
     properties = Property.objects.all()
-    return render(request, "listings/property_list.html", {properties: properties})
+    return render(request, "listings/property_list.html", {"properties": properties})
