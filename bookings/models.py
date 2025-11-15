@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 
@@ -31,6 +32,24 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user.username} booking for {self.property.property_name}"
+    
+
+    def clean(self):
+        """
+        Prevents user from double bookings by checking for overlap.
+        """
+        overlapping = Booking.objects.filter(
+            property=self.property,
+            check_out__gt=self.check_in,
+            check_in__lt=self.check_out
+        )
+
+        if self.pk:
+            overlapping = overlapping.exclude(pk=self.pk)
+
+        if overlapping.exists():
+            raise ValidationError("This Property is already booked for these dates.")
+
 
     def number_of_nights(self):
         """Return total number of nights booked"""
