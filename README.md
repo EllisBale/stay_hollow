@@ -1,27 +1,23 @@
 # [stay_hollow](https://stay-hollow-9b3793ea0059.herokuapp.com)
 
-Developer: Ellis Scarfe ([EllisBale](https://www.github.com/EllisBale))
+Developer: ([EllisBale](https://www.github.com/EllisBale))
 
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/EllisBale/stay_hollow)](https://www.github.com/EllisBale/stay_hollow/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/EllisBale/stay_hollow)](https://www.github.com/EllisBale/stay_hollow/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/EllisBale/stay_hollow)](https://www.github.com/EllisBale/stay_hollow)
 [![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://stay-hollow-9b3793ea0059.herokuapp.com)
 
-⚠️ PROJECT INTRODUCTION AND RATIONALE⚠️
+## Project Overview
 
-In this section, include a few paragraphs providing an overview of your project. Essentially, this part is your "sales pitch". Describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience. Also, assessors lately have been asking that students explain "why" they opted to do a project about this particular topic/subject, so be sure to explain what made you choose this particular theme/concept/subject/idea. This is the project "rationale".
+**Stay Hollow** is a centralised holiday letting booking website that allows users to **explore a range of holiday properties** across the UK. The platform enables users to **browse available properties**, **view detailed information**, and make **secure online bookings with ease**.
 
-⚠️ --- END --- ⚠️
+The platform is designed to be **simple**, **intuitive**, and **streamlined**, providing users with a **smooth** and **reliable booking experience**. Its **clean layout** and **straightforward navigation** helps users find **suitable accommodation** without confusion or unnecssary steps.
 
-🛑 README NOTES 🛑
+The website provides admins with **effcient tools** to **manage property listings**, **user accounts**, and **bookings**. This allows for **easier maintenance** of **property information** and **user management**, ensuring that availability and bookings remain **accurate** and **up to date**.
 
-Do not add a **Table of Contents** to your Markdown files. GitHub has these built-in automatically using the headers/hashtags.
+The primary target audience for this platform would be **holiday travellers** and **local visitors** looking for **comfortable**, **reliable**, and **enjoyable short-term accommodation**. Users benfit from a **simple**, **centralised booking experience** that brings everything they need into one place.
 
-Don't add screenshots for the README/TESTING into your `assets` or `static` folders. Create a new folder at the root-level called `documentation`. Consider creating sub-directories within `documentation` to handle things like `wireframes`, `features`, `validation`, `responsiveness`, etc.
-
-Learn about Markdown Alerts (aka Callouts), a fairly new feature for GitHub Markdown files.
-https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
-Note: these are not visible within your README Previewer, and are only visible once you push the code to GitHub.
+I chose to develop a holiday letting booking system because I wanted to try something that is both **challenging** and **practical** in a **real-world** use. I aim to make this website **simple** for the users because many people struggle with **complicated interfaces** and **unclear availability**. Booking a holiday should feel **exciting** and **not stressful**, so making the booking process and property listings **simple** and **enjoyable** for the user.
 
 **Site Mockups**
 _([amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)_
