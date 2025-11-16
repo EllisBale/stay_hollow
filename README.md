@@ -19,6 +19,16 @@ The primary target audience for this platform would be **holiday travellers** an
 
 I chose to develop a holiday letting booking system because I wanted to try something that is both **challenging** and **practical** in a **real-world** use. I aim to make this website **simple** for the users because many people struggle with **complicated interfaces** and **unclear availability**. Booking a holiday should feel **exciting** and **not stressful**, so making the booking process and property listings **simple** and **enjoyable** for the user.
 
+# Explain websites I Visited
+
+**Websites Visited:**
+
+[Luxury Cottages](https://luxurycottages.com/)
+
+[Ivy](https://www.ivylettings.com/)
+
+[The Landmark Trust](https://www.landmarktrust.org.uk/)
+
 **Site Mockups**
 _([amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)_
 Having issues generating site mockups? This is likely due to security policies with your deployed site.
