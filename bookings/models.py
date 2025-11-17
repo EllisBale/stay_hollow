@@ -38,6 +38,10 @@ class Booking(models.Model):
         """
         Prevents user from double bookings by checking for overlap.
         """
+
+        if not self.property_id:
+            return
+
         overlapping = Booking.objects.filter(
             property=self.property,
             check_out__gt=self.check_in,
@@ -60,6 +64,9 @@ class Booking(models.Model):
         return self.number_of_nights() * self.property.price_per_night
 
     def save(self, *args, **kwargs):
+        
+        self.full_clean()
+
         if not self.total_price:
             self.total_price = self.calculate_total_price()
         super().save(*args, **kwargs)

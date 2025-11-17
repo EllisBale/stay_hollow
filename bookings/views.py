@@ -10,6 +10,7 @@ def create_booking(request, property_id):
     property_obj = get_object_or_404(Property, pk=property_id)
 
     if request.method == "POST":
+        form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
@@ -19,7 +20,9 @@ def create_booking(request, property_id):
 
             return redirect("booking_success")
 
-    form = BookingForm()  
+
+    else:
+        form = BookingForm()
 
     return render(request, "bookings/booking.html", {
         "form": form,
