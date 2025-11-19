@@ -64,7 +64,7 @@ class Booking(models.Model):
         return self.number_of_nights() * self.property.price_per_night
 
     def save(self, *args, **kwargs):
-        
+
         self.full_clean()
 
         if not self.total_price:
