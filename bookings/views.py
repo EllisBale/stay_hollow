@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 from .models import Booking
 from .forms import BookingForm
 from listings.models import Property
@@ -16,9 +18,14 @@ def create_booking(request, property_id):
             booking.user = request.user
             booking.property = property_obj
             booking.is_paid = False
-            booking.save()
+            
+            try:
+                booking.save()
+                return redirect("booking_success")
 
-            return redirect("booking_success")
+            except ValidationError as e:
+                messages.error(request, "This date has already been booked.")
+                
 
 
     else:
