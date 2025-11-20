@@ -59,9 +59,11 @@ class Booking(models.Model):
         """Return total number of nights booked"""
         return (self.check_out - self.check_in).days
 
+
     def calculate_total_price(self):
         """Calculate total price based on property nightly rate"""
         return self.number_of_nights() * self.property.price_per_night
+
 
     def save(self, *args, **kwargs):
 
