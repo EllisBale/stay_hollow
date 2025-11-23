@@ -26,8 +26,6 @@ def create_booking(request, property_id):
             except ValidationError as e:
                 messages.error(request, "This date has already been booked.")
                 
-
-
     else:
         form = BookingForm()
 
