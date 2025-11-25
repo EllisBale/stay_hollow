@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -11,6 +12,7 @@ import stripe
 import json
 
 
+@login_required
 @require_POST
 def cache_checkout_data(request):
     """
@@ -23,7 +25,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'booking_id': request.POST.get('booking_id'),
             'save_info': request.POST.get('save_info'),
-            'username': request.user,
+            'username': request.user.username,
         })
 
         return HttpResponse(status=200)
