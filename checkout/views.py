@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
@@ -36,9 +37,27 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
     
 
-def checkout(request):
+def checkout(request, booking_id):
     """
     Checkout page for single booking
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+    booking = get_object_or_404(Booking, pk=booking_id)
+
+    # Handles form submission
+    if request.method == "POST":
+        
+        form_data = {
+            'first_name': request.POST['first_name'],
+            'last_name': request.POST['last_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST('street_address2'),
+            'town_or_city': request.POST['town_or_city'],
+            'county': request.POST['county'],
+            'country': request.POST['country'],
+            'postcode': request.POST['postcode'],
+        }
