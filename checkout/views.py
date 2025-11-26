@@ -37,6 +37,7 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
     
 
+@login_required
 def checkout(request, booking_id):
     """
     Checkout page for single booking
@@ -55,9 +56,58 @@ def checkout(request, booking_id):
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST('street_address2'),
+            'street_address2': request.POST['street_address2'],
             'town_or_city': request.POST['town_or_city'],
             'county': request.POST['county'],
             'country': request.POST['country'],
             'postcode': request.POST['postcode'],
         }
+
+        order_form = OrderForm(form_data)
+
+        if order_form.is_valid():
+            order = order_form.save(commit=False)
+            order.booking = booking
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_booking = booking_id
+            order.save()
+
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+            )
+        
+        else:
+            messages.error(request, "There was an error with form.")
+    else:
+
+        if not stripe_public_key:
+            messages.warning(request, 'Stripe public key is missing.')
+
+        stripe.api_key = stripe_secret_key
+
+        intent = stripe.PaymentIntent.create(
+            amount=int(booking.total_price * 100),
+            currency=settings.STRIPE_CURRENCY,
+            metadata={
+                "booking_id": booking.id,
+                "username": request.user.username,
+            }
+        )
+
+        order_form = OrderForm()
+
+    template = 'checkout.checkout.html'
+    context = {
+        'booking': booking,
+        'order_form': order_form,
+        'stripe_public_key': stripe_public_key,
+        "client_secret": intent.client_secret,
+    }
+
+    return render(request, template, context)
+
+    
+    
+
+
