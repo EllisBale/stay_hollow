@@ -97,7 +97,7 @@ def checkout(request, booking_id):
 
         order_form = OrderForm()
 
-    template = 'checkout.checkout.html'
+    template = 'checkout/checkout.html'
     context = {
         'booking': booking,
         'order_form': order_form,
