@@ -18,14 +18,14 @@ def create_booking(request, property_id):
             booking.user = request.user
             booking.property = property_obj
             booking.is_paid = False
-            
+
             try:
                 booking.save()
                 return redirect("booking_success")
 
             except ValidationError as e:
                 messages.error(request, "This date has already been booked.")
-                
+
     else:
         form = BookingForm()
 
