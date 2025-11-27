@@ -11,3 +11,61 @@
 </form>
 
 {% endblock %}
+
+
+{% block postloadjs %}
+<script>
+// disable check-out until check-in is selected
+// set check-in minimum date to be today's date
+// on-changing check-in date, re-enable the checkout-date and set its min-date to the check-in date +1 day
+
+$(document).ready(function () {
+    const checkIn = $("#id_check_in");
+    const checkOut = $("#id_check_out");
+
+    // If form is loaded with existing booking dates (eg: editing an existing booking)
+    if ($(checkIn).val() && $(checkOut).val()) {
+        $(checkOut).prop("disabled", false);
+    }
+
+    function formatDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    }
+
+    function addDays(dateString, days) {
+        const [y, m, d] = dateString.split("-");
+        const date = new Date(y, m - 1, d);
+        date.setDate(date.getDate() + days);
+        return formatDate(date);
+    }
+
+    // Min date for check-in
+    const today = formatDate(new Date());
+    $(checkIn).attr("min", today);
+
+    // Disable check-out until check-in is chosen
+    $(checkOut).prop("disabled", true);
+
+    // Update check-out on change
+    $(checkIn).on("change", function () {
+        const checkInVal = $(this).val();
+
+        if (!checkInVal) {
+            $(checkOut).val("").prop("disabled", true).removeAttr("min");
+            return;
+        }
+
+        const minCheckout = addDays(checkInVal, 1);
+
+        $(checkOut)
+            .prop("disabled", false)
+            .attr("min", minCheckout)
+            .val(minCheckout);
+    });
+});
+
+</script>
+{% endblock %}

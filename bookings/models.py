@@ -32,7 +32,7 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user.username} booking for {self.property.property_name}"
-    
+
 
     def clean(self):
         """
