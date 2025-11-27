@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
 
 
@@ -13,9 +14,16 @@ class Property(models.Model):
     property_name = models.CharField(max_length=200)
     location = models.CharField(max_length=100)
     price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
-    guests = models.PositiveIntegerField(default=1)
+    guests = models.PositiveIntegerField(
+        default=1,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(10),
+        ]
+    )
+    
     main_image = CloudinaryField(
-        "Main Image",
+        "image",
         default="placeholder",
         folder="property_images"
     )
@@ -35,7 +43,9 @@ class Property(models.Model):
 
 class PropertyImage(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name="extra_images")
-    image = CloudinaryField("Extra Image", folder="property_images")
+    image = CloudinaryField(
+        "image",
+        folder="property_images")
 
     def __str__(self):
         return f"Extra Image for {self.property.property_name}"

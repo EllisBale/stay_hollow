@@ -39,4 +39,3 @@ def create_booking(request, property_id):
 @login_required
 def booking_success(request):
     return render(request, "bookings/booking_success.html")
-
