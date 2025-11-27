@@ -1,13 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
 <h1>Checkout</h1>
 
-<form method="POST">
+<form id="payment-form" method="POST">
     {% csrf_token %}
+
     {{ order_form|crispy }}
-    <button type="submit" class="btn btn-primary">Complete Payment</button>
+
+    <fieldset class="px-3 mt-4">
+        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+
+        <!-- The Stripe card element goes here -->
+        <div id="card-element" class="mb-3"></div>
+
+        <!-- Error messages -->
+        <div id="card-errors" class="text-danger mb-3" role="alert"></div>
+
+        <!-- Hidden client secret -->
+        <input type="hidden" id="client_secret" name="client_secret" value="{{ client_secret }}">
+
+    </fieldset>
+
+    <button id="submit-button" type="submit" class="btn btn-primary mt-3">
+        Complete Payment £{{ booking.total_price}}
+    </button>
+
+
+
 </form>
 
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

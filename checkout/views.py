@@ -47,9 +47,9 @@ def checkout(request, booking_id):
 
     booking = get_object_or_404(Booking, pk=booking_id)
 
-    # Handles form submission
+    # Handles form submission (POST)
     if request.method == "POST":
-        
+
         form_data = {
             'first_name': request.POST['first_name'],
             'last_name': request.POST['last_name'],
@@ -67,8 +67,14 @@ def checkout(request, booking_id):
 
         if order_form.is_valid():
             order = order_form.save(commit=False)
+            total_pricce = booking.total_price
+            order.order_total = total_pricce
+            pid = request.POST.get('client_secret')
+            if pid:
+               pid = pid.split('_secret')[0]
+            else:
+                messages.error(request, "Client secret is missing.")
             order.booking = booking
-            pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_booking = booking_id
             order.save()
@@ -79,10 +85,14 @@ def checkout(request, booking_id):
         
         else:
             messages.error(request, "There was an error with form.")
-    else:
 
+
+    else:
+        # Handles GET request
         if not stripe_public_key:
-            messages.warning(request, 'Stripe public key is missing.')
+            messages.warning(
+                request, 'Stripe public key is missing.'
+            )
 
         stripe.api_key = stripe_secret_key
 
@@ -107,7 +117,15 @@ def checkout(request, booking_id):
 
     return render(request, template, context)
 
+
+@login_required
+def checkout_success(request, order_number):
     
+
+    order = get_object_or_404(Order, order_number=order_number)
     
+    return render(request, 'checkout/checkout_success.html', {
+        'order':order
+    })
 
 

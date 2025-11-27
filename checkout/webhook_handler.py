@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from bookings.models import Booking
+import stripe
 
 
 class StripeWH_Handler:
@@ -18,9 +19,13 @@ class StripeWH_Handler:
     def handle_payment_intent_succeeded(self, event):
         """Handle successful payment"""
         intent = event.data.object
-
+        pid = intent.id
         # Read the booking ID from metadata
         booking_id = intent.metadata.get("booking_id")
+        save_info = intent.metadata.save_info
+
+        billing_details = intent.charges.data[0].billing_details
+
 
         if not booking_id:
             return HttpResponse(
