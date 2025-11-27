@@ -21,7 +21,7 @@ def create_booking(request, property_id):
 
             try:
                 booking.save()
-                return redirect("booking_success")
+                return redirect("checkout", booking_id=booking.id)
 
             except ValidationError as e:
                 messages.error(request, "This date has already been booked.")
