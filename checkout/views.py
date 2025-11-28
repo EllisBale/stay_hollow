@@ -66,22 +66,18 @@ def checkout(request, booking_id):
         order_form = OrderForm(form_data)
 
         if order_form.is_valid():
+            pid = request.POST.get('client_secret').split('_secret')[0]
             order = order_form.save(commit=False)
-            total_pricce = booking.total_price
-            order.order_total = total_pricce
-            pid = request.POST.get('client_secret')
-            if pid:
-               pid = pid.split('_secret')[0]
-            else:
-                messages.error(request, "Client secret is missing.")
+            order.order_total = booking.total_price
+            order.stripe_payment_intent = pid
             order.booking = booking
-            order.stripe_pid = pid
-            order.original_booking = booking_id
+            order.original_booking = booking.id
+
             order.save()
 
-            return redirect(
-                reverse('checkout_success', args=[order.order_number])
-            )
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]
+            ))
         
         else:
             messages.error(request, "There was an error with form.")
@@ -120,12 +116,13 @@ def checkout(request, booking_id):
 
 @login_required
 def checkout_success(request, order_number):
-    
-
     order = get_object_or_404(Order, order_number=order_number)
+    booking = order.booking
+    
     
     return render(request, 'checkout/checkout_success.html', {
-        'order':order
+        'order':order,
+        'booking': booking
     })
 
 

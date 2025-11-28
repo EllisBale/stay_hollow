@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from bookings.models import Booking
-import stripe
+
+import json
+import time
 
 
 class StripeWH_Handler:
@@ -10,47 +12,67 @@ class StripeWH_Handler:
         self.request = request
 
     def handle_event(self, event):
-        """Fallback for any event not specifically handled"""
+        """
+        Handle a generic/unknown/unexpected webhook event
+        """
         return HttpResponse(
-            content=f"Unhandled event type: {event['type']}",
+            content=f'Unhandled webhook received: {event["type"]}',
             status=200
         )
 
     def handle_payment_intent_succeeded(self, event):
-        """Handle successful payment"""
+        """
+        Handle the payment_intent.succeeded webhook from Stripe
+        """
         intent = event.data.object
         pid = intent.id
-        # Read the booking ID from metadata
+
+        # Metadata
         booking_id = intent.metadata.get("booking_id")
-        save_info = intent.metadata.save_info
-
-        billing_details = intent.charges.data[0].billing_details
-
+        save_info = intent.metadata.get("save_info")
 
         if not booking_id:
             return HttpResponse(
-                content="No booking ID in metadata",
-                status=400,
+                content="Webhook Error: No booking ID in metadata",
+                status=400
             )
 
-        try:
-            booking = Booking.objects.get(id=booking_id)
+        # Retry loop (same structure as original example)
+        booking_exists = False
+        attempt = 1
+        while attempt <= 5:
+            try:
+                booking = Booking.objects.get(id=booking_id)
+                booking_exists = True
+                break
+            except Booking.DoesNotExist:
+                attempt += 1
+                time.sleep(1)
+
+        if booking_exists:
+            # Mark booking as paid
             booking.is_paid = True
+            booking.stripe_pid = pid
             booking.save()
-        except Booking.DoesNotExist:
+
             return HttpResponse(
-                content="Booking not found",
+                content=(f'Webhook received: {event["type"]} | SUCCESS: '
+                         f'Booking {booking_id} marked as paid'),
+                status=200
+            )
+
+        else:
+            return HttpResponse(
+                content=(f'Webhook received: {event["type"]} | ERROR: '
+                         f'Booking {booking_id} not found after retries'),
                 status=404
             )
 
-        return HttpResponse(
-            content="Payment confirmed and booking marked as paid",
-            status=200
-        )
-
     def handle_payment_intent_payment_failed(self, event):
-        """Handle failed payment"""
+        """
+        Handle the payment_intent.payment_failed webhook from Stripe
+        """
         return HttpResponse(
-            content=f"Payment failed event: {event['type']}",
+            content=f'Webhook received: {event["type"]}',
             status=200
         )
