@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load allauth i18n %}
+
+{% block head_title %} Logout {% endblock head_title %}
+
+{% block content %}
+    <div class="container py-5">
+        <h1 class="mb-4"> Logout</h1>
+        <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        {{ redirect_field }}
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+            Logout
+        </button>
+    </form>
+    </div>
+{% endblock %}
