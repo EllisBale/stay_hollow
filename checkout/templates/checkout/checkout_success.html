@@ -2,5 +2,33 @@
 {% load static %}
 
 {% block content %}
-<h1> Tsvsvs</h1>
+    <div class="container py-5 text-center">
+        <h1 class="mb-3"> Booking Confirmed </h1>
+        <p class="lead">Thank you for your reservation. </p>
+        <!-- Booking Summary-->
+         <div class="card p-4">
+            <h4> Booking Summary</h4>
+            <p class="pt-3"> <strong>Reference:</strong> {{ order.order_number }}</p>
+            <p class="pt-3"> <strong>Property:</strong> {{ booking.property }}</p>
+            <p class="pt-3"> <strong>Check-in:</strong> {{ booking.check_in }}</p>
+            <p class="pt-3"> <strong>Check-out:</strong> {{ booking.check_out }}</p>
+            <p><strong>Guests:</strong> {{ booking.guests }}</p>
+            <p><strong>Total paid:</strong> £{{ order.order_total  }}</p>
+         </div>
+
+         
+    <p class="mt-4">
+        We've sent a confirmation email with full details.
+    </p>
+
+    <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">
+        Back to home
+    </a>
+
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3 ms-2">
+        View my bookings
+    </a>
+
+
+    </div>
 {% endblock %}

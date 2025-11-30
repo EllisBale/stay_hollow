@@ -118,8 +118,7 @@ def checkout(request, booking_id):
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     booking = order.booking
-    
-    
+
     return render(request, 'checkout/checkout_success.html', {
         'order':order,
         'booking': booking
