@@ -72,6 +72,7 @@ def checkout(request, booking_id):
             order.stripe_payment_intent = pid
             order.booking = booking
             order.original_booking = booking.id
+            order.user = request.user
 
             order.save()
 
@@ -116,7 +117,11 @@ def checkout(request, booking_id):
 
 @login_required
 def checkout_success(request, order_number):
-    order = get_object_or_404(Order, order_number=order_number)
+    order = get_object_or_404(
+        Order,
+        order_number=order_number,
+        user=request.user
+        )
     booking = order.booking
 
     return render(request, 'checkout/checkout_success.html', {
