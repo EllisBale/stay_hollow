@@ -122,7 +122,10 @@ def checkout_success(request, order_number):
         order_number=order_number,
         user=request.user
         )
+    
     booking = order.booking
+    booking.is_paid = True
+    booking.save()
 
     return render(request, 'checkout/checkout_success.html', {
         'order':order,
