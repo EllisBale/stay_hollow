@@ -93,7 +93,7 @@ ACCOUNT_SIGNUP_FIELDS = [
         'email*', 'password1*', 'password2*'
     ]
 
-ACCOUNT_EMAIL_VERIFICATION = 'none' 
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
 
