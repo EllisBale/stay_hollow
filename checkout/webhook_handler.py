@@ -29,7 +29,6 @@ class StripeWH_Handler:
 
         # Metadata
         booking_id = intent.metadata.get("booking_id")
-        save_info = intent.metadata.get("save_info")
 
         if not booking_id:
             return HttpResponse(
