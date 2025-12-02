@@ -3,34 +3,34 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Checkout</h1>
+<div class="container py-5 text-center">
+    <h1 class="text-center">Checkout</h1>
 
-<form id="payment-form" method="POST">
-    {% csrf_token %}
+    <form id="payment-form" method="POST">
+        {% csrf_token %}
 
-    {{ order_form|crispy }}
+        {{ order_form|crispy }}
 
-    <fieldset class="px-3 mt-4">
-        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+        <fieldset class="px-3 mt-4">
+            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
 
-        <!-- The Stripe card element goes here -->
-        <div id="card-element" class="mb-3"></div>
+            <!-- The Stripe card element goes here -->
+            <div id="card-element" class="mb-3"></div>
 
-        <!-- Error messages -->
-        <div id="card-errors" class="text-danger mb-3" role="alert"></div>
+            <!-- Error messages -->
+            <div id="card-errors" class="text-danger mb-3" role="alert"></div>
 
-        <!-- Hidden client secret -->
-        <input type="hidden" id="client_secret" name="client_secret" value="{{ client_secret }}">
+            <!-- Hidden client secret -->
+            <input type="hidden" id="client_secret" name="client_secret" value="{{ client_secret }}">
 
-    </fieldset>
+        </fieldset>
 
-    <button id="submit-button" type="submit" class="btn btn-primary mt-3">
-        Complete Payment £{{ booking.total_price}}
-    </button>
+        <button id="submit-button" type="submit" class="btn btn-primary mt-3">
+            Complete Payment £{{ booking.total_price}}
+        </button>
 
-
-
-</form>
+    </form>
+</div>
 
 <script src="https://js.stripe.com/v3/"></script>
 {% endblock %}
