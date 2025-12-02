@@ -51,6 +51,7 @@ class Booking(models.Model):
 
         overlapping = Booking.objects.filter(
             property=self.property,
+            is_paid=True,
             check_out__gt=self.check_in,
             check_in__lt=self.check_out
         )

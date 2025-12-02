@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.core.exceptions import ValidationError
 
 from .models import Order
 from .forms import OrderForm
@@ -46,6 +47,7 @@ def checkout(request, booking_id):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     booking = get_object_or_404(Booking, pk=booking_id)
+
 
     # Handles form submission (POST)
     if request.method == "POST":
@@ -131,5 +133,3 @@ def checkout_success(request, order_number):
         'order':order,
         'booking': booking
     })
-
-
