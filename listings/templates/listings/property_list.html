@@ -3,7 +3,7 @@
 
 {% block content %}
   <div class="container my-5">
-  <h1 class="text-center mb-4">Our Properties</h1>
+  <h1 class="text-center mb-4">Properties</h1>
   <div class="row justify-content-center">
     {% for property in properties %}
       <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex">
@@ -12,13 +12,12 @@
             <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
             <div class="card-body">
               <h5 class="card-title">{{ property.property_name }}</h5>
-              <p class="card-text">{{ property.location }}</p>
-              <p><strong>£{{ property.price_per_night }}</strong> per night</p>
+              <p class="card-text">{{ property.destinations }}</p>
+              <p><strong>£{{ property.formatted_price }}</strong> per night</p>
             </div>
           </div>
         </a>
       </div>
-    
     {% endfor %}
   </div>
 </div>

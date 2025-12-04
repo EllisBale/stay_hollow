@@ -73,6 +73,10 @@ class Property(models.Model):
     class Meta:
         ordering = ["-is_featured", "-created_at"]
 
+
+    def formatted_price(self):
+        return f"{self.price_per_night:,.0f}"    
+
     def __str__(self):
         return self.property_name
 

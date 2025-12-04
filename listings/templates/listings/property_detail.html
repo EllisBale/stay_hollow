@@ -11,7 +11,7 @@
             <h1>{{ property.property_name }}</h1>
             <p><strong>{{ property.location }}</strong></p>
             <p><strong>Guests:</strong>{{ property.guests }}</p>
-            <p><strong>Price Per Night:</strong>{{ property.price_per_night }}</p>
+            <p><strong>Price Per Night:</strong> £{{ property.formatted_price }}</p>
 
             <h4>Amenities</h4>
             <ul>
@@ -28,7 +28,7 @@
         </div>
 
         <div>
-            <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> fsf</a>
+            <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> Book Now</a>
         </div>
     </div>
  </div>
