@@ -12,8 +12,13 @@
             <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
             <div class="card-body">
               <h5 class="card-title">{{ property.property_name }}</h5>
-              <p class="card-text">{{ property.destinations }}</p>
-              <p><strong>£{{ property.formatted_price }}</strong> per night</p>
+                         {% if property.destinations.parent_destination %}
+                <p>{{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
+            {% else %}
+                {{ property.destinations.name }}
+            {% endif %}
+
+              <p><strong> From  £{{ property.formatted_price }}</strong> per night</p>
             </div>
           </div>
         </a>
