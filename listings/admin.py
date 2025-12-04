@@ -1,6 +1,13 @@
 from django.contrib import admin
-from .models import Property, PropertyImage, Amenity
+from .models import Destination, Property, PropertyImage, Amenity
 
+
+@admin.register(Destination)
+class DestinationAdmin(admin.ModelAdmin):
+    list_display = ("name", "parent_destination", "slug")
+    prepopulated_fields = {"slug": ("name",)}
+    search_fields = ("name",)
+    list_filter = ("parent_destination",)
 
 class PropertyImage(admin.TabularInline):
     model = PropertyImage
