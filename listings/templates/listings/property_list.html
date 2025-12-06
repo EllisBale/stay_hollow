@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="{% static 'listings/css/listings.css' %}">
 {% endblock %}
 {% block content %}
+
+  {% include "partials/search_bar.html" %}
   <div class="container my-5">
-  <h1 class="text-center mb-4">Properties</h1>
-  <div class="row justify-content-center">
+    <h1 class="text-center mb-4">Properties</h1>
+    <div class="row justify-content-center">
     {% for property in properties %}
       <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex">
         <a href="{% url 'property_detail' property.id %}"> 
