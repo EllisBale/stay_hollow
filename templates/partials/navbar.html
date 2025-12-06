@@ -11,7 +11,16 @@
                     <div class="navbar-nav">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                         <a class="nav-link" href="{% url 'properties' %}">Listings</a>
-                        <a class="nav-link" href="#">Destinations</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Destination
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="destinations-link">
+                                <li><a class="dropdown-item" href="{% url 'properties' %}?destinations=England">England</a></li>
+                                <li><a class="dropdown-item" href="{% url 'properties' %}?destinations=Scotland">Scotland</a></li>
+                                <li><a class="dropdown-item" href="{% url 'properties' %}?destinations=Wales">Wales</a></li>
+                            </ul>
+                        </li>
                         <a class="nav-link" href="#">About</a>
                         <a class="nav-link" href="#">Contact</a>
                         <div class="d-lg-flex mx-2">

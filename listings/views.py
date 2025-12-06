@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Property
+from .models import Property, Destination
 
 
 def property_list(request):
@@ -11,8 +11,25 @@ def property_list(request):
 
     properties = Property.objects.all()
     query = None
+    selected_destinations = None
+
+
 
     if request.GET:
+
+        if "destinations" in request.GET:
+
+            destinations_param = request.GET.get("destinations")
+            if destinations_param:
+                destinations_names = destinations_param.split(",")
+                selected_destinations = Destination.objects.filter(name__in=destinations_names)
+
+                properties = properties.filter(
+                    Q(destinations__name__in=destinations_names) |
+                    Q(destinations__parent_destination__name__in=destinations_names)
+                )
+
+
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
@@ -32,6 +49,7 @@ def property_list(request):
     context = {
         "properties": properties,
         "search_term": query,
+        "selected_destinations": selected_destinations,
     }
 
     return render(request, "listings/property_list.html", context)
