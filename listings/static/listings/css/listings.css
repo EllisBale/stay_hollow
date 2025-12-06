@@ -1,4 +1,7 @@
 
+li {list-style: none;}
+
+
 /* ===== Carousel ===== */
 .carousel-img {
     width: 100%;
@@ -6,6 +9,7 @@
     object-position: center;
     height: 100%;
 }
+
 
 .carousel-inner {
     height: 400px;
@@ -16,6 +20,11 @@
 }
 
 
-li {
-    list-style: none;
+/* ===== Card ====== */
+
+.card-img-top { 
+    width: 100%;
+    border-radius: 0px !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover; 
 }
