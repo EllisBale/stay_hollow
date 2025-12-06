@@ -7,6 +7,8 @@
 {% block content %}
 
   {% include "partials/search_bar.html" %}
+
+
   <div class="container my-5">
     <h1 class="text-center mb-4">Properties</h1>
     <div class="row justify-content-center">
@@ -18,7 +20,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ property.property_name }}</h5>
                          {% if property.destinations.parent_destination %}
-                <p>{{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
             {% else %}
                 {{ property.destinations.name }}
             {% endif %}
