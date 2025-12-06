@@ -23,8 +23,13 @@
             <p><strong><i class="fa-solid fa-money-bill"></i> Price Per Night:</strong> £{{ property.formatted_price }}</p>
 
             <ul class="list-unstyled">
-                {% for a in property.amenities.all %}
-                    <li>{{ a.name }}</li>
+                {% for amenity in property.amenities.all %}
+                    <li>
+                        {% if amenity.icon_class %}
+                            <i class="{{ amenity.icon_class }}"></i>
+                        {% endif %}
+                        {{ amenity.name }}
+                    </li>
                 {% empty %}
                     <li> No Amenities</li>
                 {% endfor %}

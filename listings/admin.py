@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import Destination, Property, PropertyImage, Amenity
 
 
@@ -24,4 +25,10 @@ class PropertyAdmin(admin.ModelAdmin):
 
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
-    search_fields = ("name",)
+    list_display = ("name", "icon_preview")
+
+    def icon_preview(self, obj):
+        if obj.icon_class:
+            return format_html("<i class='{}'></i>", obj.icon_class)
+        return "-"
+    icon_preview.short_description = "Icon"

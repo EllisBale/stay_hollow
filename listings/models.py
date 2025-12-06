@@ -6,6 +6,11 @@ from django.utils.text import slugify
 
 class Amenity(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    icon_class = models.CharField(
+        max_length=150,
+        blank=True,
+        help_text="Enter the FontAwesome icon class."
+    )
 
     def __str__(self):
         return self.name
