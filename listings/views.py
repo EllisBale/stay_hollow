@@ -37,14 +37,27 @@ def property_list(request):
                 return redirect(reverse('properties'))
             
             queries = (
-                Q(property_name__icontains=query) | 
+                Q(property_name__icontains=query) |
+                Q(bedrooms__icontains=query) |
+                Q(guests__icontains=query) |
                 Q(description__icontains=query) |
                 Q(destinations__name__icontains=query) |
                 Q(destinations__parent_destination__name__icontains=query)
             )
 
             properties = properties.filter(queries)
-            
+
+        sortby = request.GET.get("sort")
+
+        if sortby == "price_asc":
+            properties = properties.order_by("price_per_night")
+
+        elif sortby == "price_desc":
+             properties = properties.order_by("-price_per_night")
+
+        elif sortby == "newest":
+            properties = properties.order_by("-id")
+
 
     context = {
         "properties": properties,
