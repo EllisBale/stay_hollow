@@ -14,9 +14,9 @@
         <div class="col-md-6 d-flex flex-column justify-content-center px-5 pt-5 pt-sm-5">
             <h1 class="mb-5">{{ property.property_name }}</h1>
             {% if property.destinations.parent_destination %}
-                <p><strong><i class="fa-regular fa-map"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }} </strong></p>
+                <p><strong><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }} </strong></p>
             {% else %}
-                {{ property.destinations.name }}
+                <p><strong><i class="fa-solid fa-location-dot"></i> {{ property.destinations.name }} </strong></p>
             {% endif %}
 
             <p><strong><i class="fa-solid fa-person"></i> Guests: </strong>{{ property.guests }}</p>

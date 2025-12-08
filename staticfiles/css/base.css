@@ -2,12 +2,21 @@
 :root {
     --btn-green: #5EBC67;
     --btn-green-dark: #4aa557;
-    --btn-gray: #6C757D ;
+    --btn-gray: #6C757D;
+
+    /* Add these to sections */
+    --section-gray: #e4e9e7;
+    --section-dark-gray:  #dde3e1;
+
+    --footer-colour: #1f2f24;
+    --footer-text-colour: #e9f5ec;
+    /* ===============================================================================    */
 }
 
 
 body {
     background-color: #FFFFFF;
+    
 }
 
 a {

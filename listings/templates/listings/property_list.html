@@ -13,19 +13,20 @@
     <h1 class="text-center mb-4">Properties</h1>
     <div class="row justify-content-center">
     {% for property in properties %}
-      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 mb-4 d-flex mb-5">
         <a href="{% url 'property_detail' property.id %}"> 
           <div class="card shadow-sm h-100">
             <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
             <div class="card-body">
               <h5 class="card-title">{{ property.property_name }}</h5>
-                         {% if property.destinations.parent_destination %}
-                <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
-            {% else %}
-                <i class="fa-solid fa-location-dot"></i> {{ property.destinations.name }}
-            {% endif %}
-
-              <p><strong> From  £{{ property.formatted_price }}</strong> per night</p>
+              {% if property.destinations.parent_destination %}
+                  <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
+              {% else %}
+                <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.name }}</p>
+              {% endif %}
+              <div class="container px-0 price-background">
+                <p class="px-3">From <strong>£{{ property.formatted_price }}</strong> per night</p>
+              </div>
             </div>
           </div>
         </a>
