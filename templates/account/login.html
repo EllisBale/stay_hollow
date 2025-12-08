@@ -6,13 +6,13 @@
 
 {% block content %}
     <div class="container py-5">
-        <h1 class="mb-4"> Sign In</h1>
+        <h1 class="mb-4"> Login </h1>
         <form method="post" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
 
         <button type="submit" class="btn btn-primary w-100 mt-3">
-            Sign In
+            Login
         </button>
     </form>
 

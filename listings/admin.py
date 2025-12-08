@@ -18,9 +18,9 @@ class PropertyImage(admin.TabularInline):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     inlines = [PropertyImage]
-    list_display = ("property_name", "location", "price_per_night", "guests", "is_featured", "created_at")
-    list_filter = ("is_featured", "location")
-    search_fields = ("property_name", "location")
+    list_display = ("property_name", "price_per_night", "guests", "bedrooms", "is_featured", "created_at")
+    list_filter = ("is_featured",)
+    search_fields = ("property_name",)
 
 
 @admin.register(Amenity)

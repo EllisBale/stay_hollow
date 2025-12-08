@@ -44,7 +44,6 @@ class Destination(models.Model):
 
 class Property(models.Model):
     property_name = models.CharField(max_length=200)
-    location = models.CharField(max_length=100)
 
     destinations = models.ForeignKey(
         Destination,
@@ -55,11 +54,18 @@ class Property(models.Model):
     )
 
     price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
+    bedrooms = models.PositiveIntegerField(
+        default=1,
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(15),
+        ]
+    )
     guests = models.PositiveIntegerField(
         default=1,
         validators=[
             MinValueValidator(1),
-            MaxValueValidator(10),
+            MaxValueValidator(30),
         ]
     )
     
