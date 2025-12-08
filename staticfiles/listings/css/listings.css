@@ -39,11 +39,10 @@ li {list-style: none;}
     background: #f6f8f7 !important;
 }
 
-
-.fa-location-dot {
-    opacity: 60%;
+.card-body .fa-solid {
+    color: #4c5053;
+    opacity: 0.8;
 }
-
 
 .price-background > p {
     background-color: #e3f1eb;
@@ -51,3 +50,4 @@ li {list-style: none;}
     border-radius: 20px;
     color: #2f3a34;
 }
+
