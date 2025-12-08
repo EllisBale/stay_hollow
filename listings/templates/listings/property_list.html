@@ -22,7 +22,7 @@
                          {% if property.destinations.parent_destination %}
                 <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
             {% else %}
-                {{ property.destinations.name }}
+                <i class="fa-solid fa-location-dot"></i> {{ property.destinations.name }}
             {% endif %}
 
               <p><strong> From  £{{ property.formatted_price }}</strong> per night</p>
