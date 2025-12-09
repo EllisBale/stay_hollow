@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 from .models import Property, Destination
@@ -58,11 +59,14 @@ def property_list(request):
         elif sortby == "newest":
             properties = properties.order_by("-id")
 
+    paginator = Paginator(properties, 12)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     context = {
-        "properties": properties,
         "search_term": query,
         "selected_destinations": selected_destinations,
+        "page_obj": page_obj,
     }
 
     return render(request, "listings/property_list.html", context)
