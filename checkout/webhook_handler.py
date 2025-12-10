@@ -60,7 +60,7 @@ class StripeWH_Handler:
                 status=400
             )
 
-        # Retry loop (same structure as original example)
+        # Retry loop 
         booking_exists = False
         attempt = 1
         while attempt <= 5:
@@ -77,6 +77,8 @@ class StripeWH_Handler:
             booking.is_paid = True
             booking.stripe_pid = pid
             booking.save()
+
+            self._send_confirmation_email(booking)
 
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
