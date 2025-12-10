@@ -1,0 +1,16 @@
+Hello {{ user.email }}
+
+This is a confirmation of your booking with Stay Hollow. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Booking Property: {{ booking.property }}
+Check-in: {{ booking.check_in }}
+Check-out: {{ booking.check_out }}
+
+Order Total: £{{ order.order_total  }}
+
+Thank you for your booking order!
+
+Sincerely,
+
+Stay Hollow
