@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
+from .models import Order
 from bookings.models import Booking
 
 import time
@@ -19,7 +20,7 @@ class StripeWH_Handler:
         """
         Send the user confirmation email
         """
-        cust_email = order.email
+        cust_email = order.user.email
         subject = render_to_string(
             "checkout/confirmation_emails/confirmation_email_subject.txt",
             {"order": order,})
@@ -31,7 +32,8 @@ class StripeWH_Handler:
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
+            [cust_email],
+            fail_silently=False
         )
         
 
@@ -78,7 +80,11 @@ class StripeWH_Handler:
             booking.stripe_pid = pid
             booking.save()
 
-            self._send_confirmation_email(booking)
+            try:
+                order = Order.objects.get(original_booking=booking_id)
+                self._send_confirmation_email(order)
+            except Order.DoesNotExist:
+                pass
 
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
