@@ -67,7 +67,11 @@
              <div class="col-12 col-lg-6 pt-4 pt-lg-4 px-lg-5 pb-5">
                 <h4 class="mb-3">Location</h4>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora repellendus dolore quae sed reiciendis vero, maxime neque fuga fugit! Cumque eum nostrum nisi voluptate doloremque aliquam minus voluptates eaque atque?
+                    {% if property.destinations and property.destinations.area_description %}
+                        {{ property.destinations.area_description }}
+                    {% else %}
+                        <p> No location description available for this destination.  </p>
+                    {% endif %}
                 </p>
             </div>
         </div>

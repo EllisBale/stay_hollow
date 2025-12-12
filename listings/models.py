@@ -30,6 +30,12 @@ class Destination(models.Model):
 
     slug = models.SlugField(max_length=120, unique=True)
 
+    area_description = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Description of the area."
+    )
+
     class Meta:
         verbose_name_plural = "Destinations"
 
@@ -76,6 +82,7 @@ class Property(models.Model):
     )
 
     description = models.TextField(blank=True, null=True)
+    
 
     latitude = models.DecimalField(
         max_digits=18,
