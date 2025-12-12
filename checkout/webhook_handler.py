@@ -10,32 +10,35 @@ import time
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe webhooks
+    """
 
     def __init__(self, request):
         self.request = request
 
-
     def _send_confirmation_email(self, order):
-        """
-        Send the user confirmation email
-        """
-        cust_email = order.user.email
+        """Send the user a confirmation email"""
+        cust_email = order.email
+        if not cust_email:
+            return
+
         subject = render_to_string(
             "checkout/confirmation_emails/confirmation_email_subject.txt",
-            {"order": order,})
+            {"order": order},
+        )
         body = render_to_string(
             "checkout/confirmation_emails/confirmation_email_body.txt",
-            {"order": order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+            {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
+        )
+
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
-            [cust_email],
-            fail_silently=False
+            [cust_email]
         )
-        
+
 
     def handle_event(self, event):
         """
@@ -47,13 +50,9 @@ class StripeWH_Handler:
         )
 
     def handle_payment_intent_succeeded(self, event):
-        """
-        Handle the payment_intent.succeeded webhook from Stripe
-        """
+        """Handle payment success webhook"""
         intent = event.data.object
         pid = intent.id
-
-        # Metadata
         booking_id = intent.metadata.get("booking_id")
 
         if not booking_id:
@@ -62,42 +61,43 @@ class StripeWH_Handler:
                 status=400
             )
 
-        # Retry loop 
-        booking_exists = False
-        attempt = 1
-        while attempt <= 5:
+        booking_id = int(booking_id)
+
+        # Retry loop for booking creation delay
+        booking = None
+        for _ in range(5):
             try:
                 booking = Booking.objects.get(id=booking_id)
-                booking_exists = True
                 break
             except Booking.DoesNotExist:
-                attempt += 1
                 time.sleep(1)
 
-        if booking_exists:
-            # Mark booking as paid
-            booking.is_paid = True
-            booking.stripe_pid = pid
-            booking.save()
-
-            try:
-                order = Order.objects.get(original_booking=booking_id)
-                self._send_confirmation_email(order)
-            except Order.DoesNotExist:
-                pass
-
+        if not booking:
             return HttpResponse(
-                content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                         f'Booking {booking_id} marked as paid'),
-                status=200
-            )
-
-        else:
-            return HttpResponse(
-                content=(f'Webhook received: {event["type"]} | ERROR: '
-                         f'Booking {booking_id} not found after retries'),
+                content=f"Webhook Error: Booking {booking_id} not found",
                 status=404
             )
+
+        # Update booking
+        booking.is_paid = True
+        booking.save()
+
+        # Update matching order
+        try:
+            order = Order.objects.get(booking_id=booking_id)
+            order.stripe_payment_intent = pid
+            order.save()
+
+            self._send_confirmation_email(order)
+
+        except Order.DoesNotExist:
+            pass
+
+        return HttpResponse(
+            content=f"Webhook received: {event['type']} | SUCCESS",
+            status=200
+        )
+
 
     def handle_payment_intent_payment_failed(self, event):
         """

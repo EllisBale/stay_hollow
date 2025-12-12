@@ -4,14 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-from django.core.exceptions import ValidationError
 
 from .models import Order
 from .forms import OrderForm
 from bookings.models import Booking
 
 import stripe
-import json
 
 
 @login_required
