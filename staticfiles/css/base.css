@@ -1,12 +1,11 @@
 
 :root {
-    --btn-green: #5EBC67;
+    --btn-white: #ffffff;
     --btn-green-dark: #4aa557;
     --btn-gray: #6C757D;
 
     /* Add these to sections */
-    --section-gray: #e4e9e7;
-    --section-dark-gray:  #dde3e1;
+    --section-gray: #E8E7E7;
 
     --footer-colour: #1f2f24;
     --footer-text-colour: #e9f5ec;
@@ -15,7 +14,9 @@
 
 
 body {
-    background-color: #FFFFFF;
+    background-color: #f3f1f1;
+    padding-top: 90px;
+
     
 }
 
@@ -30,45 +31,54 @@ a {
 
 
 .navbar {
-    background-color: #F3F4F6 !important;
-    border-bottom: 1px solid #E0E0E0;
+    
+    background-color: #4AA557 !important;
+    border-bottom: 1px solid #4aa557;
 }
+
+.nav-link {
+    color: #ffffff;
+}
+
 
 /* ===== Buttons ===== */
 
 .btn {
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   font-weight: 500;
   padding: 0.5rem 1.25rem;
 }
 
 
 .btn-login {
-    border-color: var(--btn-green);
-    color: var(--btn-green);
-    background-color:#F3F4F6  ;
+    color: #ffffff;
+    background-color:#4AA557;
+    border: 1px solid #FFFFFF !important;
     transition: all 0.25s ease;
 }
 
 .btn-login:hover {
-    background-color: var(--btn-green);
-    color: #fff;
+    background-color: #E8E8E8 !important;
+    border: 1px solid #ffffff !important;
+    color: #4AA557;
     box-shadow: 0 4px 10px rgba(94, 188, 103, 0.3);
 }
 
 .btn-register {
-    background-color: var(--btn-green);
-    border-color: var(--btn-green);
-    color: #fff;
+    background-color: var(--btn-white);
+    color: #4AA557;
     transition: all 0.25s ease;
 }
 
 .btn-register:hover {
     background-color: var(--brand-green-dark);
-    border-color: var(--brand-green-dark);
+    border-color: #000;
+    color: #ffffff;
     box-shadow: 0 4px 10px rgba(94, 188, 103, 0.3);  
 }
 
+
+/* ===== Card ===== */
 
 
 .card {
@@ -78,6 +88,9 @@ a {
 .card-img-top {
     border-radius: 0px;
 }
+
+
+
 
 @media (min-width: 576px) {
     .logo-img {
