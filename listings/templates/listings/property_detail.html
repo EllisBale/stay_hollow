@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'listings/css/listings.css' %}">
 {% endblock %}
 
+{% block leaflet_css %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+{% endblock %}
+
 {% block content %}
  <div class="container py-5">
     <div class="row mb-4 ">
@@ -45,5 +49,29 @@
             <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> Book Now</a>
         </div>
     </div>
- </div>
+
+    <div id="map"></div>
+
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        const propertyLat = {{ property.latitude }};
+        const propertyLng = {{ property.longitude }};
+
+        const map = L.map('map').setView([propertyLat, propertyLng], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        L.marker([propertyLat, propertyLng])
+            .addTo(map)
+            .bindPopup("{{ property.property_name }}")
+            .openPopup();
+    </script>
+
 {% endblock %}

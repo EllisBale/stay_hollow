@@ -77,6 +77,22 @@ class Property(models.Model):
 
     description = models.TextField(blank=True, null=True)
 
+    latitude = models.DecimalField(
+        max_digits=18,
+        decimal_places=14,
+        null=True,
+        blank=True,
+        help_text="Paste only the numeric latitude value. Right-click on Google Maps => Copy the first set of numbers and paste in here."
+
+    )
+    longitude = models.DecimalField(
+        max_digits=18,
+        decimal_places=14,
+        null=True,
+        blank=True,
+        help_text="Paste only the numeric longitude value. Right-click on Google Maps => Copy the second set of numbers and paste in here."
+    )
+
     amenities = models.ManyToManyField(Amenity, blank=True, related_name="properties")
     is_featured = models.BooleanField(default=False, help_text="Mark yes for property to be featured on Homepage")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -86,10 +102,21 @@ class Property(models.Model):
 
 
     def formatted_price(self):
+        """
+        Return price per night and formats it 
+        for templates
+        """
         return f"{self.price_per_night:,.0f}"    
 
     def __str__(self):
         return self.property_name
+    
+    def maps_url(self):
+        """
+        Return Google Maps link based on 
+        latitude and longitude
+        """
+        return f"https://www.google.com/maps/search/?api=1&query={self.latitude},{self.longitude}"
 
 
 class PropertyImage(models.Model):

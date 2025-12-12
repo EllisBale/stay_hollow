@@ -92,3 +92,12 @@ li {list-style: none;}
 .page-link:disabled {
     cursor: not-allowed;
 }
+
+
+/* ===== Map section ===== */
+
+#map {
+    height: 350px;
+    width: 100%;
+    border-radius: 0px;
+}
