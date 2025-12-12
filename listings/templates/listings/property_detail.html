@@ -10,49 +10,69 @@
 {% endblock %}
 
 {% block content %}
- <div class="container py-5">
-    <div class="row mb-4 ">
-        <div class="col-md-6 px-0">
-            {% include "listings/partials/carousel.html" %}
-        </div>
-        <div class="col-md-6 d-flex flex-column justify-content-center px-5 pt-5 pt-sm-5">
-            <h1 class="mb-5">{{ property.property_name }}</h1>
-            {% if property.destinations.parent_destination %}
-                <p><strong><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }} </strong></p>
-            {% else %}
-                <p><strong><i class="fa-solid fa-location-dot"></i> {{ property.destinations.name }} </strong></p>
-            {% endif %}
+    <div class="container-fluid pb-3 px-0 pt-lg-5">
+        <div class="container-lg px-lg-5">
+            <div class="row mb-4 ">
+                <div class="col-12 col-lg-7 px-0">
+                    {% include "listings/partials/carousel.html" %}
+                </div>
+                <div class="col-12 col-lg-5 d-flex flex-column justify-content-center px-5 px-lg pt-5 property-info-text">
+                    <h1 class="mb-5">{{ property.property_name }}</h1>
+                    {% if property.destinations.parent_destination %}
+                        <p><strong><i class="fa-solid fa-location-dot"></i></strong> {{ property.destinations.parent_destination.name }} >  {{ property.destinations.name }}</p>
+                    {% else %}
+                        <p><strong><i class="fa-solid fa-location-dot"></i></strong> {{ property.destinations.name }}</p>
+                    {% endif %}
 
-            <p><strong><i class="fa-solid fa-person"></i> Guests: </strong>{{ property.guests }}</p>
-            <p><strong><i class="fa-solid fa-money-bill"></i> Price Per Night:</strong> £{{ property.formatted_price }}</p>
+                    <p><strong><i class="fa-solid fa-person"></i></strong> Guests: {{ property.guests }}</p>
+                    <div>
+                        <p><strong><i class="fa-solid fa-money-bill"></i></strong> Price Per Night: £{{ property.formatted_price }}</p>
+                    
+                        <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> Book Now</a>
+                    </div>
 
-            <ul class="list-unstyled">
-                {% for amenity in property.amenities.all %}
-                    <li>
-                        {% if amenity.icon_class %}
-                            <i class="{{ amenity.icon_class }}"></i>
-                        {% endif %}
-                        {{ amenity.name }}
-                    </li>
-                {% empty %}
-                    <li> No Amenities</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="col-12 py-4">
-            <h4> Overview </h4>
-            <p>{{ property.description }}</p>
-        </div>
-
-        <div>
-            <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> Book Now</a>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <div class="container py-2 pb-5 px-3">
 
-    <div id="map"></div>
+        <div class="col-12 border-bottom">
+            <h4 class="mb-3"> Overview </h4>
+            <p>{{ property.description }}</p>
+        </div>
+        
+        <div class="row g-3 justify-content-start mt-5 mb-5 pb-5 border-bottom">
+            <h4 class="mb-3"> Features </h4>
+            {% for amenity in property.amenities.all %}
+                <div class="col-5 col-sm-6 col-md-4 d-flex align-items-center justify-content-start pl-0">
+                    {% if amenity.icon_class %}
+                        <i class="mx-2 {{ amenity.icon_class }}"></i>
+                    {% endif %}
+                    {{ amenity.name }}
+                </div>
+                            
+            {% empty %}
+                    <li> No Amenities</li>
+            {% endfor %}
+        </div>
+                
 
-</div>
+        <div class="row mt-5 pt-5">
+
+            <div class="col-12 col-lg-6">
+                <div id="map"></div>
+            </div>
+             <div class="col-12 col-lg-6 pt-4 pt-lg-4 px-lg-5 pb-5">
+                <h4 class="mb-3">Location</h4>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora repellendus dolore quae sed reiciendis vero, maxime neque fuga fugit! Cumque eum nostrum nisi voluptate doloremque aliquam minus voluptates eaque atque?
+                </p>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
