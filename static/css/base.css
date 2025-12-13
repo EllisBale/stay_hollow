@@ -17,7 +17,7 @@
 
 body {
     background-color: #f3f1f1;
-    padding-top: 90px;
+    padding-top: 0px;
 
     
 }
@@ -27,15 +27,16 @@ a {
 }
 
 
-.logo-img {
-    height: 30px;
-}
-
+/* ===== Navbar ===== */
 
 .navbar {
     
     background-color: #2F6F3E !important;
     border-bottom: 1px solid #4aa557;
+}
+
+.logo-img {
+    height: 30px;
 }
 
 .nav-link {
@@ -100,3 +101,4 @@ a {
 }
 
 }
+
