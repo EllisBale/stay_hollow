@@ -6,6 +6,8 @@
 
     /* Add these to sections */
     --section-gray: #E8E7E7;
+    --section-green-tint: #EAF5EC;
+
 
     --footer-colour: #1f2f24;
     --footer-text-colour: #e9f5ec;
@@ -32,7 +34,7 @@ a {
 
 .navbar {
     
-    background-color: #4AA557 !important;
+    background-color: #2F6F3E !important;
     border-bottom: 1px solid #4aa557;
 }
 
@@ -52,7 +54,7 @@ a {
 
 .btn-login {
     color: #ffffff;
-    background-color:#4AA557;
+    background: transparent;
     border: 1px solid #FFFFFF !important;
     transition: all 0.25s ease;
 }
@@ -60,13 +62,13 @@ a {
 .btn-login:hover {
     background-color: #E8E8E8 !important;
     border: 1px solid #ffffff !important;
-    color: #4AA557;
+    color: #2F6F3E;
     box-shadow: 0 4px 10px rgba(94, 188, 103, 0.3);
 }
 
 .btn-register {
     background-color: var(--btn-white);
-    color: #4AA557;
+    color: #2F6F3E;
     transition: all 0.25s ease;
 }
 
