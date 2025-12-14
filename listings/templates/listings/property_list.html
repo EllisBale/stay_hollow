@@ -8,9 +8,11 @@
 
 {% block content %}
 
-  {% include "partials/search_bar.html" %}
-
+  <div class="container-fluid search-background pt-2 pb-5">
+    {% include "partials/search_bar.html" %}
+  </div>
   {% include "listings/partials/sortby.html" %}
+
   <div class="container my-5">
     <h1 class="text-center mb-4">Properties</h1>
     <div class="row justify-content-center">

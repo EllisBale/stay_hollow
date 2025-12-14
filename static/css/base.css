@@ -34,7 +34,6 @@ a {
 .navbar {
     
     background-color: #2F6F3E !important;
-    border-bottom: 1px solid #4aa557;
 }
 
 .logo-img {
@@ -127,7 +126,6 @@ a {
 
 @media (min-width: 992px) {
 
-    }
 }
 
 

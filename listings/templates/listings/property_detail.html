@@ -90,16 +90,19 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script>
-        const propertyLat = {{ property.latitude }};
-        const propertyLng = {{ property.longitude }};
+        const propertyLat = "{{ property.latitude }}";
+        const propertyLng = "{{ property.longitude }}";
 
-        const map = L.map('map').setView([propertyLat, propertyLng], 14);
+        const lat = parseFloat(propertyLat)
+        const lng = parseFloat(propertyLng)
+
+        const map = L.map('map').setView([lat, lng], 14);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
         }).addTo(map);
 
-        L.marker([propertyLat, propertyLng])
+        L.marker([lat, lng])
             .addTo(map)
             .bindPopup("{{ property.property_name }}")
             .openPopup();
