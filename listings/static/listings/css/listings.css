@@ -97,10 +97,18 @@ li {list-style: none;}
 /* ===== Sections ===== */
 
 .border-bottom {
-    border-bottom: 1px solid black;
+    position: relative;
+    border-bottom: 1px solid #dee2e6 !important;
+    
 }
 
+.feat-section {
+    background-color: var(--section-gray) !important;
+}
 
+hr {
+    color:  #747474 !important;
+}
 
 
 /* ===== Map section ===== */
@@ -117,5 +125,5 @@ li {list-style: none;}
         text-align: center;
     }
 
-    
+ 
 }

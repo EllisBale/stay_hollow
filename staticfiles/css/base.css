@@ -15,11 +15,13 @@
 }
 
 
+html {
+    scroll-behavior: auto;
+}
+
 body {
     background-color: #f3f1f1;
     padding-top: 0px;
-
-    
 }
 
 a {
@@ -81,6 +83,25 @@ a {
 }
 
 
+/* Default mobile behaviour */
+.back-to-top {
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    z-index: 999;
+}
+
+.back-to-top.is-hidden {
+    display: none;
+}
+
+/* Desktop behaviour */
+
+.back-to-top.is-desktop {
+    display: block;
+}
+
 /* ===== Card ===== */
 
 
@@ -95,10 +116,18 @@ a {
 
 
 
+
+
 @media (min-width: 576px) {
     .logo-img {
-    height: 50px;
+        height: 50px;
+    }
 }
 
+
+@media (min-width: 992px) {
+
+    }
 }
+
 

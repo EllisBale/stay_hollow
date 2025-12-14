@@ -12,7 +12,7 @@
 {% block content %}
     <div class="container-fluid pb-3 px-0 pt-lg-5">
         <div class="container-lg px-lg-5">
-            <div class="row mb-4 ">
+            <div class="row mb-4">
                 <div class="col-12 col-lg-7 px-0">
                     {% include "listings/partials/carousel.html" %}
                 </div>
@@ -38,25 +38,28 @@
     
     <div class="container py-2 pb-5 px-3">
 
-        <div class="col-12 border-bottom">
+        <div class="col-12 px-0">
             <h4 class="mb-3"> Overview </h4>
             <p>{{ property.description }}</p>
         </div>
+        <hr>
+
         
-        <div class="row g-3 justify-content-start mt-5 mb-5 pb-5 border-bottom">
-            <h4 class="mb-3"> Features </h4>
-            {% for amenity in property.amenities.all %}
-                <div class="col-5 col-sm-6 col-md-4 d-flex align-items-center justify-content-start pl-0">
-                    {% if amenity.icon_class %}
-                        <i class="mx-2 {{ amenity.icon_class }}"></i>
-                    {% endif %}
-                    {{ amenity.name }}
-                </div>
-                            
-            {% empty %}
-                    <li> No Amenities</li>
-            {% endfor %}
+        <div class="row g-3 justify-content-start mt-5 mb-5 px-5 pt-3 pb-5 feat-section">
+                <h4 class="mb-3"> Features </h4>
+                {% for amenity in property.amenities.all %}
+                    <div class="col-5 col-sm-6 col-md-4 d-flex align-items-center justify-content-start pl-0">
+                        {% if amenity.icon_class %}
+                            <i class="mx-2 {{ amenity.icon_class }}"></i>
+                        {% endif %}
+                        {{ amenity.name }}
+                    </div>
+                                
+                {% empty %}
+                        <li> No Amenities</li>
+                {% endfor %}
         </div>
+        <hr>
                 
 
         <div class="row mt-5 pt-5">
@@ -75,11 +78,15 @@
                 </p>
             </div>
         </div>
+        <hr>
 
     </div>
+    {% include "partials/back_to_top_btn.html" %}
+
 {% endblock %}
 
 {% block postloadjs %}
+<script src="{% static 'listings/js/property_detail.js' %}"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script>
