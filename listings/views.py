@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Property, Destination
 from bookings.models import Booking
+from reviews.models import Review
+
 
 def property_list(request):
     """
@@ -76,6 +78,7 @@ def property_detail(request, pk):
     property_obj = get_object_or_404(Property, pk=pk)
 
     has_paid_booking = False
+    has_reviewed = False
 
     if request.user.is_authenticated:
         has_paid_booking = Booking.objects.filter(
@@ -85,9 +88,16 @@ def property_detail(request, pk):
 
         ).exists()
 
+        has_reviewed = Review.objects.filter(
+            booking__user=request.user,
+            booking__property=property_obj
+
+        ).exists()
+
     context = {
         "property": property_obj,
         "has_paid_booking": has_paid_booking,
+        "has_reviewed": has_reviewed,
     }
 
     return render(request, "listings/property_detail.html", context)

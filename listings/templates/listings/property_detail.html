@@ -80,10 +80,12 @@
         </div>
         <hr>
 
-        {% if has_paid_booking %}
+        {% if has_paid_booking and not has_reviewed %}
             <a href="{% url 'add_review' property.id %}" class="btn btn-primary">
-                Leave Review    
+                Add Review    
             </a>
+        {% elif has_reviewed %}
+            <p> You have already submitted a review for this property.</p>
         {% endif %}
 
     </div>

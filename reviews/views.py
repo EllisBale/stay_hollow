@@ -10,13 +10,13 @@ from .forms import ReviewForm
 
 @login_required
 def add_review(request, property_id):
-    property = get_object_or_404(Property, id=property_id)
+    property_obj = get_object_or_404(Property, id=property_id)
 
     booking = (
         Booking.objects
         .filter(
             user=request.user,
-            property=property,
+            property=property_obj,
             is_paid=True
         )
         .exclude(review__isnull=False)
@@ -25,7 +25,7 @@ def add_review(request, property_id):
 
     if not booking:
         messages.error(request, "You cannot review this property.")
-        return redirect("property_detail", property_id=property.id)
+        return redirect("property_detail", pk=property_obj.id)
     
     if request.method == "POST":
         review_form = ReviewForm(request.POST)
@@ -35,11 +35,11 @@ def add_review(request, property_id):
             review.user = review.user
             review.save()
             messages.success(request, "Review Submitted!")
-            return redirect("property_detail", property_id=property.id)
+            return redirect("property_detail", pk=property_obj.id)
     else:
         review_form = ReviewForm()
     
     return render(request, "reviews/add_review.html", {
         "review_form": review_form ,
-        "property": property,
+        "property": property_obj,
     })
