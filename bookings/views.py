@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.contrib import messages
-from .models import Booking
 from .forms import BookingForm
 from listings.models import Property
 
