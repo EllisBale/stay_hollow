@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <h1 class="text-center">Add Review</h1>
+
+    <form  method="POST">
+        {% csrf_token %}
+        {{ review_form|crispy }}
+
+        <button type="submit" class="btn btn-primary mt-3">
+            Complete Review
+        </button>
+    </form>
+</div>
+{% endblock %}

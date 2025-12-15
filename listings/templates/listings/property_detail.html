@@ -80,6 +80,12 @@
         </div>
         <hr>
 
+        {% if has_paid_booking %}
+            <a href="{% url 'add_review' property.id %}" class="btn btn-primary">
+                Leave Review    
+            </a>
+        {% endif %}
+
     </div>
     {% include "partials/back_to_top_btn.html" %}
 

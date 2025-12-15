@@ -28,18 +28,18 @@ def add_review(request, property_id):
         return redirect("property_detail", property_id=property.id)
     
     if request.method == "POST":
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False)
+        review_form = ReviewForm(request.POST)
+        if review_form .is_valid():
+            review = review_form .save(commit=False)
             review.booking = booking
             review.user = review.user
             review.save()
             messages.success(request, "Review Submitted!")
             return redirect("property_detail", property_id=property.id)
     else:
-        form = ReviewForm()
+        review_form = ReviewForm()
     
     return render(request, "reviews/add_review.html", {
-        "form": form,
+        "review_form": review_form ,
         "property": property,
     })

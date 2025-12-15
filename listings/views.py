@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from django.db.models import Q
 from .models import Property, Destination
-
+from bookings.models import Booking
 
 def property_list(request):
     """
@@ -74,4 +74,20 @@ def property_list(request):
 
 def property_detail(request, pk):
     property_obj = get_object_or_404(Property, pk=pk)
-    return render(request, "listings/property_detail.html", {"property": property_obj})
+
+    has_paid_booking = False
+
+    if request.user.is_authenticated:
+        has_paid_booking = Booking.objects.filter(
+            user=request.user,
+            property=property_obj,
+            is_paid=True,
+
+        ).exists()
+
+    context = {
+        "property": property_obj,
+        "has_paid_booking": has_paid_booking,
+    }
+
+    return render(request, "listings/property_detail.html", context)
