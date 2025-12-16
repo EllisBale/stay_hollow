@@ -99,11 +99,14 @@ def property_detail(request, pk):
         booking__property=property_obj
     )
 
+    reviews_preview = reviews[:3]
+
     context = {
         "property": property_obj,
         "has_paid_booking": has_paid_booking,
         "has_reviewed": has_reviewed,
         "reviews": reviews,
+        "reviews_preview": reviews_preview,
     }
 
     return render(request, "listings/property_detail.html", context)
