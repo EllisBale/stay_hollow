@@ -82,9 +82,12 @@
             <div class="container px-0 mt-5">
 
                 <h4> Reviews </h4>
+                {% if reviews %}
+                    <p class="text-break mb-3">{{ reviews|length }} reviews</p>
+                {% endif %}
 
                 {% if has_paid_booking and not has_reviewed %}
-                    <a href="{% url 'add_review' property.id %}" class="btn btn-primary">
+                    <a href="{% url 'add_review' property.id %}" class="btn btn-primary mb-4">
                         Add Review    
                     </a>
                 {% elif has_reviewed %}
@@ -94,7 +97,7 @@
                     {% for review in reviews_preview %}
                     <div class="col-12 review mb-4 p-4">
                         <div class="rating d-flex justify-content-between">
-                            <p><strong><i>{{ review.user }}</i></strong></p>
+                            <p><strong><i>{{ review.user.first_name }}</i></strong></p>
                             <div class="gap-1 text-center items-center">
                             {% for i in "12345" %}        
                                 {% if forloop.counter <= review.rating %}
@@ -132,7 +135,7 @@
                             {% for review in reviews %}
                                 <div class="col-12 review mb-4 p-4">
                                     <div class="rating d-flex justify-content-between">
-                                        <p><strong><i>{{ review.user }}</i></strong></p>
+                                        <p><strong><i>{{ review.user.first_name }}</i></strong></p>
                                         <div class="gap-1 text-center items-center">
                                         {% for i in "12345" %}        
                                             {% if forloop.counter <= review.rating %}

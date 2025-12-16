@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'listings',
     'checkout',
     'reviews',
+    'user_account',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,10 @@ ACCOUNT_SIGNUP_FIELDS = [
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 
+
+ACCOUNT_FORMS = {
+    'signup': 'user_account.forms.CustomSignupForm',
+}
 
 
 WSGI_APPLICATION = 'stay_hollow.wsgi.application'

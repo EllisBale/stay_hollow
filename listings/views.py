@@ -101,6 +101,8 @@ def property_detail(request, pk):
 
     reviews_preview = reviews[:3]
 
+
+
     context = {
         "property": property_obj,
         "has_paid_booking": has_paid_booking,
