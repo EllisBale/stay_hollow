@@ -32,8 +32,9 @@ def add_review(request, property_id):
         if review_form .is_valid():
             review = review_form .save(commit=False)
             review.booking = booking
-            review.user = review.user
+            review.user = request.user
             review.save()
+            
             messages.success(request, "Review Submitted!")
             return redirect("property_detail", pk=property_obj.id)
     else:

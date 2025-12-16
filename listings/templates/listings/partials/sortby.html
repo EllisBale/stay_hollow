@@ -2,8 +2,9 @@
 <div class="container mt-5">   
     <div class="d-flex justify-content-end mb-3">
         <form method="get" action="{% url 'properties' %}">
+            
             <select name="sort" class="form-select" title="Sort By" onchange="this.form.submit()">
-                <option value="">Sort By</option>
+                <option value=""> Sort By</option>
                 <option value="price_asc" {% if request.GET.sort == "price_asc" %} selected {% endif %}>Price (low to high)</option>
                 <option value="price_desc" {% if request.GET.sort == "price_desc" %} selected {% endif %}>Price (high to low)</option>
                 <option value="newest" {% if request.GET.sort == "newest" %} selected {% endif %} >Newest</option>

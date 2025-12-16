@@ -94,10 +94,16 @@ def property_detail(request, pk):
 
         ).exists()
 
+    
+    reviews = Review.objects.filter(
+        booking__property=property_obj
+    )
+
     context = {
         "property": property_obj,
         "has_paid_booking": has_paid_booking,
         "has_reviewed": has_reviewed,
+        "reviews": reviews,
     }
 
     return render(request, "listings/property_detail.html", context)

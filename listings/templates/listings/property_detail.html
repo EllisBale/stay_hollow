@@ -79,14 +79,41 @@
             </div>
         </div>
         <hr>
+        <div class="container px-0 mt-5">
 
-        {% if has_paid_booking and not has_reviewed %}
-            <a href="{% url 'add_review' property.id %}" class="btn btn-primary">
-                Add Review    
-            </a>
-        {% elif has_reviewed %}
-            <p> You have already submitted a review for this property.</p>
-        {% endif %}
+            <h4> Reviews </h4>
+
+            {% if has_paid_booking and not has_reviewed %}
+                <a href="{% url 'add_review' property.id %}" class="btn btn-primary">
+                    Add Review    
+                </a>
+            {% elif has_reviewed %}
+                <p> You have already submitted a review for this property.</p>
+            {% endif %}
+
+            {% for review in reviews %}
+            <div class="col-12 review mb-4 p-4">
+                <div class="rating d-flex justify-content-between">
+                    <p><strong><i>{{ review.user }}</i></strong></p>
+                    <div class="gap-1 text-center items-center">
+                    {% for i in "12345" %}        
+                        {% if forloop.counter <= review.rating %}
+                            <i class="fa-solid fa-star text-warning align-center"></i>
+                        {% else %}
+                                <i class="fa-regular fa-star text-warning"></i>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+                <p class="text-break">{{ review.created_at|date:"d M, Y" }}</p>
+                <p class="text-break">{{ review.comment }}</p>
+                
+            </div>
+            {% endfor %}
+        </div>
+            
+
+
 
     </div>
     {% include "partials/back_to_top_btn.html" %}
