@@ -23,8 +23,8 @@
                     {% else %}
                         <p><strong><i class="fa-solid fa-location-dot"></i></strong> {{ property.destinations.name }}</p>
                     {% endif %}
-
-                    <p><strong><i class="fa-solid fa-person"></i></strong> Guests: {{ property.guests }}</p>
+                    <p><strong><i class="fa-solid fa-bed"></i></strong> Bedrooms {{ property.bedrooms }}</p>
+                    <p><strong><i class="fa-solid fa-person"></i></strong> Max Guests: {{ property.guests }}</p>
                     <div>
                         <p><strong><i class="fa-solid fa-money-bill"></i></strong> Price Per Night: £{{ property.formatted_price }}</p>
                     
@@ -46,7 +46,7 @@
 
         
         <div class="row g-3 justify-content-start mt-5 mb-5 px-5 pt-3 pb-5 feat-section">
-                <h4 class="mb-3"> Features </h4>
+                <h4 class="mb-3"> Amenities </h4>
                 {% for amenity in property.amenities.all %}
                     <div class="col-5 col-sm-6 col-md-4 d-flex align-items-center justify-content-start pl-0">
                         {% if amenity.icon_class %}
