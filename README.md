@@ -148,31 +148,22 @@ Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome
 
 ## Wireframes
 
-⚠️ INSTRUCTIONS ⚠️
-
-If you've created wireframes or mock-ups, use this section to display screenshots of your wireframes. The example table below uses sample pages from the walkthrough project to give you some inspiration for your own project, so please adjust accordingly.
-
-⚠️ --- END --- ⚠️
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-| Page             | Mobile                                                              | Tablet                                                              | Desktop                                                              |
-| ---------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Register         | ![screenshot](documentation/wireframes/mobile-register.png)         | ![screenshot](documentation/wireframes/tablet-register.png)         | ![screenshot](documentation/wireframes/desktop-register.png)         |
-| Login            | ![screenshot](documentation/wireframes/mobile-login.png)            | ![screenshot](documentation/wireframes/tablet-login.png)            | ![screenshot](documentation/wireframes/desktop-login.png)            |
-| Profile          | ![screenshot](documentation/wireframes/mobile-profile.png)          | ![screenshot](documentation/wireframes/tablet-profile.png)          | ![screenshot](documentation/wireframes/desktop-profile.png)          |
-| Home             | ![screenshot](documentation/wireframes/mobile-home.png)             | ![screenshot](documentation/wireframes/tablet-home.png)             | ![screenshot](documentation/wireframes/desktop-home.png)             |
-| Products         | ![screenshot](documentation/wireframes/mobile-products.png)         | ![screenshot](documentation/wireframes/tablet-products.png)         | ![screenshot](documentation/wireframes/desktop-products.png)         |
-| Product Details  | ![screenshot](documentation/wireframes/mobile-product-details.png)  | ![screenshot](documentation/wireframes/tablet-product-details.png)  | ![screenshot](documentation/wireframes/desktop-product-details.png)  |
-| Bag              | ![screenshot](documentation/wireframes/mobile-bag.png)              | ![screenshot](documentation/wireframes/tablet-bag.png)              | ![screenshot](documentation/wireframes/desktop-bag.png)              |
-| Checkout         | ![screenshot](documentation/wireframes/mobile-checkout.png)         | ![screenshot](documentation/wireframes/tablet-checkout.png)         | ![screenshot](documentation/wireframes/desktop-checkout.png)         |
-| Checkout Success | ![screenshot](documentation/wireframes/mobile-checkout-success.png) | ![screenshot](documentation/wireframes/tablet-checkout-success.png) | ![screenshot](documentation/wireframes/desktop-checkout-success.png) |
-| Add Product      | ![screenshot](documentation/wireframes/mobile-add-product.png)      | ![screenshot](documentation/wireframes/tablet-add-product.png)      | ![screenshot](documentation/wireframes/desktop-add-product.png)      |
-| Edit Product     | ![screenshot](documentation/wireframes/mobile-edit-product.png)     | ![screenshot](documentation/wireframes/tablet-edit-product.png)     | ![screenshot](documentation/wireframes/desktop-edit-product.png)     |
-| Newsletter       | ![screenshot](documentation/wireframes/mobile-newsletter.png)       | ![screenshot](documentation/wireframes/tablet-newsletter.png)       | ![screenshot](documentation/wireframes/desktop-newsletter.png)       |
-| Contact          | ![screenshot](documentation/wireframes/mobile-contact.png)          | ![screenshot](documentation/wireframes/tablet-contact.png)          | ![screenshot](documentation/wireframes/desktop-contact.png)          |
-| 404              | ![screenshot](documentation/wireframes/mobile-404.png)              | ![screenshot](documentation/wireframes/tablet-404.png)              | ![screenshot](documentation/wireframes/desktop-404.png)              |
+| Page                  | Mobile/Tablet/Deskop                                                       |
+| --------------------- | -------------------------------------------------------------------------- |
+| Home                  | ![screenshot](docs/wireframes/stay_hollow_home_wireframes.png)             |
+| Login                 | ![screenshot](docs/wireframes/stay_hollow_login_wireframes.png)            |
+| Sign up               | ![screenshot](docs/wireframes/stay_hollow_signup_wireframes.png)           |
+| Listings              | ![screenshot](docs/wireframes/stay_hollow_listings_wireframes.png)         |
+| Listing Details       | ![screenshot](docs/wireframes/stay_hollow_listings_details_wireframes.png) |
+| Account Order History | ![screenshot](docs/wireframes/stay_hollow_order_history_wireframes.png)    |
+| Checkout              | ![screenshot](documentation/wireframes/mobile-checkout.png)                |
+| Checkout Success      | ![screenshot](documentation/wireframes/mobile-checkout-success.png)        |
+| About                 | ![screenshot]()                                                            |
+| Contact               | ![screenshot]()                                                            |
+| 404                   | ![screenshot]()                                                            |
 
 ## User Stories
 

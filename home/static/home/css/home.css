@@ -1,3 +1,13 @@
+/* ====== Messages ====== */
+aside.alert.my-0.alert-success.rounded-0.text-center.popup {
+    position: absolute;
+    z-index: 10000;
+    width: 100%;
+    text-align: center;
+    right: 50%;
+    transform: translate(50%, 0%);
+}
+
 
 /* ====== Hero ====== */
 .hero {
@@ -19,7 +29,6 @@
     -webkit-user-drag: none;
 }
 
-
 .searchbar {
     position: absolute;
     top: 50%;
@@ -32,8 +41,6 @@
     color: #fff;
     text-shadow: 0px 0px 25px #000;
 }
-
-
 
 
 
