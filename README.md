@@ -51,8 +51,6 @@ source: [stay_hollow amiresponsive](https://ui.dev/amiresponsive?url=https://sta
 
 ### The 5 Planes of UX
 
-⚠️ NOTE: make sure to update the text below to match your own project! ⚠️
-
 #### 1. Strategy
 
 **Purpose**
@@ -70,9 +68,9 @@ The platform provides an admin interface that allows administrators and managers
 
 **Primary User Needs**
 
-- Guest users need to browse products and checkout with ease.
-- Registered customers need a streamlined shopping experience with account and order history features.
-- Site owners need robust tools for inventory and order management.
+- Guest users need to browse property listings.
+- Registered users need to be able to book a date for holiday booking with secure transactions, and view order history.
+- Admin/Managers users need tools for order management, user management, and property listing management.
 
 **Business Goals**
 
