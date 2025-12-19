@@ -57,8 +57,16 @@ source: [stay_hollow amiresponsive](https://ui.dev/amiresponsive?url=https://sta
 
 **Purpose**
 
-- Provide a seamless and intuitive e-commerce experience for customers to browse, filter, and purchase products.
-- Empower site owners to manage the store's inventory and customer orders efficiently.
+The project's purpose is to provide a seamless and intuitive e-commerce experience for users to browse, filter, search, and book properties around the UK. The website is designed to deliver users an easy-to-navigate, informative platform with secure transactions that supports users decision-making and straightforward bookings.
+
+**Admin/Managers purpose**
+
+The platform provides an admin interface that allows administrators and managers to:
+
+- Create new property listings and add information for the property.
+- Update existing property information, including overview, images, amenities, and location.
+- Delete property listings that are no longer available.
+- Manage user accounts.
 
 **Primary User Needs**
 
