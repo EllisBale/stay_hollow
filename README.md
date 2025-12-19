@@ -7,6 +7,10 @@ Developer: ([EllisBale](https://www.github.com/EllisBale))
 [![GitHub repo size](https://img.shields.io/github/repo-size/EllisBale/stay_hollow)](https://www.github.com/EllisBale/stay_hollow)
 [![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://stay-hollow-9b3793ea0059.herokuapp.com)
 
+![screenshot](documentation/mockup.png)
+
+source: [stay_hollow amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com)
+
 ## Project Overview
 
 **Stay Hollow** is a centralised holiday letting booking website that allows users to **explore a range of holiday properties** across the UK. The platform enables users to **browse available properties**, **view detailed information**, and make **secure online bookings with ease**.
@@ -17,9 +21,9 @@ The website provides admins with **effcient tools** to **manage property listing
 
 The primary target audience for this platform would be **holiday travellers** and **local visitors** looking for **comfortable**, **reliable**, and **enjoyable short-term accommodation**. Users benfit from a **simple**, **centralised booking experience** that brings everything they need into one place.
 
-I chose to develop a holiday letting booking system because I wanted to try something that is both **challenging** and **practical** in a **real-world** use. I aim to make this website **simple** for the users because many people struggle with **complicated interfaces** and **unclear availability**. Booking a holiday should feel **exciting** and **not stressful**, so making the booking process and property listings **simple** and **enjoyable** for the user.
+I chose to develop a holiday letting booking system because I wanted to try something that is both **challenging** and **practical** in a **real-world** use. I aim to make this website **simple** for the users because many people struggle with **complicated interfaces**. Booking a holiday should feel **exciting** and **not stressful**, so making the booking process and property listings **simple** and **enjoyable** for the user.
 
-# Explain websites I Visited
+For this project, I researched popular UK-based holiday letting websites to understand their **layouts**, **features** and **purpose**, allowing me to **implement effective design choices and functionality** to my own website. All of the websites I visited featured a **landing page** containing a **hero image** and **search bar** to help users search immediately. It would benefit my website to have a **search bar** on the **landing page** so that users can find suitable properties based on their chosen location and requirements without unnecessary navigation.
 
 **Websites Visited:**
 
@@ -29,20 +33,11 @@ I chose to develop a holiday letting booking system because I wanted to try some
 
 [The Landmark Trust](https://www.landmarktrust.org.uk/)
 
-**Site Mockups**
-_([amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)_
-Having issues generating site mockups? This is likely due to security policies with your deployed site.
-If you open up your DevTools, there may be an error referencing `X-Frame-Options`.
+[Holiday Cottages](https://www.holidaycottages.co.uk/)
 
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser. Once installed, navigate back to the mockup site of your choice. You should find your site rendering in the various devices now.
+[Cottages](https://www.cottages.com/)
 
-Alternatively, open your project in Gitpod and run the server. Once the site is running, click the `Ports` tab from your Gitpod Terminal. Click the padlock on the appropriate port for your project (`Flask: 5000`, `Django: 8000`). This will make your local page public temporarily. Now, copy the URL of your live-preview page into the responsive tool above. You should find your site rendering in the various devices.
-
-🛑 --- END ---- 🛑
-
-![screenshot](documentation/mockup.png)
-
-source: [stay_hollow amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com)
+[Airbnb](https://www.airbnb.co.uk/)
 
 > [!IMPORTANT]  
 > The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Boutique Ado".
