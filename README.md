@@ -74,9 +74,11 @@ The platform provides an admin interface that allows administrators and managers
 
 **Business Goals**
 
-- Drive sales by providing a user-friendly shopping experience.
-- Build customer loyalty through personalized and efficient account features.
-- Maintain an organized and up-to-date store inventory.
+- Drive sales by providing a user-friendly booking experience.
+- Encourage repeat visits by allowing users to browse and discover new properties and locations.
+- Improve property management for admin/managers to maintain an up-to-date listings.
+- Increase customer trust by providing users with secure transactions, clear pricing, and up-to-date property information.
+- Enhance reputation by enabling users reviews and ratings.
 
 #### 2. Scope
 
