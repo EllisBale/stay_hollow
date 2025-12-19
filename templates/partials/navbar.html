@@ -20,12 +20,12 @@
                                 <li><a class="dropdown-item" href="{% url 'properties' %}?destinations=Wales">Wales</a></li>
                             </ul>
                         </li>
-                            <a class="nav-link" href="#">About</a>
+                            
                             <a class="nav-link" href="#">Contact</a>
-
                             {% if user.is_authenticated %}
                                 <a class="nav-link me-3" href="{% url 'order_history' %}">Account</a>
                             {% endif %}
+                            <a class="nav-link" href="#">About</a>
                     </div>
                     <div class="d-lg-flex justify-content-end">
                         {% if user.is_authenticated %}

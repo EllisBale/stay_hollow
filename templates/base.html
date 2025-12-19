@@ -47,7 +47,7 @@
         {% if messages %}
                 <section id="alerts">
             {% for msg in messages %}
-                <aside class="alert {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} rounded-0 text-center popup" role="alert">
+                <aside class="alert my-0 {% if msg.tags == 'error' %}alert-danger{% else %}alert-{{ msg.tags }}{% endif %} rounded-0 text-center popup" role="alert">
                     {% if "Successfully signed in as" in msg|stringformat:"s" %}
                         <h3>Successfully signed in.</h3>
                     {% else %}
