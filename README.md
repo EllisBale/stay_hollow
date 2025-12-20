@@ -182,6 +182,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | Listings              | ![screenshot](docs/wireframes/stay_hollow_listings_wireframes.png)         |
 | Listing Details       | ![screenshot](docs/wireframes/stay_hollow_listings_details_wireframes.png) |
 | Account Order History | ![screenshot](docs/wireframes/stay_hollow_order_history_wireframes.png)    |
+| Management            | ![screenshot](docs/wireframes/stay_hollow_admin_wireframes.png)            |
 | Checkout              | ![screenshot](documentation/wireframes/mobile-checkout.png)                |
 | Checkout Success      | ![screenshot](documentation/wireframes/mobile-checkout-success.png)        |
 | About                 | ![screenshot]()                                                            |
