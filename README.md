@@ -81,12 +81,32 @@ The platform provides an admin interface that allows administrators and managers
 
 **Content Requirements**
 
-- Product details, including name, price, description, category, and images.
-- Clear prompts and instructions for browsing, filtering, and purchasing.
-- Order details, confirmation pages, and email notifications.
-- Secure payment processing using Stripe.
-- Payment success emails sent to users.
-- 404 page for lost users.
+##### All Users
+
+- View property details
+- View destinations
+- Filter listings by price, location, property name, guests, bedrooms, and description
+- Search property information
+- Sort listings price and newest
+- 404 page for lost users
+
+##### Registered Users
+
+- Register and login
+- Logout
+- Book property dates
+- Secure payments
+- View current and past bookings
+- Leave reviews after a stay
+- Receive booking confirmation in email
+
+##### Admin/Manager Users
+
+- User Management
+- Add properties
+- Delete properties
+- Edit Existing properties
+- Manage reviews
 
 #### 3. Structure
 
