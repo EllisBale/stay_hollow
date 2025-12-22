@@ -13,34 +13,47 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 .hero {
     width: 100%;
     height: calc(100vh - 56px);
+    position: relative;
     overflow: hidden;
 }
+
+.container-background {
+    background: #000;
+}
+
 
 .hero-image {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    filter: brightness(53%);
     display: block;
-    filter: brightness(50%);
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     transition: transform 0.3 ease;
+    z-index: 2;
+    background-color: #000;
 }
+
 
 .searchbar {
     position: absolute;
+    z-index: 99999;
     top: 50%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
+    background: transparent;
+
 }
 
 .searchbar > h1 {
-    color: #fff;
-    text-shadow: 0px 0px 25px #000;
+    color: #ffffff;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+    background: none;
 }
 
 

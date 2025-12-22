@@ -24,6 +24,15 @@ body {
     padding-top: 0px;
 }
 
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", serif;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 3rem;
+}
+
 a {
     text-decoration: none;
 }
