@@ -24,7 +24,7 @@ body {
     padding-top: 0px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: "Playfair Display", serif;
 }
 
@@ -33,8 +33,13 @@ h1 {
     font-size: 3rem;
 }
 
+
+p {font-family: "Inter", sans-serif;}
+
+
 a {
     text-decoration: none;
+    font-family: "Inter", sans-serif;
 }
 
 
@@ -43,7 +48,7 @@ a {
 .navbar {
     
     background-color: #2F6F3E !important;
-    z-index: 999999;
+    z-index: 999;
 }
 
 .logo-img {
