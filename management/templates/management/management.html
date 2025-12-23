@@ -7,19 +7,19 @@
 {% block content %}
     <div class="container-fluid px-0">
         <div class="row g-0 min-vh-100">
-            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar sticky-top vh-100">
+            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar sticky-top">
                 {% include "partials/sidebar.html" %}
             </aside>
 
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
-                    <h1 class="mb-5"> Overview </h1>
+                    <h1 class="mb-3"> Overview </h1>
                     <!-- Listings  -->
                     <div class="col-12 col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Listings</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">{{ total_properties }}</p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Bookings</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">{{ total_bookings }}</p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Users</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">{{ total_users}}</p>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Reviews </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">{{ total_reviews }}</p>
                             </div>
                         </div>
                     </div>
