@@ -1,32 +1,45 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_css %}
+    <link href="{% static 'management/css/manage.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
-   <div class="container py-5">
-    <h1 class="mb-5 text-center"> Users </h1>
-    <h2> Recent Orders </h2>
-        <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">Order Number</th>
-                <th scope="col">Date ordered</th>
-                <th scope="col">Order Total</th>
-                <th scope="col">Check-in/Check-out</th>
-                <th scope="col">Property</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                {% for order in orders %}
-                    <td scope="row" class="text-break">{{ order.order_number }}</td>
-                    <td class="text-break">{{ order.date }}</td>
-                    <td class="text-break">£{{ order.order_total }}</td>
-                    <td class="text-break">{{ order.booking.check_in}} => {{ order.booking.check_out}}</td>
-                    <td class="text-break">{{ order.booking.property }}</td>
-                    </tr>
-                {% endfor %}
-                </tr>
-            </tbody>
-        </table>
+   <div class="container-fluid px-0">
+        <div class="row g-0 min-vh-100">
+            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
+                {% include "partials/sidebar.html" %}
+            </aside>
+            <main class="col-lg-10 p-4 text-center px-5">
+                <div class="row justify-content-center">
+                    <h1 class="mb-3"> Users </h1>
+                    <table class="table table-striped mt-5">
+                        <thead>
+                            <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email Address</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Staff Status</th>
+                            </tr>
+                        </thead>
+                         <tbody>
+                            <tr>
+                            {% for user in users %}
+                                <td scope="row" class="text-break">{{ user.username }}</td>
+                                <td class="text-break">{{ user.email }}</td>
+                                <td class="text-break">{{ user.first_name }}</td>
+                                <td class="text-break">{{ user.last_name }}</td>
+                                <td class="text-break">{{ user.is_staff }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+              
+    </div>
 </div>
 {% endblock %}
