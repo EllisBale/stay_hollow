@@ -27,6 +27,9 @@ def management(request):
 
      return render(request, "management/management.html", context)
 
+# ----------------------------
+#   User Management (CRUD)
+# ----------------------------
 
 @login_required
 def user_mangement(request):
@@ -36,3 +39,18 @@ def user_mangement(request):
      users = User.objects.all()
 
      return render(request, "management/user_list.html", {"users": users})
+
+
+
+# ----------------------------
+#   Listings Management (CRUD)
+# ----------------------------
+
+@login_required
+def listing_management(request):
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     listings = Property.objects.all()
+
+     return render(request, "management/listings_list.html", {"listings": listings })
