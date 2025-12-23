@@ -14,11 +14,8 @@ def management(request):
           return redirect("home")
      
      total_properties = Property.objects.count()
-
      total_users = User.objects.count()
-
      total_bookings = Booking.objects.filter(is_paid=True).count()
-
      total_reviews = Review.objects.count()
 
      context = {
