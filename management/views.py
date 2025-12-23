@@ -26,3 +26,13 @@ def management(request):
      }
 
      return render(request, "management/management.html", context)
+
+
+@login_required
+def user_mangement(request):
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     users = User.objects.all()
+
+     return render(request, "management/user_list.html", {"users": users})
