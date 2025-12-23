@@ -30,7 +30,6 @@ def management(request):
 # ----------------------------
 #   User Management (CRUD)
 # ----------------------------
-
 @login_required
 def user_mangement(request):
      if not request.user.is_staff:
@@ -41,11 +40,9 @@ def user_mangement(request):
      return render(request, "management/user_list.html", {"users": users})
 
 
-
 # ----------------------------
 #   Listings Management (CRUD)
 # ----------------------------
-
 @login_required
 def listing_management(request):
      if not request.user.is_staff:
@@ -54,7 +51,6 @@ def listing_management(request):
      listings = Property.objects.all()
 
      return render(request, "management/listings_list.html", {"listings" : listings })
-
 
 
 # ----------------------------
@@ -68,3 +64,15 @@ def booking_management(request):
      bookings = Booking.objects.filter(is_paid = True)
 
      return render(request, "management/booking_list.html", {"bookings" : bookings})
+
+# ----------------------------
+#   Reviews Management (CRUD)
+# ----------------------------
+@login_required
+def reviews_management(request):
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     reviews = Review.objects.all()
+
+     return render(request, "management/reviews_list.html", {"reviews" : reviews})

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link href="{% static 'management/css/manage.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+   <div class="container-fluid px-0">
+        <div class="row g-0 min-vh-100">
+            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
+                {% include "partials/sidebar.html" %}
+            </aside>
+            <main class="col-lg-10 p-4 text-center px-5">
+                <div class="row justify-content-center">
+                    <h1 class="mb-3"> Reviews </h1>
+                    <table class="table table-striped mt-5">
+                        <thead>
+                            <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Booking</th>
+                            <th scope="col">Property</th>
+                            <th scope="col">Rating</th>
+                            <th scope="col">Created</th>
+                            </tr>
+                        </thead>
+                         <tbody>
+                            <tr>
+                            {% for review in reviews %}
+                                <td scope="row" class="text-break">{{ review.user }}</td>
+                                <td class="text-break">{{ review.user.first_name }}</td>
+                                <td class="text-break">{{ review.booking }}</td>
+                                <td class="text-break">{{ review.booking.property }}</td>
+                                <td class="text-break">{{ review.rating }}</td>
+                                <td class="text-break">{{ review.created_at}}</td>
+                                </tr>
+                            {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+              
+    </div>
+</div>
+{% endblock %}
