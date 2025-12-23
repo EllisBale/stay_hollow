@@ -53,4 +53,18 @@ def listing_management(request):
      
      listings = Property.objects.all()
 
-     return render(request, "management/listings_list.html", {"listings": listings })
+     return render(request, "management/listings_list.html", {"listings" : listings })
+
+
+
+# ----------------------------
+#   Booking Management (CRUD)
+# ----------------------------
+@login_required
+def booking_management(request):
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     bookings = Booking.objects.filter(is_paid = True)
+
+     return render(request, "management/booking_list.html", {"bookings" : bookings})
