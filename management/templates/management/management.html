@@ -7,7 +7,7 @@
 {% block content %}
     <div class="container-fluid px-0">
         <div class="row g-0 min-vh-100">
-            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar sticky-top">
+            <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
                 {% include "partials/sidebar.html" %}
             </aside>
 
@@ -17,36 +17,48 @@
                     <!-- Listings  -->
                     <div class="col-12 col-lg-6 mt-5">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Listings</h5>
-                                <p class="card-text total_number pt-5">{{ total_properties }}</p>
+                            <div class="card-body py-5 listing-back">
+                                <h2 class="card-title">Total Listings</h2>
+                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                    <h3 class="card-text total_number mb-0">{{ total_properties }}</h3>
+                                    <i class="fa-solid fa-building fa-2x"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Bookings -->
                     <div class="col-12 col-lg-6 mt-5">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Bookings</h5>
-                                <p class="card-text total_number pt-5">{{ total_bookings }}</p>
+                            <div class="card-body py-5 bookings-back">
+                                <h2 class="card-title">Total Bookings</h2>
+                                 <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                    <h3 class="card-text total_number">{{ total_bookings }}</h3>
+                                    <i class="fa-solid fa-calendar fa-2x"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Users -->
                     <div class="col-12 col-lg-6 mt-5">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Users</h5>
-                                <p class="card-text total_number pt-5">{{ total_users}}</p>
+                            <div class="card-body py-5 users-back">
+                                <h2 class="card-title">Total Users</h2>
+                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                    <h3 class="card-text total_number">{{ total_users}}</h3>
+                                    <i class="fa-solid fa-users fa-2x"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Reviews -->
                     <div class="col-12 col-lg-6 mt-5">
                         <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Reviews </h5>
-                                <p class="card-text total_number pt-5">{{ total_reviews }}</p>
+                            <div class="card-body py-5 reviews-back">
+                                <h2 class="card-title">Total Reviews </h2>
+                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                    <h3 class="card-text total_number">{{ total_reviews }}</h3>
+                                    <i class="fa-solid fa-star fa-2x"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
