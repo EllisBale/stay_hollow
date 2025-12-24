@@ -117,37 +117,6 @@ a {
     display: block;
 }
 
-/* ===== Card ===== */
-
-
-.card-img-top { 
-    width: 100%;
-    border-radius: 0px !important;
-    aspect-ratio: 4 / 3;
-    object-fit: cover; 
-}
-
-.card {
-    border: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15) !important;
-}
-
-
-.card-body {
-    background: #f6f8f7 !important;
-}
-
-.card-body .fa-solid {
-    color: #4c5053;
-    opacity: 0.8;
-}
-
-.price-background > p {
-    background-color: #e3f1eb;
-    display: inline-block;
-    border-radius: 20px;
-    color: #2f3a34;
-}
 
 
 @media (min-width: 576px) {
