@@ -41,7 +41,7 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 
 .searchbar {
     position: absolute;
-    z-index: 99999;
+    z-index: 3;
     top: 50%;
     left: 50%;
     text-align: center;

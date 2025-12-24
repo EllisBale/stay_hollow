@@ -7,7 +7,7 @@
                 </button>
                 <img class="img-fluid logo-img" src="{% static 'images/logo2.png' %}" alt="stay hollow Logo">
                 <div class="collapse navbar-collapse justify-content-evenly" id="navbarNavAltMarkup">
-                    <div class="navbar-nav  gap-0 gap-md-2 gap-lg-2 gap-xl-5">
+                    <div class="navbar-nav  gap-xxl-5">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                         <a class="nav-link" href="{% url 'properties' %}">Listings</a>
                         <li class="nav-item dropdown">
@@ -33,6 +33,9 @@
                         {% else %}
                             <a href="{% url 'account_login' %}" class="btn btn-login me-3"> Login </a>
                             <a href="{% url 'account_signup' %}" class="btn btn-register"> Sign Up </a>
+                        {% endif %}
+                        {% if user.is_staff %}
+                            <a href="{% url 'management' %}" class="btn btn-register"> Manage </a>
                         {% endif %}
                     </div>
                 </div>
