@@ -25,9 +25,8 @@
   </div>
 
   <div class="container my-5">
-    <h1 class="text-center mb-5 mt-2">Featured Properties</h1>
-    <div class="row justify-content-center">
-      
+    <h2 class="text-center mb-5 mt-2">Featured Properties</h2>
+    <div class="row justify-content-center">  
       {% for property in featured_properties %}
         <div class="col-12 col-md-6 col-lg-4 d-flex mb-5 mt-3">
           <a href="{% url 'property_detail' property.id %}"> 
@@ -52,6 +51,51 @@
           </a>
         </div>
       {% endfor %}
+    </div>
+  </div>
+
+  <div class="container-fluid pb-5  my-5 booking">
+    <h2 class="text-center py-5 mb-5"> Why Book With Us</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Best Price -->
+        <div class="col-12 col-lg-4">
+          <div class="icon-div mb-5 mt-lg-0 text-center px-5">
+            <div class="mb-4">
+              <i class="fa-regular fa-credit-card fa-4x"></i>
+            </div>
+            <div class="text-break">
+              <h4>Best Price Guarantee</h4>
+              <p class="mt-4">Get the best rates for your dream holiday. We offer competitive pricing with no hidden fees.</p>
+            </div>
+          </div>
+        </div>
+         <!-- Verified Trusted Listings -->
+        <div class="col-12 col-lg-4">
+          <div class="icon-div mb-5 mt-5 mt-lg-0 text-center px-5">
+            <div class="mb-4">
+              <i class="fa-regular fa-circle-check fa-4x"></i>
+            </div>
+            <div class="text-break">
+              <h4>Verified Trusted Listings</h4>
+              <p class="mt-4">All our holiday homes are verified and meet high standards for comfort and safety. Book with confidence.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Dedicated Guest Support -->
+        <div class="col-12 col-lg-4">
+            <div class="icon-div mt-5 mt-lg-0  text-center px-5">
+            <div class="mb-4">
+                <i class="fas fa-life-ring fa-4x"></i>
+            </div>
+              <div class="text-break">
+                <h4>Dedicated Guest Support</h4>
+                <p class="mt-4">Get the best rates for your dream holiday. We offer competitive pricing with no hidden fees.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 

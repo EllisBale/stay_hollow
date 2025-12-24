@@ -91,6 +91,12 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 }
 
 
+.booking {
+    background-color: var(--section-gray);
+}
+
+
+
 
 @media (min-width: 576px) {
     .hero {height: calc(100vh - 66px);}
