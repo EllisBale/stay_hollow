@@ -12,31 +12,33 @@
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
                     <h1 class="mb-3"> Bookings </h1>
-                    <table class="table table-striped mt-5">
-                        <thead>
-                            <tr>
-                            <th scope="col">Property</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Check In</th>
-                            <th scope="col">Check Out</th>
-                            <th scope="col">Guests</th>
-                            <th scope="col">Paid</th>
-                            </tr>
-                        </thead>
-                         <tbody>
-                            <tr>
-                            {% for booking in bookings %}
-                                <td scope="row" class="text-break">{{ booking.property }}</td>
-                                <td class="text-break">{{ user.email }}</td>
-                                <td class="text-break">{{ booking.check_in }}</td>
-                                <td class="text-break">{{ booking.check_out }}</td>
-                                <td class="text-break">{{ booking.guests }}</td>
-                                <td class="text-break">£{{ booking.total_price }}</td>
+                    <div class="table-responsive">
+                        <table class="table table-striped mt-5">
+                            <thead>
+                                <tr>
+                                <th scope="col">Property</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Check In</th>
+                                <th scope="col">Check Out</th>
+                                <th scope="col">Guests</th>
+                                <th scope="col">Paid</th>
                                 </tr>
-                            {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                {% for booking in bookings %}
+                                    <td scope="row" class="text-break">{{ booking.property }}</td>
+                                    <td class="text-break">{{ user.email }}</td>
+                                    <td class="text-break">{{ booking.check_in }}</td>
+                                    <td class="text-break">{{ booking.check_out }}</td>
+                                    <td class="text-break">{{ booking.guests }}</td>
+                                    <td class="text-break">£{{ booking.total_price }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
         </div>

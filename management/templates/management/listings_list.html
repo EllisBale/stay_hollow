@@ -12,31 +12,33 @@
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
                     <h1 class="mb-3"> Listings </h1>
-                    <table class="table table-striped mt-5">
-                        <thead>
-                            <tr>
-                            <th scope="col">Property Name</th>
-                            <th scope="col">Price Per Night</th>
-                            <th scope="col">Max-guests</th>
-                            <th scope="col">Max-bedrooms</th>
-                            <th scope="col">Featured</th>
-                            <th scope="col">Created At</th>
-                            </tr>
-                        </thead>
-                         <tbody>
-                            <tr>
-                            {% for listing in listings %}
-                                <td scope="row" class="text-break">{{ listing.property_name }}</td>
-                                <td class="text-break">£{{ listing.price_per_night }}</td>
-                                <td class="text-break">{{ listing.guests }}</td>
-                                <td class="text-break">{{ listing.bedrooms }}</td>
-                                <td class="text-break">{{ listing.is_featured }}</td>
-                                <td class="text-break">{{ listing.created_at }}</td>
+                    <div class="table-responsive">
+                        <table class="table table-striped mt-5">
+                            <thead>
+                                <tr>
+                                <th scope="col">Property Name</th>
+                                <th scope="col">Price Per Night</th>
+                                <th scope="col">Max-guests</th>
+                                <th scope="col">Max-bedrooms</th>
+                                <th scope="col">Featured</th>
+                                <th scope="col">Created At</th>
                                 </tr>
-                            {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                {% for listing in listings %}
+                                    <td scope="row" class="text-break">{{ listing.property_name }}</td>
+                                    <td class="text-break">£{{ listing.price_per_night }}</td>
+                                    <td class="text-break">{{ listing.guests }}</td>
+                                    <td class="text-break">{{ listing.bedrooms }}</td>
+                                    <td class="text-break">{{ listing.is_featured }}</td>
+                                    <td class="text-break">{{ listing.created_at }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
         </div>

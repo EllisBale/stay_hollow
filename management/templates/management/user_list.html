@@ -12,29 +12,31 @@
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
                     <h1 class="mb-3"> Users </h1>
-                    <table class="table table-striped mt-5">
-                        <thead>
-                            <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Email Address</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Staff Status</th>
-                            </tr>
-                        </thead>
-                         <tbody>
-                            <tr>
-                            {% for user in users %}
-                                <td scope="row" class="text-break">{{ user.username }}</td>
-                                <td class="text-break">{{ user.email }}</td>
-                                <td class="text-break">{{ user.first_name }}</td>
-                                <td class="text-break">{{ user.last_name }}</td>
-                                <td class="text-break">{{ user.is_staff }}</td>
+                    <div class="table-responsive">
+                        <table class="table table-striped mt-5">
+                            <thead>
+                                <tr>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email Address</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Staff Status</th>
                                 </tr>
-                            {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                {% for user in users %}
+                                    <td scope="row" class="text-break">{{ user.username }}</td>
+                                    <td class="text-break">{{ user.email }}</td>
+                                    <td class="text-break">{{ user.first_name }}</td>
+                                    <td class="text-break">{{ user.last_name }}</td>
+                                    <td class="text-break">{{ user.is_staff }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </main>
         </div>
