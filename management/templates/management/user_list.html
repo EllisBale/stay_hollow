@@ -3,6 +3,11 @@
 {% block extra_css %}
     <link href="{% static 'management/css/manage.css' %}" rel="stylesheet">
 {% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'management/js/manage.js' %}"></script>
+{% endblock %}
+
 {% block content %}
    <div class="container-fluid px-0">
         <div class="row g-0 min-vh-100">
@@ -12,31 +17,38 @@
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
                     <h1 class="mb-3"> Users </h1>
-                    <div class="table-responsive">
-                        <table class="table table-striped mt-5">
-                            <thead>
-                                <tr>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email Address</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Staff Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                {% for user in users %}
-                                    <td scope="row" class="text-break">{{ user.username }}</td>
-                                    <td class="text-break">{{ user.email }}</td>
-                                    <td class="text-break">{{ user.first_name }}</td>
-                                    <td class="text-break">{{ user.last_name }}</td>
-                                    <td class="text-break">{{ user.is_staff }}</td>
+                        <div class="table-responsive">
+                            <table class="table table-striped mt-5">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Email Address</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Staff Status</th>
+                                        <th scope="col">Edit user </th>
                                     </tr>
-                                {% endfor %}
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    {% for user in users %}
+                                        <td scope="row" class="text-break">{{ user.username }}</td>
+                                        <td class="text-break">{{ user.email }}</td>
+                                        <td class="text-break">{{ user.first_name }}</td>
+                                        <td class="text-break">{{ user.last_name }}</td>
+                                        <td class="text-break">{{ user.is_staff }}</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'user_form' user.pk %}" class="btn btn-outline-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
+                                            <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-sm btn-outline-danger mb-1  delete-btn">Delete</button>
+                                            </form>
+                                        </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
             </main>
         </div>

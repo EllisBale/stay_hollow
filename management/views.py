@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+
+# Models
 from listings.models import Property
 from bookings.models import Booking
 from reviews.models import Review
+
+#Forms
+from .forms import *
 
 
 @login_required
@@ -27,6 +33,7 @@ def management(request):
 
      return render(request, "management/management.html", context)
 
+
 # ----------------------------
 #   User Management (CRUD)
 # ----------------------------
@@ -39,6 +46,52 @@ def user_mangement(request):
 
      return render(request, "management/user_list.html", {"users": users})
 
+
+@login_required
+def user_delete(request, pk):
+     """
+     Delete User
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     user = get_object_or_404(User, pk=pk)
+     user.delete()
+     messages.success(request, "User Deleted Successfully")
+     return redirect("user_list")
+
+
+@login_required
+def user_update(request, pk):
+     """
+     Update User
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     user = get_object_or_404(User, pk=pk)
+
+     if request.method == "POST":
+          user_form = UserForm(request.POST, instance=user)
+          if user_form.is_valid():
+               user_form.save()
+               messages.success(request, "User Updated Successfully")
+               return redirect("user_list")
+     else:
+          user_form = UserForm(instance=user)
+          
+     return render(request, "management/user_form.html", {"user_form" : user_form})
+
+@login_required
+@require_POST
+def user_delete(request, pk):
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     user = get_object_or_404(User, pk=pk)
+     user.delete()
+     messages.success(request, "User Deleted Successfully")
+     return redirect("user_list")
 
 # ----------------------------
 #   Listings Management (CRUD)
