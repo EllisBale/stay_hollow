@@ -169,3 +169,17 @@ def reviews_management(request):
      reviews = Review.objects.all()
 
      return render(request, "management/reviews_list.html", {"reviews" : reviews})
+
+
+@login_required
+def reviews_delete(request, pk):
+     """
+     Delete User Reviews
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+
+     review = get_object_or_404(Review, pk=pk)
+     review.delete()
+     messages.success(request, "Review Deleted Successfully")
+     return redirect("reviews_list")

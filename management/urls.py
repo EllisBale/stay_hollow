@@ -19,4 +19,5 @@ urlpatterns = [
     path('booking/delete/<int:pk>/', views.booking_delete, name='delete_booking'),
 
     path('reviews_list/', views.reviews_management, name='reviews_list'),
+    path('review/delete/<int:pk>/', views.reviews_delete, name='delete_review'),
 ]

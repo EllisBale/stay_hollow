@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from bookings.models import Booking
+from reviews.models import Review
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -24,3 +25,5 @@ class BookingForm(forms.ModelForm):
             "guests",
             "total_price",
         ]
+
+

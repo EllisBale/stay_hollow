@@ -3,6 +3,11 @@
 {% block extra_css %}
     <link href="{% static 'management/css/manage.css' %}" rel="stylesheet">
 {% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'management/js/manage.js' %}"></script>
+{% endblock %}
+
 {% block content %}
    <div class="container-fluid px-0">
         <div class="row g-0 min-vh-100">
@@ -33,7 +38,13 @@
                                     <td class="text-break">{{ review.booking.property }}</td>
                                     <td class="text-break">{{ review.rating }}</td>
                                     <td class="text-break">{{ review.created_at}}</td>
-                                    </tr>
+                                    <td class="text-center">
+                                        <form method="POST" action="{% url 'delete_review' review.pk %}" class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-outline-danger mb-1 delete-btn">Delete</button>
+                                        </form>
+                                     </td>
+                                </tr>
                                 {% endfor %}
                                 </tr>
                             </tbody>
