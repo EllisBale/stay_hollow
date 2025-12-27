@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-
+from bookings.models import Booking
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,14 @@ class UserForm(forms.ModelForm):
             "is_staff"
         ]
 
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = [
+            "property",
+            "user",
+            "check_in",
+            "check_out",
+            "guests",
+            "total_price",
+        ]

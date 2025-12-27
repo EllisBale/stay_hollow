@@ -84,7 +84,11 @@ def user_update(request, pk):
 
 @login_required
 @require_POST
+
 def user_delete(request, pk):
+     """
+     Delete User
+     """
      if not request.user.is_staff:
           return redirect("home")
      
@@ -117,6 +121,42 @@ def booking_management(request):
      bookings = Booking.objects.filter(is_paid = True)
 
      return render(request, "management/booking_list.html", {"bookings" : bookings})
+
+
+@login_required
+def booking_update(request, pk):
+     """
+     Update User Booking
+     """
+     if not request.user.is_staff:
+         return redirect("home")
+     
+     booking = get_object_or_404(Booking, pk=pk)
+
+     if request.method == "POST":
+          booking_form = BookingForm(request.POST, instance=booking)
+          if booking_form.is_valid():
+               booking_form.save()
+               messages.success(request, "Booking Updated Successfully")
+               return redirect("booking_list")
+          
+     else:
+          booking_form = BookingForm(instance=booking)
+     return render(request, "management/booking_form.html", {"booking_form" : booking_form})
+
+
+@login_required
+def booking_delete(request, pk):
+     """
+     Delete User Booking
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+
+     booking = get_object_or_404(Booking, pk=pk)
+     booking.delete()
+     messages.success(request, "Booking Deleted Successfully")
+     return redirect("booking_list")
 
 # ----------------------------
 #   Reviews Management (CRUD)

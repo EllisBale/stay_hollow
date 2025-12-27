@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    deleteBtns.forEach(deleteBtn => {
     deleteBtn.addEventListener("click", event => {
-        if (!confirm("Are You Sure You Want to Delete This User?")) {
+        if (!confirm("Are You Sure You Want to Delete This?")) {
             event.preventDefault();
         }
     });
