@@ -48,20 +48,6 @@ def user_mangement(request):
 
 
 @login_required
-def user_delete(request, pk):
-     """
-     Delete User
-     """
-     if not request.user.is_staff:
-          return redirect("home")
-     
-     user = get_object_or_404(User, pk=pk)
-     user.delete()
-     messages.success(request, "User Deleted Successfully")
-     return redirect("user_list")
-
-
-@login_required
 def user_update(request, pk):
      """
      Update User
@@ -108,6 +94,44 @@ def listing_management(request):
      listings = Property.objects.all()
 
      return render(request, "management/listings_list.html", {"listings" : listings })
+
+
+@login_required
+def listing_update(request, pk):
+     """
+     Update Listing
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     listing = get_object_or_404(Property, pk=pk)
+
+     if request.method == "POST":
+          listing_form = ListingForm(request.POST, instance=listing)
+          if listing_form.is_valid():
+               listing_form.save()
+               messages.success(request, "Property Updated Successfully")
+               return redirect("listings_list")
+     else:
+          listing_form = ListingForm(instance=listing)
+          
+     return render(request, "management/listing_form.html", {"listing_form" : listing_form})
+
+
+@login_required
+def listing_delete(request, pk):
+     """
+     Delete User Booking
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+
+     listing = get_object_or_404(listing, pk=pk)
+     listing.delete()
+     messages.success(request, "Listing Deleted Successfully")
+     return redirect("listings_list")
+
+
 
 
 # ----------------------------

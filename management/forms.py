@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from bookings.models import Booking
-from reviews.models import Review
+from listings.models import Property
+
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -24,6 +25,23 @@ class BookingForm(forms.ModelForm):
             "check_out",
             "guests",
             "total_price",
+        ]
+
+class ListingForm(forms.ModelForm):
+    class Meta:
+        model = Property
+        fields = [
+            "property_name",
+            "destinations",
+            "price_per_night",
+            "bedrooms",
+            "guests",
+            "main_image",
+            "description",
+            "latitude",
+            "longitude",
+            "amenities",
+            "is_featured",
         ]
 
 
