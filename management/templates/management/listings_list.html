@@ -31,7 +31,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                {% for listing in listings %}
+                                {% for listing in page_obj %}
                                     <td scope="row" class="text-break">{{ listing.property_name }}</td>
                                     <td class="text-break">£{{ listing.price_per_night }}</td>
                                     <td class="text-break">{{ listing.guests }}</td>
@@ -52,10 +52,10 @@
                         </table>
                     </div>
                 </div>
+                {% include "partials/pagination.html" %}
             </main>
         </div>
     </div>
-              
-    </div>
-</div>
+    
+
 {% endblock %}

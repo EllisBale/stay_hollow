@@ -1,3 +1,7 @@
+main {
+    position: relative;
+}
+
 .offcanvas {
     z-index: 1;
 }
@@ -10,10 +14,6 @@
     position: sticky;
     height: calc(100vh - 66px);
     top: 66px;
-}
-
-main {
-    position: relative;
 }
 
 .card {
@@ -53,3 +53,43 @@ main {
     color: #fff;
 }
 
+
+/* ===== Pagination ===== */
+
+.page-item {
+    border-radius: 0px !important;
+}
+
+.active > .page-link {
+    background-color: #2F6F3E ;
+    color: #fff;
+    border: solid #00000067 1px;
+    border-radius: 0px;
+}
+
+.active > .page-link:hover {
+    color: #fff !important;
+}
+
+.active > .page-link:focus {
+    color: #fff;
+} 
+
+.page-link {
+    color: #000;
+    border-radius: 0px;
+}
+
+.page-link:hover {
+    color: black !important;
+}
+
+.page-link:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    color: black !important; 
+}
+
+.page-link:disabled {
+    cursor: not-allowed;
+}

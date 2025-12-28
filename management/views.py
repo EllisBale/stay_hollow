@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
 from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
@@ -44,7 +45,16 @@ def user_mangement(request):
      
      users = User.objects.all()
 
-     return render(request, "management/user_list.html", {"users": users})
+     paginator = Paginator(users, 10)
+     page_number = request.GET.get("page")
+     page_obj = paginator.get_page(page_number)
+
+     context = {
+          "users" : users,
+          "page_obj" : page_obj,
+     }
+
+     return render(request, "management/user_list.html", context)
 
 
 @login_required
@@ -72,6 +82,7 @@ def user_update(request, pk):
           
      return render(request, "management/user_form.html", {"user_form" : user_form})
 
+
 @login_required
 @require_POST
 def user_delete(request, pk):
@@ -84,7 +95,7 @@ def user_delete(request, pk):
      user = get_object_or_404(User, pk=pk)
 
      if user.is_superuser and not request.user.is_superuser:
-          return HttpResponseForbidden("You cannot delete a superuser.")
+          return redirect("home")
 
      user.delete()
      messages.success(request, "User Deleted Successfully")
@@ -100,7 +111,17 @@ def listing_management(request):
      
      listings = Property.objects.all()
 
-     return render(request, "management/listings_list.html", {"listings" : listings })
+     paginator = Paginator(listings, 10)
+     page_number = request.GET.get("page")
+     page_obj = paginator.get_page(page_number)
+
+     context = {
+          "listings" : listings,
+          "page_obj" : page_obj,
+
+     }
+
+     return render(request, "management/listings_list.html", context)
 
 
 @login_required
@@ -151,7 +172,17 @@ def booking_management(request):
      
      bookings = Booking.objects.filter(is_paid = True)
 
-     return render(request, "management/booking_list.html", {"bookings" : bookings})
+     paginator = Paginator(bookings, 10)
+     page_number = request.GET.get("page")
+     page_obj = paginator.get_page(page_number)
+
+
+     context = {
+          "bookings" : bookings,
+          "page_obj": page_obj,
+     }
+
+     return render(request, "management/booking_list.html", context)
 
 
 @login_required
@@ -200,7 +231,18 @@ def reviews_management(request):
      
      reviews = Review.objects.all()
 
-     return render(request, "management/reviews_list.html", {"reviews" : reviews})
+
+     paginator = Paginator(reviews, 10)
+     page_number = request.GET.get("page")
+     page_obj = paginator.get_page(page_number)
+
+     context = {
+          "reviews" : reviews,
+          "page_obj" : page_obj,
+
+     }
+
+     return render(request, "management/reviews_list.html", context)
 
 
 @login_required
