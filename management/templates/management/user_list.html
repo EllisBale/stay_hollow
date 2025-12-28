@@ -38,11 +38,18 @@
                                         <td class="text-break">{{ user.last_name }}</td>
                                         <td class="text-break">{{ user.is_staff }}</td>
                                         <td class="text-center">
-                                            <a href="{% url 'user_form' user.pk %}" class="btn btn-outline-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
-                                            <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-sm btn-outline-danger mb-1  delete-btn">Delete</button>
-                                            </form>
+                                        {% if request.user.is_staff %}
+                                            {% if user.is_superuser and not request.user.is_superuser %}
+                                                <span> Cannot Edit/Delete Super User </span>
+                                            {% else %}
+                                                <a href="{% url 'user_form' user.pk %}" class="btn btn-outline-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
+                                                <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
+                                                    {% csrf_token %}
+
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger mb-1  delete-btn">Delete</button>
+                                                </form>
+                                            {% endif %}
+                                        {% endif %}
                                         </td>
                                         </tr>
                                     {% endfor %}

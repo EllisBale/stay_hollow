@@ -57,6 +57,10 @@ def user_update(request, pk):
      
      user = get_object_or_404(User, pk=pk)
 
+
+     if user.is_superuser and not request.user.is_superuser:
+          return redirect("user_list")
+
      if request.method == "POST":
           user_form = UserForm(request.POST, instance=user)
           if user_form.is_valid():
@@ -70,7 +74,6 @@ def user_update(request, pk):
 
 @login_required
 @require_POST
-
 def user_delete(request, pk):
      """
      Delete User
@@ -79,6 +82,10 @@ def user_delete(request, pk):
           return redirect("home")
      
      user = get_object_or_404(User, pk=pk)
+
+     if user.is_superuser and not request.user.is_superuser:
+          return HttpResponseForbidden("You cannot delete a superuser.")
+
      user.delete()
      messages.success(request, "User Deleted Successfully")
      return redirect("user_list")
@@ -181,6 +188,7 @@ def booking_delete(request, pk):
      booking.delete()
      messages.success(request, "Booking Deleted Successfully")
      return redirect("booking_list")
+
 
 # ----------------------------
 #   Reviews Management (CRUD)

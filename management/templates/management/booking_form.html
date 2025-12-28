@@ -4,6 +4,7 @@
 
 {% block content %}
     <div class="container py-5">
+        <h1 class="text-center">Update Booking </h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ booking_form|crispy }}
