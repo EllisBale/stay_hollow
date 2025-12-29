@@ -140,20 +140,15 @@ The platform provides an admin interface that allows administrators and managers
 
 ### Colour Scheme
 
-⚠️INSTRUCTIONS ⚠️
+The website primarily uses light colours, mainly shade of white with slightly darker accents. For the navigation bar, I chose `#2F6F3E`, a type of green that is associated with nature and relaxation and complements well with a holiday letting website. The navbar button background colours include `#ffffff` and transparent, helping maintain a clean and simple design. The text colours on the page are mainly black to maintain a good contrast ratio with the background and ensure readability.
 
-Explain your colors and color scheme. Consider adding a link and screenshot for your color scheme using [coolors](https://coolors.co/generate).
+I used [coolors.co](https://coolors.co/2f6f3e-f3f1f1-245a32-e8e7e7) to generate my colour palette.
 
-When you add a color to the palette, the URL is dynamically updated, making it easier for you to return back to your color palette later if needed. See example below:
-
-⚠️ --- END --- ⚠️
-
-I used [coolors.co](https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6) to generate my color palette.
-
-- `#000000` primary text.
-- `#3772FF` primary highlights.
-- `#DF2935` secondary text.
-- `#FDCA40` secondary highlights.
+- `#0a0a0a` primary text and headings.
+- `#f3f1f1` body background.
+- `#2F6F3E` Navbar and transparent button background.
+- `#245A32;` Book Now button.
+- `#E8E7E7;` Light gray background for some sections.
 
 ![screenshot](documentation/coolors.png)
 
@@ -165,8 +160,7 @@ Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome
 
 ⚠️ --- END --- ⚠️
 
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+- []
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
 ## Wireframes

@@ -1,17 +1,15 @@
 
 :root {
-    --btn-white: #ffffff;
-    --btn-green-dark: #4aa557;
-    --btn-gray: #6C757D;
 
-    /* Add these to sections */
+    --btn-white: #ffffff;
+    --btn-green: #245A32;
+
     --section-gray: #E8E7E7;
     --section-green-tint: #EAF5EC;
 
-
     --footer-colour: #1f2f24;
     --footer-text-colour: #cfe8d6;
-    /* ===============================================================================    */
+
 }
 
 
@@ -20,8 +18,10 @@ html {
 }
 
 body {
-    background-color: #f3f1f1;
     padding-top: 0px;
+    background-color: #f3f1f1;
+    color: #0a0a0a !important;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -98,6 +98,20 @@ a {
     border-color: #000;
     color: #ffffff;
     box-shadow: 0 4px 10px rgba(94, 188, 103, 0.3);  
+}
+
+.btn-primary {
+    background-color: var(--btn-green);
+    color: #fff;
+    border: 0px;
+}
+
+.btn-primary:hover {
+    background-color: #214b2b;
+}
+
+.btn-primary:active {
+    background-color: #1a3a21 !important;
 }
 
 
