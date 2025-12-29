@@ -154,14 +154,15 @@ I used [coolors.co](https://coolors.co/2f6f3e-f3f1f1-245a32-e8e7e7) to generate 
 
 ### Typography
 
-⚠️ INSTRUCTIONS ⚠️
+I used three types of fonts for this website. I imported fonts from Google Fonts. I felt the fonts worked well for each other as they give optimal readability for the types of content on the website.
 
-Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome**, etc. Consider adding a link to each font used, the Font Awesome site (if used), or similar icon library.
+I use icons from [Font Awesome](https://fontawesome.com/). These icons allow users to understand information without having to read text. For example, I use icons in my property card listings so users can quickly see how many guests and beds are available on the property. Using Font Awesome icons gives the site a professional apperance.
 
-⚠️ --- END --- ⚠️
-
-- []
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+- [Google Fonts](https://fonts.google.com/) Fonts were used for all text such as buttons, headings and paragraphs.
+  - [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) Used for headings.
+  - [Inter](https://fonts.google.com/specimen/Inter) Used for paragraphs.
+  - [Montserrat](https://fonts.google.com/specimen/Montserrat) Used for buttons and call to actions.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer and amenities.
 
 ## Wireframes
 
