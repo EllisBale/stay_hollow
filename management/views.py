@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 # Models
-from listings.models import Property
+from listings.models import Property, PropertyImage
 from bookings.models import Booking
 from reviews.models import Review
 
@@ -135,15 +135,32 @@ def listing_update(request, pk):
      listing = get_object_or_404(Property, pk=pk)
 
      if request.method == "POST":
-          listing_form = ListingForm(request.POST, instance=listing)
-          if listing_form.is_valid():
+          listing_form = ListingForm(request.POST, request.FILES, instance=listing)
+
+          images_form = ImagesForm(request.POST, request.FILES)
+
+          if listing_form.is_valid() and images_form.is_valid():
+
                listing_form.save()
+
+               image = images_form.save(commit=False)
+               image.property = listing
+               image.save()
+
+
                messages.success(request, "Property Updated Successfully")
                return redirect("listings_list")
      else:
           listing_form = ListingForm(instance=listing)
+          images_form = ImagesForm()
           
-     return render(request, "management/listing_form.html", {"listing_form" : listing_form})
+     return render(request, "management/listing_form.html", {
+          "listing_form" : listing_form,
+          "images_form": images_form,
+          "listing" : listing,
+          "property_images": listing.extra_images.all(),
+     })
+
 
 
 @login_required
@@ -160,6 +177,24 @@ def listing_delete(request, pk):
      return redirect("listings_list")
 
 
+
+@login_required
+def delete_property_image(request, pk, image_id):
+     """
+     Delete A Property Image
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+
+     image = get_object_or_404(PropertyImage, pk=image_id)
+
+     if image.property.pk != pk:
+          return messages.error("You are not authorised to delete this image.")
+     
+     image.delete()
+
+     messages.success(request, "Image deleted successfully.")
+     return redirect("edit_listing", pk=pk)
 
 
 # ----------------------------
@@ -192,7 +227,7 @@ def booking_update(request, pk):
      """
      if not request.user.is_staff:
          return redirect("home")
-     
+
      booking = get_object_or_404(Booking, pk=pk)
 
      if request.method == "POST":
@@ -201,7 +236,7 @@ def booking_update(request, pk):
                booking_form.save()
                messages.success(request, "Booking Updated Successfully")
                return redirect("booking_list")
-          
+
      else:
           booking_form = BookingForm(instance=booking)
      return render(request, "management/booking_form.html", {"booking_form" : booking_form})
@@ -228,7 +263,7 @@ def booking_delete(request, pk):
 def reviews_management(request):
      if not request.user.is_staff:
           return redirect("home")
-     
+
      reviews = Review.objects.all()
 
 

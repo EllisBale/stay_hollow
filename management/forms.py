@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 from bookings.models import Booking
-from listings.models import Property
+from listings.models import Property, PropertyImage
+
 
 
 class UserForm(forms.ModelForm):
@@ -44,4 +45,11 @@ class ListingForm(forms.ModelForm):
             "is_featured",
         ]
 
+class ImagesForm(forms.ModelForm):
+    class Meta:
+        model = PropertyImage
+        fields = [
+            "image",
+
+        ]
 

@@ -93,3 +93,12 @@ main {
 .page-link:disabled {
     cursor: not-allowed;
 }
+
+
+.property_img {
+
+    width: 100%;
+    border-radius: 0px !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
