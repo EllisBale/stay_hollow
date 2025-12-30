@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'home/css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'home/js/home.js' %}"></script>
+{% endblock %}
+
+    
+ {% block title %} About {% endblock %}
+
+{% block content %}
+  <div class="container py-5 px-5">
+    <h1 class="mb-5 text-center"> About Us </h1>
+
+    <p>At Stay Hollow, we provide a centralised platform for discovering and booking high-quality holiday accommodation across the UK. Our focus is on making the booking experience simple, secure, and reliable — giving guests confidence that every stay meets consistent standards of comfort and quality. </p>
+
+    <p>We work closely with trusted property partners to manage listings, availability, and guest experiences in one streamlined system. This allows us to offer a wide range of properties — from coastal retreats to countryside escapes — all supported by a single, dependable service. </p>
+
+    <p>By handling bookings, payments, and guest communication in one place, we remove the uncertainty often found in holiday planning. Our goal is to make finding the perfect stay effortless, whether you're planning a weekend getaway or a longer escape. </p>
+
+    <p> At Stay Hollow, we believe great stays start with clarity, consistency, and care — so you can focus on enjoying your time away.</p>
+    
+  </div>
+{% endblock %}
