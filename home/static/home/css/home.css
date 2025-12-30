@@ -97,6 +97,43 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 
 
 
+/* ====== Hero Contact ====== */
+.hero-contact {
+    width: 100%;
+    height: calc(50vh - 56px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-contact {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(53%);
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    transition: transform 0.3 ease;
+    z-index: 2;
+    background-color: #000;
+}
+
+
+.contact-div {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: #ffffff;
+
+}
+
 
 @media (min-width: 576px) {
     .hero {height: calc(100vh - 66px);}

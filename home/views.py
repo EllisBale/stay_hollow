@@ -14,3 +14,9 @@ def about(request):
     """ Returns the about page"""
 
     return render(request, "home/about.html",)
+
+
+def contact(request):
+    """ Returns the contact page"""
+
+    return render(request, "home/contact.html",)
