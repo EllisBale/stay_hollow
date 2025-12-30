@@ -178,11 +178,11 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | Listing Details       | ![screenshot](docs/wireframes/stay_hollow_listings_details_wireframes.png) |
 | Account Order History | ![screenshot](docs/wireframes/stay_hollow_order_history_wireframes.png)    |
 | Management            | ![screenshot](docs/wireframes/stay_hollow_admin_wireframes.png)            |
-| Checkout              | ![screenshot](documentation/wireframes/mobile-checkout.png)                |
-| Checkout Success      | ![screenshot](documentation/wireframes/mobile-checkout-success.png)        |
-| About                 | ![screenshot]()                                                            |
-| Contact               | ![screenshot]()                                                            |
-| 404                   | ![screenshot]()                                                            |
+| Checkout              | ![screenshot](docs/wireframes/stay_hollow_checkout_wireframes.png)         |
+| Checkout Success      | ![screenshot](docs/wireframes/stay_hollow_checkout_success_wireframes.png) |
+| About                 | ![screenshot](docs/wireframes/stay_hollow_about_wireframes.png)            |
+| Contact               | ![screenshot](docs/wireframes/stay_hollow_contact_wireframes.png)          |
+| 404                   | ![screenshot](docs/wireframes/stay_hollow_404_wireframes.png)              |
 
 ## User Stories
 
