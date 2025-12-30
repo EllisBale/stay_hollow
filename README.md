@@ -39,9 +39,6 @@ For this project, I researched popular UK-based holiday letting websites to unde
 
 [Airbnb](https://www.airbnb.co.uk/)
 
-> [!IMPORTANT]  
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Boutique Ado".
-
 ## UX
 
 ### The 5 Planes of UX
@@ -113,19 +110,25 @@ The platform provides an admin interface that allows administrators and managers
 **Information Architecture**
 
 - **Navigation Menu**:
-  - Links to Home, Products, Cart, Newsletter, and Account sections.
+
+  - User (Guest)
+    - Links to Home, Listings, Destination, Contact, About, Login and Signup.
+  - User (Logged-in)
+    - Links to Home, Listings, Destinations, Contact, Account, About and Logout.
+  - User (Admin)
+    - Links to Home, Listings, Destinations, Contact, Account, About, Manage and Logout.
+
 - **Hierarchy**:
   - Prominent product categories and filters for easy navigation.
-  - Cart and checkout options displayed prominently for convenience.
 
 **User Flow**
 
-1. Guest user browses the store → filters and sorts products by category, price, or name.
-2. Guest user adds items to the cart → proceeds to checkout.
-3. Guest user creates an account or logs in during checkout → completes purchase.
-4. Returning customers log in → view past orders and track purchase history.
-5. Site owners manage inventory → add, update, or delete products and categories.
-6. Users signup to the newsletter → potentially receive advanced notice of upcoming sales.
+1. Guest user browses the homepage → View hero banner with searchbar, featured properties and why book with us section.
+2. Guest user explore listings page → Searchbar, sortby, View listings → View property listing details.
+3. Guest user creates an account → log in to make bookings.
+4. Logged-in user views property detail → Choose a date → Checkout → Receive confirmation.
+5. Logged-in user views past bookings.
+6. Admin access manage panel → add, edit, or delete user, listings, reviews and bookings.
 
 #### 4. Skeleton
 
@@ -242,14 +245,6 @@ In this section, you should go over the different parts of your project, and des
 | 404                | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/features/404.png)                |
 
 ### Future Features
-
-⚠️ INSTRUCTIONS ⚠️
-
-Do you have additional ideas that you'd like to include on your project in the future? Fantastic, list them here! It's always great to have plans for future improvements. Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-A few examples are listed below to align with possible ways to improve on the sample walkthrough project, to give you some inspiration.
-
-⚠️ --- END ---⚠️
 
 - **Product Reviews & Ratings**: Allow customers to leave reviews and rate products, with admin moderation. Display average ratings and review counts on product pages.
 - **Wishlist Functionality**: Enable users to save products to a personal wishlist for future purchases. Notify users if wishlist items go on sale or are back in stock.
