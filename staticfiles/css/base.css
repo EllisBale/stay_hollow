@@ -63,6 +63,13 @@ a {
 }
 
 
+.nav-link:hover {
+    color: #fff;
+}
+.nav-link:active, .nav-link:focus, .show {
+    color: #fff !important;
+}
+
 
 /* ===== Buttons ===== */
 
