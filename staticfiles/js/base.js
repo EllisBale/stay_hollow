@@ -5,9 +5,6 @@ $(document).ready(function () {
     })
 
 
-
-
-
     const scrollDistance = 500;
     const desktopWidth = 992;
 

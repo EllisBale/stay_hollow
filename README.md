@@ -701,32 +701,84 @@ There are no remaining major differences between the local version when compared
 
 ### Content
 
-| Source                                                      | Notes                                               |
-| ----------------------------------------------------------- | --------------------------------------------------- |
-| [Markdown Builder](https://markdown.2bn.dev)                | Help generating Markdown files                      |
-| [Chris Beams](https://chris.beams.io/posts/git-commit)      | "How to Write a Git Commit Message"                 |
-| [Boutique Ado](https://codeinstitute.net)                   | Code Institute walkthrough project inspiration      |
-| [Bootstrap](https://getbootstrap.com)                       | Various components / responsive front-end framework |
-| [Whitenoise](https://whitenoise.readthedocs.io)             | Static file service                                 |
-| [Stripe](https://docs.stripe.com/payments/elements)         | Online payment services                             |
-| [Gmail API](https://developers.google.com/gmail/api/guides) | Sending payment confirmation emails                 |
-| [Python Tutor](https://pythontutor.com)                     | Additional Python help                              |
-| [ChatGPT](https://chatgpt.com)                              | Help with code logic and explanations               |
+| Source                                                                                                                        | Notes                                               |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [Markdown Builder](https://markdown.2bn.dev)                                                                                  | Help generating Markdown files                      |
+| [Boutique Ado](https://codeinstitute.net)                                                                                     | Code Institute walkthrough project inspiration      |
+| [Bootstrap](https://getbootstrap.com)                                                                                         | Various components / responsive front-end framework |
+| [Whitenoise](https://whitenoise.readthedocs.io)                                                                               | Static file service                                 |
+| [Stripe](https://docs.stripe.com/payments/elements)                                                                           | Online payment services                             |
+| [Gmail API](https://developers.google.com/gmail/api/guides)                                                                   | Sending payment confirmation emails                 |
+| [Python Tutor](https://pythontutor.com)                                                                                       | Additional Python help                              |
+| [ChatGPT](https://chatgpt.com)                                                                                                | Help with code logic and explanations               |
+| [Leaflet](https://leafletjs.com)                                                                                              | Interactive map                                     |
+| [Pixabay](https://pixabay.com)                                                                                                | Copyright free images for properties                |
+| [Unsplash](https://unsplash.com)                                                                                              | Copyright free images for properties                |
+| [pxhere](https://pxhere.com)                                                                                                  | Copyright free images for properties                |
+| [TempMail](https://temp-mail.org/en)                                                                                          | Help with testing accounts with temporary emails    |
+| [CSS Box Shadow](https://www.w3schools.com/css/css3_shadows_box.asp)                                                          | Box shadow for property cards                       |
+| [Pagination](https://docs.djangoproject.com/en/5.2/topics/pagination)                                                         | Pagination for admin pages and properties           |
+| [Window: innerWidth property](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)                             | Back to top button                                  |
+| [Built-in template tags and filters](https://docs.djangoproject.com/en/6.0/ref/templates/builtins/)                           | forloop.counter for review rating                   |
+| [QuerySet API reference](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet.exclude) | .exclude() and .first() used for add review view.   |
 
 ### Media
 
-| Source                                                                                     | Notes                                                |
-| ------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| [favicon.io](https://favicon.io)                                                           | Generating the favicon                               |
-| [Boutique Ado](https://codeinstitute.net)                                                  | Sample images provided from the walkthrough projects |
-| [Font Awesome](https://fontawesome.com)                                                    | Icons used throughout the site                       |
-| [Pexels](https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg)                 | Hero image                                           |
-| [Wallhere](https://c.wallhere.com/images/9c/c8/da4b4009f070c8e1dfee43d25f99-2318808.jpg!d) | Background wallpaper                                 |
-| [Pixabay](https://cdn.pixabay.com/photo/2017/09/04/16/58/passport-2714675_1280.jpg)        | Background wallpaper                                 |
-| [DALL-E 3](https://openai.com/index/dall-e-3)                                              | AI generated artwork                                 |
-| [TinyPNG](https://tinypng.com)                                                             | Compressing images < 5MB                             |
-| [CompressPNG](https://compresspng.com)                                                     | Compressing images > 5MB                             |
-| [CloudConvert](https://cloudconvert.com/webp-converter)                                    | Converting images to `.webp`                         |
+#### Listing images used:
+
+- [Hero Image](https://pixabay.com/photos/building-interior-design-furnitures-8484196/) by 23555986
+
+- [Whitwave House](https://pixabay.com/photos/architecture-render-external-design-1477101/) by Giovanni_cg
+
+  - [Room](https://pixabay.com/photos/architecture-render-external-design-1477100/) by Giovanni_cg
+
+- [Saltwood Retreat](https://unsplash.com/photos/white-and-grey-concrete-building-near-swimming-pool-under-clear-sky-during-daytime-2d4lAQAlbDA) by Frames For Your Heart
+
+  - [Room](https://unsplash.com/photos/a-house-with-a-glass-front-HOCxqM8z4LY) by Woody Kelly
+
+- [Seafoam House](https://unsplash.com/photos/white-and-brown-concrete-house-near-body-of-water-during-daytime-htIxmylBznU) by Eilis Garvey
+
+- [Glenpine Lodge](https://pixabay.com/tr/photos/eve-giri%c5%9f-yapmak-kay%c4%b1t-ev-k%c4%b1rsal-2225433/) by user32212
+
+  - [Kitchen](https://pixabay.com/photos/hdr-logs-log-home-log-cabin-2244067/) by user32212
+  - [Bedroom](https://pixabay.com/photos/log-home-log-home-bedroom-rustic-2225414/) by user32212
+
+- [Brambleroom House](https://pixabay.com/photos/house-cottage-rural-building-home-4020575/) by dimitrisvetsikas1969
+
+- [Cwmleaf Cottage](https://unsplash.com/photos/a-couple-of-wooden-chairs-sitting-on-top-of-a-wooden-deck-MvBf0e0mVjw) by Jonathan Ardila
+
+- [The Driftpine](https://unsplash.com/photos/a-stone-house-with-purple-flowers-on-the-side-of-the-road-mc146Wabe9Y) by Benjamin Elliott
+
+  - [Kitchen](https://unsplash.com/photos/green-indoor-plant-near-brown-wooden-table-Ihh0nT34AJs) by Seiji Seiji
+  - [Bedroom](https://unsplash.com/photos/white-bed-linen-on-bed-H87P_izw84s) by Ashley Byrd
+
+- [Maplehurst House](https://pixabay.com/photos/eagla-rock-way-montclair-867216/) by WikimediaImages
+
+  - [Room](https://unsplash.com/photos/a-chandelier-hanging-from-a-wooden-ceiling-in-a-library-DAE--I2sJQI) by Daniil Smetanin
+
+- [Heatherwood](https://pixabay.com/photos/farmhouse-woodhouse-house-usa-8482881/) by Tho-Ge
+
+  - [Bathroom](https://pixabay.com/photos/bathroom-toilet-wooden-wood-retro-4787940/) by Engin_Akyurt
+  - [Bedroom](https://unsplash.com/photos/empty-bed-beside-closed-window-b-HIPPuBgeM) by Sam McNamara
+
+- [Thistlewood House](https://unsplash.com/photos/old-stone-house-with-four-windows-and-a-dark-door-BNnDVC52Hrg) by Annie Spratt
+
+- [Branwen Cottage](https://unsplash.com/photos/brown-and-white-concrete-house-8NmXsNGwKWE) by Charles Lamb
+
+- [Bramblewood Cottage](https://pixabay.com/photos/cottage-trees-path-trail-house-2955582/) by Stanly8853
+
+  - [Room](https://unsplash.com/photos/a-dining-room-with-a-wooden-table-and-a-chandelier-KLPARZr59Vs) by Clay Banks
+
+- [Trevellan Manor](https://pixabay.com/photos/mansion-england-estate-3431460/) by GregMontani
+
+  - [Bedroom](https://pixabay.com/photos/bedroom-fireplace-double-bedroom-1706801/) by joseclaudioguima
+
+- [Glenhaven](https://unsplash.com/photos/a-house-with-a-large-garden-of-flowers-in-front-of-it-e3Ujhjjr1Fs) by Kevin Krüger
+
+  - [Kitchen](https://pixabay.com/photos/home-interiors-kitchen-2486092/) by user32212
+
+- [Willowbrook House](https://unsplash.com/photos/black-city-bike-parked-beside-white-and-brown-house-during-daytime-4aVF-MMbu_M) by May Gauthier
+  - [Kitchen](https://pixabay.com/photos/garlic-cactus-window-green-house-2556022/) by TheVirtualDenise
 
 ### Acknowledgements
 
