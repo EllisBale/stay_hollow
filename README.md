@@ -186,37 +186,25 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## User Stories
 
-⚠️ INSTRUCTIONS ⚠️
-
-In this section, list all of your possible user stories for the project. Samples have been provided below using the example walkthrough project for your inspiration. Make sure to adjust to match your own project features!
-
-⚠️ --- END --- ⚠️
-
-| Target                  | Expectation                                                                                                                              | Outcome                                                                            |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| As a guest user         | I would like to browse products without needing to register                                                                              | so that I can shop freely before deciding to create an account.                    |
-| As a guest user         | I would like to be prompted to create an account or log in at checkout                                                                   | so that I can complete my purchase and track my order history.                     |
-| As a user               | I would like to sign up to the site's newsletter                                                                                         | so that I can stay up to date with any upcoming sales or promotions.               |
-| As a customer           | I would like to browse various product categories (clothing, toys, jewelry, kitchen gadgets, etc.)                                       | so that I can easily find what I'm looking for.                                    |
-| As a customer           | I would like to sort products by price (low-to-high/high-to-low) and name (alphabetical)                                                 | so that I can quickly organize items in a way that suits my shopping style.        |
-| As a customer           | I would like to filter products by category                                                                                              | so that I can narrow down the products to the types I am most interested in.       |
-| As a customer           | I would like to click on individual products to view more details (description, price, image, etc.)                                      | so that I can make an informed decision about my purchase.                         |
-| As a customer           | I would like to add items to my shopping cart using quantity increment/decrement buttons                                                 | so that I can adjust how many units of a product I want before checkout.           |
-| As a customer           | I would like to view and manage my shopping cart                                                                                         | so that I can review, add, or remove items before proceeding to checkout.          |
-| As a customer           | I would like to adjust the quantity of items in my cart                                                                                  | so that I can modify my purchase preferences without leaving the cart.             |
-| As a customer           | I would like to remove items from my cart                                                                                                | so that I can remove products I no longer wish to buy.                             |
-| As a customer           | I would like to proceed to checkout where I see my cart items, grand total, and input my name, email, shipping address, and card details | so that I can complete my purchase.                                                |
-| As a customer           | I would like to receive a confirmation email after my purchase                                                                           | so that I can have a record of my transaction and order details.                   |
-| As a customer           | I would like to see an order confirmation page with a checkout order number after completing my purchase                                 | so that I know my order has been successfully placed.                              |
-| As a customer           | I would like to securely enter my card details using Stripe at checkout                                                                  | so that I can feel confident my payment information is protected.                  |
-| As a returning customer | I would like to be able to log in and view my past orders                                                                                | so that I can track my previous purchases and order history.                       |
-| As a returning customer | I would like the checkout process to remember my shipping address                                                                        | so that future purchases are quicker and easier.                                   |
-| As a site owner         | I would like to create new products with a name, description, price, images, and category                                                | so that I can add additional items to the store inventory.                         |
-| As a site owner         | I would like to update product details (name, price, description, image, category) at any time                                           | so that I can keep my product listings accurate and up to date.                    |
-| As a site owner         | I would like to delete products that are no longer available or relevant                                                                 | so that I can maintain a clean and accurate inventory.                             |
-| As a site owner         | I would like to view all orders placed on the website                                                                                    | so that I can track and manage customer purchases.                                 |
-| As a site owner         | I would like to manage product categories                                                                                                | so that I can ensure items are correctly organized and easy for customers to find. |
-| As a user               | I would like to see a 404 error page if I get lost                                                                                       | so that it's obvious that I've stumbled upon a page that doesn't exist.            |
+| Target               | Expectation                                                                    | Outcome                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| As a Logged-in user, | I want to book a holiday property for specific dates,                          | so I can secure my stay and complete my reservation online.                |
+| As a Logged-in user, | I want to view an order booking confirmation after checkout.                   | so I can verify that my payment and booking were successful.               |
+| As a Logged-in user, | I want to make secure online payments for my bookings                          | so my financial details are protected.                                     |
+| As a Logged-in user, | I want to be able to receive a confirmation through email after checkout       | so I have a confirmation for my records.                                   |
+| As a Site User,      | I want to search for properties directly from the homepage                     | so I can start finding places immediately.                                 |
+| As a Site User,      | I want to be able to browse all available holiday properties                   | so I can explore my options.                                               |
+| As a Site User,      | I want to view detailed property pages with photos, descriptions and amenities | so I can make an informed choice.                                          |
+| As a Site User,      | I want to filter properties by location, price and number of guests            | so I can find suitable accommodation.                                      |
+| As a Site User,      | I want to create an account and log in                                         | so I can manage bookings and preferences.                                  |
+| As a Site User,      | I want to see featured or popular properties on the landing page,              | so I can quickly explore attractive options.                               |
+| As a Site User,      | I want to be able to see reviews and ratings for each property,                | so that I can decide where to stay.                                        |
+| As a Site User,      | I want to see reasons to book on this website and what the benefits are,       | so that I can be assured that using this website to book will be worth it. |
+| As a Site User,      | I want to see footer details like contact info, social links, and copyright,   | so I can learn more about the company.                                     |
+| As a Site User,      | I want to see a list of popular destinations on the homepage                   | so I can quickly discover places that are trending or highly recommended.  |
+| As an Admin,         | I want to add, edit, or remove property listings                               | so I can control what’s shown on the website.                              |
+| As an Admin,         | I want to view and manage user accounts                                        | so I can assist customers when needed.                                     |
+| As an Admin,         | I want to moderate or remove inappropriate reviews,                            | so that I can maintain the platform’s reputation.                          |
 
 ## Features
 

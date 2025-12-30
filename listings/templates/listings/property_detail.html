@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 {% endblock %}
 
+{% block title %} {{ property.property_name }}, {{ property.destinations.name }} {% endblock %}
+
 {% block content %}
     <div class="container-fluid pb-3 px-0 pt-lg-5">
         <div class="container-lg px-lg-5">
