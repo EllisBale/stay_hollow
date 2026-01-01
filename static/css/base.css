@@ -155,10 +155,6 @@ footer  a {
     
 }
 
-a   {
-    text-decoration: none;
-}
-
 
 @media (min-width: 576px) {
     .logo-img {

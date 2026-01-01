@@ -14,53 +14,62 @@
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center">
                     <h1 class="mb-3"> Overview </h1>
+                    {% include "partials/mobile_sidebar.html" %}
                     <!-- Listings  -->
                     <div class="col-12 col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body py-5 listing-back">
-                                <h2 class="card-title">Total Listings</h2>
-                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
-                                    <h3 class="card-text total_number mb-0">{{ total_properties }}</h3>
-                                    <i class="fa-solid fa-building fa-2x"></i>
+                        <a href="{% url 'listings_list' %}">
+                            <div class="card">
+                                <div class="card-body py-5 listing-back">
+                                    <h2 class="card-title">Total Listings</h2>
+                                    <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                        <h3 class="card-text total_number mb-0">{{ total_properties }}</h3>
+                                        <i class="fa-solid fa-building fa-2x"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Bookings -->
                     <div class="col-12 col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body py-5 bookings-back">
-                                <h2 class="card-title">Total Bookings</h2>
-                                 <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
-                                    <h3 class="card-text total_number">{{ total_bookings }}</h3>
-                                    <i class="fa-solid fa-calendar fa-2x"></i>
+                        <a href="{% url 'booking_list' %}">
+                            <div class="card">
+                                <div class="card-body py-5 bookings-back">
+                                    <h2 class="card-title">Total Bookings</h2>
+                                    <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                        <h3 class="card-text total_number">{{ total_bookings }}</h3>
+                                        <i class="fa-solid fa-calendar fa-2x"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Users -->
                     <div class="col-12 col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body py-5 users-back">
-                                <h2 class="card-title">Total Users</h2>
-                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
-                                    <h3 class="card-text total_number">{{ total_users}}</h3>
-                                    <i class="fa-solid fa-users fa-2x"></i>
+                        <a href="{% url 'user_list' %}">
+                            <div class="card">
+                                <div class="card-body py-5 users-back">
+                                    <h2 class="card-title">Total Users</h2>
+                                    <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                        <h3 class="card-text total_number">{{ total_users}}</h3>
+                                        <i class="fa-solid fa-users fa-2x"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <!-- Reviews -->
                     <div class="col-12 col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body py-5 reviews-back">
-                                <h2 class="card-title">Total Reviews </h2>
-                                <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
-                                    <h3 class="card-text total_number">{{ total_reviews }}</h3>
-                                    <i class="fa-solid fa-star fa-2x"></i>
+                        <a href="{% url 'reviews_list' %}">
+                            <div class="card">
+                                <div class="card-body py-5 reviews-back">
+                                    <h2 class="card-title">Total Reviews </h2>
+                                    <div class="d-flex justify-content-center align-items-center gap-5 pt-3">
+                                        <h3 class="card-text total_number">{{ total_reviews }}</h3>
+                                        <i class="fa-solid fa-star fa-2x"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </main>

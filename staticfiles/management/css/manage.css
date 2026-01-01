@@ -1,14 +1,10 @@
-main {
-    position: relative;
-}
+main {position: relative;}
 
-.offcanvas {
-    z-index: 1;
-}
+.offcanvas {z-index: 1;}
 
-.nav-item {
-    list-style: none;
-}
+.nav-item {list-style: none;}
+
+/* ===== Sidebar ===== */
 
 .sidebar {
     position: sticky;
@@ -16,19 +12,20 @@ main {
     top: 66px;
 }
 
+.sidebar-div {position: fixed;}
+
+
+/* ===== Overview Card ===== */
+
 .card {
     width: 100%;
     height: 15rem;
     box-shadow: 5px 10px 5px rgba(46, 47, 48, 0.26);
 }
 
-.card-title {
-    font-size: 2rem;
-}
+.card-title {font-size: 2rem;}
 
-.total_number {
-    font-size: 3rem;
-}
+.total_number {font-size: 3rem;}
 
 .listing-back {
     background: #4E73DF;
@@ -44,7 +41,6 @@ main {
 .users-back {
     background-color: #f6c23e;
     background: linear-gradient(90deg,rgba(224, 163, 9, 1) 28%, rgba(246, 194, 62, 1) 80%);
-
 }
 
 .reviews-back {
@@ -54,11 +50,15 @@ main {
 }
 
 
+
+.table-responsive {
+    border: 1px solid black;
+    padding: 0px;
+}
+
 /* ===== Pagination ===== */
 
-.page-item {
-    border-radius: 0px !important;
-}
+.page-item {border-radius: 0px !important;}
 
 .active > .page-link {
     background-color: #2F6F3E ;
@@ -67,22 +67,16 @@ main {
     border-radius: 0px;
 }
 
-.active > .page-link:hover {
-    color: #fff !important;
-}
+.active > .page-link:hover {color: #fff !important;}
 
-.active > .page-link:focus {
-    color: #fff;
-} 
+.active > .page-link:focus {color: #fff;} 
 
 .page-link {
     color: #000;
     border-radius: 0px;
 }
 
-.page-link:hover {
-    color: black !important;
-}
+.page-link:hover {color: black !important;}
 
 .page-link:focus {
     box-shadow: none !important;
@@ -90,13 +84,11 @@ main {
     color: black !important; 
 }
 
-.page-link:disabled {
-    cursor: not-allowed;
-}
+.page-link:disabled {cursor: not-allowed;}
 
 
+/* ===== Property  ===== */
 .property_img {
-
     width: 100%;
     border-radius: 0px !important;
     aspect-ratio: 4 / 3;
