@@ -18,8 +18,8 @@
       <img srcset="{% static 'images/hero_320.jpg' %} 320w, {% static 'images/hero_480.jpg' %} 480w, {% static 'images/hero_640.jpg' %} 640w, {% static 'images/hero_768.jpg' %} 768w, {% static 'images/hero_1024.jpg' %} 1024w, {% static 'images/hero_1280.jpg' %} 1280w, {% static 'images/hero_1600.jpg' %}  1600w, {% static 'images/hero_1920.jpg' %}  1920w, {% static 'images/hero_3840.jpg' %} 3840w" id="hero-scroll" class="hero-image" sizes="100vw" decoding="async" draggable="false" alt="Image of a Villa on a sunny day">
     </div>
 
-    <div class="searchbar">
-      <h1> Your Dream Getaway Starts Here  </h1>
+    <div id="search-transform" class="searchbar">
+      <h1 class="px-2"> Your Dream Getaway Starts Here  </h1>
       {% include "partials/search_bar.html" %}
     </div>
   </div>
@@ -31,7 +31,7 @@
         <div class="col-12 col-md-6 col-lg-4 d-flex mb-5 mt-3">
           <a href="{% url 'property_detail' property.id %}"> 
             <div class="card shadow-sm h-100">
-              <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
+              <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}" loading="lazy">
               <div class="card-body">
                 <h5 class="card-title">{{ property.property_name }}</h5>
                 {% if property.destinations.parent_destination %}
