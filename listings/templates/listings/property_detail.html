@@ -12,6 +12,7 @@
 {% block title %} {{ property.property_name }}, {{ property.destinations.name }} {% endblock %}
 
 {% block content %}
+<!-- Carousel & Property Info  -->
     <div class="container-fluid pb-3 px-0 pt-lg-5">
         <div class="container-lg px-lg-5">
             <div class="row mb-4">
@@ -32,21 +33,19 @@
                     
                         <a href="{% url 'create_booking' property.id %}" class="btn btn-primary"> Book Now</a>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     
     <div class="container py-2 pb-5 px-3">
-
+        <!-- Overview -->
         <div class="col-12 px-0">
             <h4 class="mb-3"> Overview </h4>
             <p>{{ property.description }}</p>
         </div>
         <hr>
-
-        
+        <!-- Amenities -->
         <div class="row g-3 justify-content-start mt-5 mb-5 px-5 pt-3 pb-5 feat-section">
                 <h4 class="mb-3"> Amenities </h4>
                 {% for amenity in property.amenities.all %}
@@ -63,9 +62,8 @@
         </div>
         <hr>
                 
-
+        <!-- Location -->
         <div class="row mt-5 pt-5">
-
             <div class="col-12 col-lg-6">
                 <div id="map"></div>
             </div>
@@ -81,8 +79,8 @@
             </div>
         </div>
         <hr>
+            <!-- Reviews -->
             <div class="container px-0 mt-5">
-
                 <h4> Reviews </h4>
                 {% if reviews %}
                     <p class="text-break mb-3">{{ reviews|length }} reviews</p>

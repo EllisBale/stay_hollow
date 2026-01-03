@@ -65,10 +65,14 @@ def property_list(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
+    property_total = properties.count()
+
+
     context = {
         "search_term": query,
         "selected_destinations": selected_destinations,
         "page_obj": page_obj,
+        "property_total": property_total,
     }
 
     return render(request, "listings/property_list.html", context)

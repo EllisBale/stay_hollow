@@ -10,16 +10,16 @@
 
 
 {% block content %}
-
+  <!-- Searchbar -->
   <div class="container-fluid search-background pt-2 pb-5">
     {% include "partials/search_bar.html" %}
   </div>
+  <!-- Sortby -->
   {% include "listings/partials/sortby.html" %}
-
   <div class="container my-5">
-    <h1 class="text-center mb-4">Properties</h1>
+    <p class="text-start">{{ property_total}} Properties Found</p>
+    <!-- Properties -->
     <div class="row justify-content-center">
-      
       {% for property in page_obj %}
         <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex mb-5">
           <a href="{% url 'property_detail' property.id %}"> 

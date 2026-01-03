@@ -13,17 +13,20 @@
  {% block title %} Home {% endblock %}
 
 {% block content %}
+  <!-- Hero -->
   <div class="container-fluid px-0 container-background">
     <div class="hero">
       <img srcset="{% static 'images/hero_320.jpg' %} 320w, {% static 'images/hero_480.jpg' %} 480w, {% static 'images/hero_640.jpg' %} 640w, {% static 'images/hero_768.jpg' %} 768w, {% static 'images/hero_1024.jpg' %} 1024w, {% static 'images/hero_1280.jpg' %} 1280w, {% static 'images/hero_1600.jpg' %}  1600w, {% static 'images/hero_1920.jpg' %}  1920w, {% static 'images/hero_3840.jpg' %} 3840w" id="hero-scroll" class="hero-image" sizes="100vw" decoding="async" draggable="false" alt="Image of a Villa on a sunny day">
     </div>
 
+    <!-- Searchbar -->
     <div id="search-transform" class="searchbar">
       <h1 class="px-2"> Your Dream Getaway Starts Here  </h1>
       {% include "partials/search_bar.html" %}
     </div>
   </div>
 
+  <!-- Featured Properties -->
   <div class="container my-5">
     <h2 class="text-center mb-5 mt-2">Featured Properties</h2>
     <div class="row justify-content-center">  
@@ -53,7 +56,7 @@
       {% endfor %}
     </div>
   </div>
-
+  <!-- Why Book With Us -->
   <div class="container-fluid pb-5  my-5 booking">
     <h2 class="text-center py-5 mb-5"> Why Book With Us</h2>
     <div class="container">
@@ -98,6 +101,4 @@
     </div>
   </div>
 
-
-  
 {% endblock %}

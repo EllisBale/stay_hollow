@@ -17,10 +17,7 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     overflow: hidden;
 }
 
-.container-background {
-    background: #000;
-}
-
+.container-background {background: #000;}
 
 .hero-image {
     height: 100%;
@@ -37,7 +34,6 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     z-index: 2;
     background-color: #000;
 }
-
 
 .searchbar {
     position: absolute;
@@ -58,19 +54,14 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     background: none;
 }
 
-
 /* ===== Card ===== */
-
 
 .card-img-top { 
     width: 100%;
     border-radius: 0px !important;
     aspect-ratio: 4 / 3;
-    object-fit: cover; 
-}
-
-.card-img-top:hover {
-    transform: translateY(20);
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
 .card {
@@ -80,10 +71,7 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15) !important;
 }
 
-
-.card-body {
-    background: #f6f8f7 !important;
-}
+.card-body {background: #f6f8f7 !important;}
 
 .card-body .fa-solid {
     color: #4c5053;
@@ -98,10 +86,9 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 }
 
 
-.booking {
-    background-color: var(--section-gray);
-}
+/* ====== Why Book With Us section ====== */
 
+.booking {background-color: var(--section-gray);}
 
 
 /* ====== Hero Contact ====== */
@@ -142,11 +129,10 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 }
 
 
-.card > a {
-    text-decoration: underline;
-}
+.card > a {text-decoration: underline;}
 
 
+/* ====== Keyframes ====== */
 @keyframes fadein{
     0%{
         opacity: 10%;
@@ -162,6 +148,6 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 }
 
 @media (max-width: 768px) {
-    
+
     .searchbar{width: 100%;}
 }
