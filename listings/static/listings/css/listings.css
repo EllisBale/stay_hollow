@@ -1,8 +1,18 @@
 
 li {list-style: none;}
 
+.form-select {
+    border-radius: 0;
+}
 
+.form-select:focus {
+    box-shadow: none;
+    border-color: #36383d;
+}
 
+.total-properties {
+    color: #36383d;
+}
 
 /* ===== Card ===== */
 .card-img-top { 
@@ -133,6 +143,16 @@ hr {
     border-radius: 0px;
 }
 
+
+.leaflet-top {
+    top: 0;
+    z-index: 940 !important;
+}
+
+.leaflet-bottom {
+    bottom: 0;
+    z-index: 800 !important;
+}
 
 @media (max-width: 992px) {
     .property-info-text {

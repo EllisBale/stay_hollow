@@ -132,17 +132,6 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 .card > a {text-decoration: underline;}
 
 
-/* ====== Keyframes ====== */
-@keyframes fadein{
-    0%{
-        opacity: 10%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
-
 @media (min-width: 576px) {
     .hero {height: calc(100vh - 66px);}
 }
