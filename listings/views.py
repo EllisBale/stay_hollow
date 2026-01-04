@@ -38,7 +38,7 @@ def property_list(request):
             if not query:
                 messages.error(request, "You didn't enter any search criterial")
                 return redirect(reverse('properties'))
-            
+
             queries = (
                 Q(property_name__icontains=query) |
                 Q(bedrooms__icontains=query) |
