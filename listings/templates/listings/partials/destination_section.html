@@ -1,14 +1,14 @@
 {% load static %}
 
-    {% if request.GET.destinations == "England" or request.GET.destinations == "Scotland" or request.GET.destinations == "Wales" %}
+{% if request.GET.destinations == "England" or request.GET.destinations == "Scotland" or request.GET.destinations == "Wales" %}
 
     <div class="container-fluid px-0 mb-5">
 
         {% if request.GET.destinations == "England" %}
-        <!-- Hero -->
+        <!-- England Hero -->
         <div class="container-fluid px-0 mb-5 container-background">
             <div class="hero-destination">
-                <img srcset="{% static 'images/england_hero_320.webp' %} 320w, {% static 'images/england_hero_480.webp' %} 480w, {% static 'images/england_hero_640.webp' %} 640w, {% static 'images/england_hero_768.webp' %} 768w, {% static 'images/england_hero_1024.webp' %} 1024w, {% static 'images/england_hero_1280.webp' %} 1280w, {% static 'images/england_hero_1600.webp' %}  1600w, {% static 'images/england_hero_1920.webp' %}  1920w, {% static 'images/england_hero_3840.webp' %} 3840w" id="hero-scroll" class="hero-image-destination" sizes="100vw" decoding="async" draggable="false" alt="">
+                <img srcset="{% static 'images/england_hero_320.webp' %} 320w, {% static 'images/england_hero_480.webp' %} 480w, {% static 'images/england_hero_640.webp' %} 640w, {% static 'images/england_hero_768.webp' %} 768w, {% static 'images/england_hero_1024.webp' %} 1024w, {% static 'images/england_hero_1280.webp' %} 1280w, {% static 'images/england_hero_1600.webp' %}  1600w, {% static 'images/england_hero_1920.webp' %}  1920w, {% static 'images/england_hero_3840.webp' %} 3840w" id="hero-scroll" class="hero-image-destination" sizes="100vw" decoding="async" draggable="false" alt="England countryside with mountains">
                 <div class="destination-div">
                     <h1> England  </h1>
                     <p class="lead mt-3">Discover the charm of England's culture, landmarks, and history.</p>
@@ -29,10 +29,10 @@
         
         {% elif request.GET.destinations == "Scotland" %}
 
-        <!-- Hero -->
+        <!-- Scotland Hero -->
         <div class="container-fluid px-0 mb-5 container-background">
             <div class="hero-destination">
-                <img srcset="{% static 'images/scotland_hero_320.webp' %} 320w, {% static 'images/scotland_hero_480.webp' %} 480w, {% static 'images/scotland_hero_640.webp' %} 640w, {% static 'images/scotland_hero_768.webp' %} 768w, {% static 'images/scotland_hero_1024.webp' %} 1024w, {% static 'images/scotland_hero_1280.webp' %} 1280w, {% static 'images/scotland_hero_1600.webp' %}  1600w, {% static 'images/scotland_hero_1920.webp' %}  1920w, {% static 'images/scotland_hero_3840.webp' %} 3840w" id="hero-scroll" class="hero-image-destination" sizes="100vw" decoding="async" draggable="false" alt="">
+                <img srcset="{% static 'images/scotland_hero_320.webp' %} 320w, {% static 'images/scotland_hero_480.webp' %} 480w, {% static 'images/scotland_hero_640.webp' %} 640w, {% static 'images/scotland_hero_768.webp' %} 768w, {% static 'images/scotland_hero_1024.webp' %} 1024w, {% static 'images/scotland_hero_1280.webp' %} 1280w, {% static 'images/scotland_hero_1600.webp' %}  1600w, {% static 'images/scotland_hero_1920.webp' %}  1920w, {% static 'images/scotland_hero_3840.webp' %} 3840w" id="hero-scroll" class="hero-image-destination" sizes="100vw" decoding="async" draggable="false" alt="Scotland countryside with mountains">
                 <div class="destination-div">
                     <h1> Scotland  </h1>
                     <p class="lead mt-3">Uncover the beauty of Scotland's landscapes, history, and vibrant culture.</p>
@@ -54,10 +54,30 @@
 
         {% elif request.GET.destinations == "Wales" %}
 
-        <h2>Welcome to Wales!</h2>
-        <p>Experience the beauty of Wales and its vibrant culture.</p>
+        <!-- Wales Hero -->
+        <div class="container-fluid px-0 mb-5 container-background">
+            <div class="hero-destination">
+                <img srcset="{% static 'images/wales_hero_320.webp' %} 320w, {% static 'images/wales_hero_480.webp' %} 480w, {% static 'images/wales_hero_640.webp' %} 640w, {% static 'images/wales_hero_768.webp' %} 768w, {% static 'images/wales_hero_1024.webp' %} 1024w, {% static 'images/wales_hero_1280.webp' %} 1280w, {% static 'images/wales_hero_1600.webp' %}  1600w, {% static 'images/wales_hero_1920.webp' %}  1920w, {% static 'images/wales_hero_3840.webp' %} 3840w" id="hero-scroll" class="hero-image-destination" sizes="100vw" decoding="async" draggable="false" alt="Wales beach with mountains">
+                <div class="destination-div">
+                    <h1> Wales  </h1>
+                    <p class="lead mt-3">Explore the magic of Wales stunning scenery, rich heritage, and lively traditions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5 py-5 text-center">
+            <h2 class="mb-5">Wales Holiday listings </h2>
+            <p class="mt-5">
+                Wales offers a breathtaking mix of rugged coastlines, soaring mountains, and picturesque villages, making it a perfect destination for outdoor enthusiasts and culture lovers alike. Whether you're hiking through the Brecon Beacons, exploring medieval castles, or visiting vibrant Welsh-speaking communities, there's always something new to discover. Each region is full of character, from the serene beauty of Snowdonia to the bustling energy of Cardiff.
+            </p>
+            <p>
+                With a deep-rooted history and a passion for traditions, Wales invites you to experience its unique blend of past and present. Enjoy local delicacies, celebrate festivals, and immerse yourself in the warmth of Welsh hospitality. Whether you're after a quiet retreat in nature or a cultural adventure, our Wales listings offer the perfect place to stay, making it easy to plan your unforgettable getaway.
+            </p>
+        </div>
+
+
         
         {% endif %}
 
     </div>
-    {% endif %}
+{% endif %}
