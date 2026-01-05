@@ -78,7 +78,7 @@ class Property(models.Model):
     main_image = CloudinaryField(
         "image",
         default="placeholder",
-        folder="property_images"
+        folder="property_images",
     )
 
     description = models.TextField(blank=True, null=True)
@@ -130,7 +130,9 @@ class PropertyImage(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name="extra_images")
     image = CloudinaryField(
         "image",
-        folder="property_images")
+        folder="property_images",
+        blank=True
+    )
 
     def __str__(self):
         return f"Extra Image for {self.property.property_name}"

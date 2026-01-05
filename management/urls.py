@@ -12,6 +12,7 @@ urlpatterns = [
 
     # Listing
     path('listings_list/', views.listing_management, name='listings_list'),
+    path('listings/create/', views.listing_create, name='create_listing'),
     path('listing/edit/<int:pk>/', views.listing_update, name='edit_listing'),
     path('listing/delete/<int:pk>/', views.listing_delete, name='delete_listing'),
     path('listing/<int:pk>/delete-image/<int:image_id>/', views.delete_property_image, name='delete_property_image'),

@@ -125,6 +125,42 @@ def listing_management(request):
 
 
 @login_required
+def listing_create(request):
+     """
+     Create Listing
+     """
+     if not request.user.is_staff:
+          return redirect("home")
+     
+     if request.method == "POST":
+          create_form = ListingForm(request.POST, request.FILES)
+          add_image = ImagesForm(request.POST, request.FILES)
+
+          if create_form.is_valid() and add_image.is_valid():
+               property = create_form.save()
+
+               image = add_image.save(commit=False)
+
+               image.property = property
+               image.save()
+
+               messages.success(request, "Property Successfully Added")
+               return redirect("listings_list")
+
+
+     else:
+          create_form = ListingForm()
+          add_image = ImagesForm()
+
+     context = {
+          "create_form" : create_form,
+          "add_image" : add_image,
+     }
+     
+     return render(request, "management/create_listing_form.html", context)
+
+
+@login_required
 def listing_update(request, pk):
      """
      Update Listing
@@ -171,8 +207,8 @@ def listing_delete(request, pk):
      if not request.user.is_staff:
           return redirect("home")
 
-     listing = get_object_or_404(listing, pk=pk)
-     listing.delete()
+     property = get_object_or_404(Property, pk=pk)
+     property.delete()
      messages.success(request, "Listing Deleted Successfully")
      return redirect("listings_list")
 

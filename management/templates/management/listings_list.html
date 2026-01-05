@@ -13,12 +13,18 @@
         <div class="row g-0 min-vh-100">
             <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
                 {% include "partials/sidebar.html" %}
+                
             </aside>
             <main class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center mb-4">
                     <h1 class="mb-5"> Listings </h1>
                     {% include "partials/mobile_sidebar.html" %}
+
+                    <div class="text-start mb-5">
+                        <a href="{% url 'create_listing' %}" class="btn btn-primary"> Add Property </a>
+                    </div>
                     <div class="table-responsive">
+                        
                         <table class="table table-striped mb-0">
                             <thead>
                                 <tr>
