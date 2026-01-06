@@ -107,24 +107,30 @@
       <div class="grid-container">
         <!-- Cornwall-->
         <div class="box box-1">
-          <div class="text-container">
-            <h3 class="destination-text mb-0"> Cornwall </h3>
-          </div>
-          <img src="{% static 'images/cornwall.webp' %}" class="popular-image" loading="lazy" draggable="false">
+          <a href="{% url 'properties' %}?q=cornwall" class="card-link">
+            <img src="{% static 'images/cornwall.webp' %}" class="popular-image" loading="lazy" draggable="false">
+            <div class="text-container">
+              <h3 class="destination-text mb-0"> Cornwall </h3>
+            </div>
+          </a>
         </div>
         <!-- Edinburgh -->
         <div class="box box-2">
+          <a href="{% url 'properties' %}?q=edinburgh" class="card-link">
+            <img src="{% static 'images/edinburgh.webp' %}" class="popular-image" loading="lazy" draggable="false">
             <div class="text-container">
               <h3 class="destination-text mb-0"> Edinburgh </h3>
             </div>
-          <img src="{% static 'images/edinburgh.webp' %}" class="popular-image" loading="lazy" draggable="false">
+          </a>
         </div>
         <!-- Dorset-->
         <div class="box box-3">
-          <div class="text-container">
+          <a href="{% url 'properties' %}?q=dorset" class="card-link">
+            <img src="{% static 'images/dorset.webp' %}" class="popular-image" loading="lazy" draggable="false">
+            <div class="text-container">
               <h3 class="destination-text mb-0"> Dorset </h3>
-          </div>
-          <img src="{% static 'images/dorset.webp' %}" class="popular-image" loading="lazy" draggable="false">
+            </div>
+          </a>
         </div>
       </div>
     </div>
