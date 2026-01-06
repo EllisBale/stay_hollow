@@ -11,10 +11,11 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
 
 /* ====== Hero ====== */
 .hero {
-    width: 100%;
+    width: auto;
     height: calc(100vh - 56px);
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .container-background {background: #000;}
@@ -115,7 +116,6 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     background-color: #000;
 }
 
-
 .contact-div {
     position: absolute;
     z-index: 3;
@@ -127,7 +127,6 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     color: #ffffff;
 
 }
-
 
 .card > a {text-decoration: underline;}
 

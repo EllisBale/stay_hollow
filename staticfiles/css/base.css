@@ -11,13 +11,16 @@
 }
 
 
-html {scroll-behavior: auto;}
+html {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     padding-top: 0px;
+    display: flex;
     background-color: #f3f1f1;
     color: #0a0a0a !important;
-    display: flex;
 }
 
 
@@ -129,6 +132,7 @@ footer  a {color: #fff !important;}
     padding: 0.5rem 1rem;
     z-index: 999;
 }
+
 
 .back-to-top.is-hidden {display: none;}
 
