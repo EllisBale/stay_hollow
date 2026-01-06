@@ -21,6 +21,7 @@ body {
     display: flex;
     background-color: #f3f1f1;
     color: #0a0a0a !important;
+    height: 100%;
 }
 
 

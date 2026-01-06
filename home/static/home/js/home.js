@@ -7,14 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let scale = 1 + scrollY / 1100;
         let searchScale = 1 - scrollY / 1800;
-        
-
 
         if (scale >= 1.8) {
             scale = 1.8;
-
         }
-
         else {
             heroImage.style.transform = `scale(${scale})`;
             searchBar.style.transform = `
