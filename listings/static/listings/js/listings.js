@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const heroImage = document.getElementById("hero-scroll"); // Hero image 
 
+    if (!heroImage) 
+        return;
+
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
         const scale = 1 + scrollY / 1100;

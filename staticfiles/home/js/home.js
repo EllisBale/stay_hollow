@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
 
+        if (!heroImage) 
+            return;
+
         let scale = 1 + scrollY / 1100;
         let searchScale = 1 - scrollY / 1800;
 

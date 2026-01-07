@@ -124,9 +124,9 @@ li {list-style: none;}
 }
 
 .active > .page-link {
-    background-color: #2F6F3E;
+    background-color: #69777cbd;
     color: #fff;
-    border: solid #00000067 1px;
+    border:  0px;
     border-radius: 0px;
 }
 

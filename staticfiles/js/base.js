@@ -5,6 +5,16 @@ $(document).ready(function () {
     })
 
 
+    /*const toast = document.getElementById(alerts)
+
+    if (toast) {
+        console.log(toast)
+    } else {
+        console.log("Toast not found")
+    }*/
+
+
+
     const scrollDistance = 500;
     const desktopWidth = 992;
 
