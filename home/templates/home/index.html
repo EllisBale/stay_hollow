@@ -36,7 +36,7 @@
             <div class="card shadow-sm h-100">
               <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}" loading="lazy">
               <div class="card-body">
-                <h5 class="card-title">{{ property.property_name }}</h5>
+                <h3 class="card-title">{{ property.property_name }}</h3>
                 {% if property.destinations.parent_destination %}
                     <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} > {{ property.destinations.name }}</p>
                 {% else %}
@@ -68,7 +68,7 @@
               <i class="fa-regular fa-credit-card fa-4x"></i>
             </div>
             <div class="text-break">
-              <h4>Best Price Guarantee</h4>
+              <h3>Best Price Guarantee</h3>
               <p class="mt-4">Get the best rates for your dream holiday. We offer competitive pricing with no hidden fees.</p>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <i class="fa-regular fa-circle-check fa-4x"></i>
             </div>
             <div class="text-break">
-              <h4>Verified Trusted Listings</h4>
+              <h3>Verified Trusted Listings</h3>
               <p class="mt-4">All our holiday homes are verified and meet high standards for comfort and safety. Book with confidence.</p>
             </div>
           </div>
@@ -92,7 +92,7 @@
                 <i class="fas fa-life-ring fa-4x"></i>
             </div>
               <div class="text-break">
-                <h4>Dedicated Guest Support</h4>
+                <h3>Dedicated Guest Support</h3>
                 <p class="mt-4">Get the best rates for your dream holiday. We offer competitive pricing with no hidden fees.</p>
               </div>
             </div>
@@ -111,7 +111,7 @@
             <img src="{% static 'images/cornwall.webp' %}" class="popular-image" alt="Beach in Cornwall during sunset" loading="lazy" draggable="false">
             <div class="text-container">
               <h3 class="destination-text mb-0"> Cornwall </h3>
-              <button class="btn"> View Properties</button>
+              <span class="btn"> View Properties</span>
             </div>
           </a>
         </div>
@@ -121,7 +121,7 @@
             <img src="{% static 'images/edinburgh.webp' %}" class="popular-image" alt="Castle in Edinburgh" loading="lazy" draggable="false">
             <div class="text-container">
               <h3 class="destination-text mb-0"> Edinburgh </h3>
-              <button class="btn"> View Properties</button>
+              <span class="btn"> View Properties</span>
             </div>
           </a>
         </div>
@@ -131,7 +131,7 @@
             <img src="{% static 'images/dorset.webp' %}" class="popular-image" alt="Beach in Dorset" loading="lazy" draggable="false">
             <div class="text-container">
               <h3 class="destination-text mb-0"> Dorset </h3>
-              <button class="btn"> View Properties</button>
+              <span class="btn"> View Properties</span>
             </div>
           </a>
         </div>

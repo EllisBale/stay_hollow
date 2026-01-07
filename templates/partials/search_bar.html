@@ -5,6 +5,9 @@
             <div class="col-12 mt-5">
                 <form method="GET" action="{% url 'properties' %}">
                     {% csrf_token %}
+                    <label for="search-bar" class="visually-hidden">
+                        Search properties
+                    </label>
                     <div class="input-group">
                         <input id="search-bar" class="form-control border shadow-none  rounded-0" type="text" name="q"
                         placeholder="Search our site">

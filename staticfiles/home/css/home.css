@@ -212,19 +212,20 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     transform: translateZ(0);
 }
 
-.text-container > button {
+.text-container > .btn {
     align-self: end;
     width: 100%;
     color: #fff;
     border: none;
     transition: transform 0.3s ease-out;
+    display: inline-block;
 }
 
-.text-container, button:hover button:active {
+.text-container, .btn:hover .btn:active {
     color: #fff;
 }
 
-.box:hover  button {
+.box:hover  .btn {
     transform:translateY(-11px);
     transition: 0.3s ease-out;
     
