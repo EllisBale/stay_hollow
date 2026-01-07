@@ -8,29 +8,28 @@
 <div class="container py-5">
     <h1 class="mb-5 text-center"> Order History </h1>
     <h2> Recent Orders </h2>
-        <table class="table">
-            <thead>
-                <tr>
+    <table class="table">
+        <thead>
+            <tr>
                 <th scope="col">Order Number</th>
                 <th scope="col">Date ordered</th>
                 <th scope="col">Order Total</th>
                 <th scope="col">Check-in/Check-out</th>
                 <th scope="col">Property</th>
                 </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
+            {% for order in orders %}
                 <tr>
-                {% for order in orders %}
-                    <td scope="row" class="text-break">{{ order.order_number }}</td>
+                    <td class="text-break">{{ order.order_number }}</td>
                     <td class="text-break">{{ order.date }}</td>
                     <td class="text-break">£{{ order.order_total }}</td>
                     <td class="text-break">{{ order.booking.check_in}} => {{ order.booking.check_out}}</td>
                     <td class="text-break">{{ order.booking.property }}</td>
-                    </tr>
-                {% endfor %}
                 </tr>
-            </tbody>
-        </table>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
     

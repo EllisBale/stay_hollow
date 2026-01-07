@@ -14,7 +14,7 @@
             <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
                 {% include "partials/sidebar.html" %}
             </aside>
-            <main class="col-lg-10 p-4 text-center px-5">
+            <div class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center mb-4">
                     <h1 class="mb-5"> Users </h1>
                     {% include "partials/mobile_sidebar.html" %}
@@ -31,38 +31,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
                                     {% for user in users %}
-                                        <td scope="row" class="text-break">{{ user.username }}</td>
+                                    <tr>
+                                        <td class="text-break">{{ user.username }}</td>
                                         <td class="text-break">{{ user.email }}</td>
                                         <td class="text-break">{{ user.first_name }}</td>
                                         <td class="text-break">{{ user.last_name }}</td>
                                         <td class="text-break">{{ user.is_staff }}</td>
                                         <td class="text-center">
-                                        {% if request.user.is_staff %}
-                                            {% if user.is_superuser and not request.user.is_superuser %}
-                                                <span> Cannot Edit/Delete Super User </span>
-                                            {% else %}
-                                                <a href="{% url 'user_form' user.pk %}" class="btn btn-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
-                                                <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
-                                                    {% csrf_token %}
+                                            {% if request.user.is_staff %}
+                                                {% if user.is_superuser and not request.user.is_superuser %}
+                                                    <span> Cannot Edit/Delete Super User </span>
+                                                {% else %}
+                                                    <a href="{% url 'user_form' user.pk %}" class="btn btn-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
+                                                    <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
+                                                        {% csrf_token %}
 
-                                                    <button type="submit" class="btn btn-sm btn-danger mb-1  delete-btn">Delete</button>
-                                                </form>
+                                                        <button type="submit" class="btn btn-sm btn-danger mb-1  delete-btn">Delete</button>
+                                                    </form>
+                                                {% endif %}
                                             {% endif %}
-                                        {% endif %}
                                         </td>
-                                        </tr>
+                                    </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                 </div>
                 {% include "partials/pagination.html" %}
-            </main>
+            </div>
         </div>
     </div>
-              
-    </div>
-</div>
 {% endblock %}

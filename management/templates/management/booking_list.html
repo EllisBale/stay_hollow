@@ -14,7 +14,7 @@
             <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
                 {% include "partials/sidebar.html" %}
             </aside>
-            <main class="col-lg-10 p-4 text-center px-5">
+            <div class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center mb-4">
                     <h1 class="mb-5"> Bookings </h1>
                     {% include "partials/mobile_sidebar.html" %}
@@ -32,33 +32,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
                                 {% for booking in bookings %}
-                                    <td scope="row" class="text-break">{{ booking.property }}</td>
-                                    <td class="text-break">{{ user.email }}</td>
-                                    <td class="text-break">{{ booking.check_in }}</td>
-                                    <td class="text-break">{{ booking.check_out }}</td>
-                                    <td class="text-break">{{ booking.guests }}</td>
-                                    <td class="text-break">£{{ booking.total_price }}</td>
-                                    <td class="text-center">
-                                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
-                                        <form method="POST" action="{% url 'delete_booking' booking.id %}" class="d-inline">
-                                            {% csrf_token %}
-                                                <button type="submit" class="btn btn-sm btn-danger mb-1 delete-btn">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="text-break">{{ booking.property }}</td>
+                                        <td class="text-break">{{ user.email }}</td>
+                                        <td class="text-break">{{ booking.check_in }}</td>
+                                        <td class="text-break">{{ booking.check_out }}</td>
+                                        <td class="text-break">{{ booking.guests }}</td>
+                                        <td class="text-break">£{{ booking.total_price }}</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'edit_booking' booking.id %}" class="btn btn-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
+                                            <form method="POST" action="{% url 'delete_booking' booking.id %}" class="d-inline">
+                                                {% csrf_token %}
+                                                    <button type="submit" class="btn btn-sm btn-danger mb-1 delete-btn">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 {% endfor %}
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 {% include "partials/pagination.html" %}
-            </main>
+            </div>
         </div>
     </div>
-              
-    </div>
-</div>
 {% endblock %}

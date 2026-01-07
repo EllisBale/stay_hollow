@@ -14,7 +14,7 @@
             <aside class="col-lg-2 d-none d-lg-block bg-light p-3 sidebar">
                 {% include "partials/sidebar.html" %}
             </aside>
-            <main class="col-lg-10 p-4 text-center px-5">
+            <div class="col-lg-10 p-4 text-center px-5">
                 <div class="row justify-content-center mb-4">
                     <h1 class="mb-5"> Reviews </h1>
                     {% include "partials/mobile_sidebar.html" %}
@@ -32,9 +32,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
                                 {% for review in reviews %}
-                                    <td scope="row" class="text-break">{{ review.user }}</td>
+                                <tr>
+                                    <td class="text-break">{{ review.user }}</td>
                                     <td class="text-break">{{ review.user.first_name }}</td>
                                     <td class="text-break">{{ review.booking }}</td>
                                     <td class="text-break">{{ review.booking.property }}</td>
@@ -45,19 +45,15 @@
                                             {% csrf_token %}
                                             <button type="submit" class="btn btn-sm btn-danger mb-1 delete-btn">Delete</button>
                                         </form>
-                                     </td>
+                                    </td>
                                 </tr>
                                 {% endfor %}
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 {% include "partials/pagination.html" %}
-            </main>
+            </div>
         </div>
     </div>
-              
-    </div>
-</div>
 {% endblock %}
