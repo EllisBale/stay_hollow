@@ -1,8 +1,11 @@
+/* jshint esversion: 11 */
+/* jshint esversion: 11, jquery: true */
+
 $(document).ready(function () {
 
     $("#btn-to-top").on("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth"})
-    })
+        window.scrollTo({ top: 0, behavior: "smooth"});
+    });
 
     const scrollDistance = 500;
     const desktopWidth = 992;
@@ -34,7 +37,7 @@ $(document).ready(function () {
     backToTop();
 
 
-    const alertcontainer = document.getElementById("alerts") // alerts
+    const alertcontainer = document.getElementById("alerts"); // alerts
 
     if (alertcontainer) {
         alertcontainer.addEventListener("click", function(event) {
@@ -44,7 +47,7 @@ $(document).ready(function () {
                     alertbox.style.display = "none";
                 }
             }
-        })
+        });
     }
 
 });

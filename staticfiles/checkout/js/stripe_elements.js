@@ -1,3 +1,6 @@
+/* jshint esversion: 11 */
+/* jshint esversion: 11, jquery: true */
+
 /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
@@ -67,10 +70,10 @@ form.addEventListener('submit', function(ev) {
     };
     var url = '/checkout/cache_checkout_data/';
 
-    var firstName = $.trim(form.first_name.value)
+    var firstName = $.trim(form.first_name.value);
     var lastName = $.trim(form.last_name.value);
 
-    var fullName = `${firstName} ${lastName}`
+    var fullName = `${firstName} ${lastName}`;
 
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
@@ -123,5 +126,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // just reload the page, the error will be in django messages
         location.reload();
-    })
+    });
 });

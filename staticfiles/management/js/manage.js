@@ -1,3 +1,4 @@
+/* jshint esversion: 11 */
 document.addEventListener("DOMContentLoaded", () => {
 
    const deleteBtns = document.querySelectorAll(".delete-btn");

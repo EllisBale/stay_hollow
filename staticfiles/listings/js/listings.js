@@ -1,3 +1,4 @@
+/* jshint esversion: 11 */
 document.addEventListener("DOMContentLoaded", () => {
     const heroImage = document.getElementById("hero-scroll"); // Hero image 
 
