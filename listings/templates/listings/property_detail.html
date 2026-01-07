@@ -41,13 +41,13 @@
     <div class="container py-2 pb-5 px-3">
         <!-- Overview -->
         <div class="col-12 px-0">
-            <h4 class="mb-3"> Overview </h4>
+            <h2 class="mb-3"> Overview </h2>
             <p>{{ property.description }}</p>
         </div>
         <hr>
         <!-- Amenities -->
         <div class="row g-3 justify-content-start mt-5 mb-5 px-5 pt-3 pb-5 feat-section">
-                <h4 class="mb-3"> Amenities </h4>
+                <h3 class="mb-3"> Amenities </h3>
                 {% for amenity in property.amenities.all %}
                     <div class="col-5 col-sm-6 col-md-4 d-flex align-items-center justify-content-start pl-0">
                         {% if amenity.icon_class %}
@@ -68,7 +68,7 @@
                 <div id="map"></div>
             </div>
              <div class="col-12 col-lg-6 pt-4 pt-lg-4 px-lg-5 pb-5">
-                <h4 class="mb-3">Location</h4>
+                <h2 class="mb-3">Location</h2>
                 <p>
                     {% if property.destinations and property.destinations.area_description %}
                         {{ property.destinations.area_description }}
@@ -81,7 +81,7 @@
         <hr>
             <!-- Reviews -->
             <div class="container px-0 mt-5">
-                <h4> Reviews </h4>
+                <h2> Reviews </h2>
                 {% if reviews %}
                     <p class="text-break mb-3">{{ reviews|length }} reviews</p>
                 {% endif %}
@@ -124,7 +124,7 @@
                     View all reviews
                     </button>
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -159,12 +159,8 @@
                 {% else %}
                 {% endif %}
             </div>
-        
-            
-
-
-
     </div>
+    <!-- Back to top button -->
     {% include "partials/back_to_top_btn.html" %}
 
 {% endblock %}
