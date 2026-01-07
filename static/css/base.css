@@ -73,6 +73,13 @@ footer  a {color: #fff !important;}
 
 /* ===== Buttons ===== */
 
+.close-btn:active, .close-btn:focus {
+    border: 0px;
+}
+
+.close-btn {
+    border: 0px;
+}
 .btn {
   border-radius: 0rem;
   font-weight: 700;

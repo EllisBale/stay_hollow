@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
         const scale = 1 + scrollY / 1100;
-        
+
         heroImage.style.transform = `scale(${scale})`;
     });
 

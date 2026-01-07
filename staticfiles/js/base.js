@@ -4,21 +4,10 @@ $(document).ready(function () {
         window.scrollTo({ top: 0, behavior: "smooth"})
     })
 
-
-    /*const toast = document.getElementById(alerts)
-
-    if (toast) {
-        console.log(toast)
-    } else {
-        console.log("Toast not found")
-    }*/
-
-
-
     const scrollDistance = 500;
     const desktopWidth = 992;
 
-    function backToTop() {
+    function backToTop() { // back to top button function
         const $btn = $(".back-to-top");
 
         if (window.innerWidth >= desktopWidth) {
@@ -43,5 +32,20 @@ $(document).ready(function () {
 
     $(window).on("scroll resize", backToTop);
     backToTop();
+
+
+    const alertcontainer = document.getElementById("alerts") // alerts
+
+    if (alertcontainer) {
+        alertcontainer.addEventListener("click", function(event) {
+            if (event.target.classList.contains("close-btn")) {
+                const alertbox = event.target.closest(".alert");
+                if (alertbox) {
+                    alertbox.style.display = "none";
+                }
+            }
+        })
+    }
+
 
 });
