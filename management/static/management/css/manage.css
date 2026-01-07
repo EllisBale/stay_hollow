@@ -9,6 +9,7 @@ main {position: relative;}
     position: sticky;
     height: calc(100vh - 66px);
     top: 66px;
+    background-color: #ffffff !important;
 }
 
 .sidebar-div {position: fixed;}

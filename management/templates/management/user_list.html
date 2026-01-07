@@ -43,11 +43,11 @@
                                             {% if user.is_superuser and not request.user.is_superuser %}
                                                 <span> Cannot Edit/Delete Super User </span>
                                             {% else %}
-                                                <a href="{% url 'user_form' user.pk %}" class="btn btn-outline-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
+                                                <a href="{% url 'user_form' user.pk %}" class="btn btn-warning btn-sm mb-1 me-0 me-md-1">Edit</a>
                                                 <form method="POST" action="{% url 'delete_user' user.pk %}" class="d-inline">
                                                     {% csrf_token %}
 
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger mb-1  delete-btn">Delete</button>
+                                                    <button type="submit" class="btn btn-sm btn-danger mb-1  delete-btn">Delete</button>
                                                 </form>
                                             {% endif %}
                                         {% endif %}

@@ -34,7 +34,7 @@
             <div class="card shadow-sm h-100">
               <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
               <div class="card-body">
-                <h5 class="card-title">{{ property.property_name }}</h5>
+                <h3 class="card-title">{{ property.property_name }}</h3>
                 {% if property.destinations.parent_destination %}
                     <p><i class="fa-solid fa-location-dot"></i> {{ property.destinations.parent_destination.name }} > {{ property.destinations.name }}</p>
                 {% else %}
