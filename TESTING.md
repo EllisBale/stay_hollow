@@ -29,28 +29,15 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 ### CSS
 
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-2. If you are copying/pasting your CSS code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-
-It's recommended to validate the live site for your primary CSS file on the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https://stay-hollow-9b3793ea0059.herokuapp.com
-
-If you have additional/multiple CSS files, then individual "[validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)" is recommended for the extra CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using external libraries/frameworks (e.g: Bootstrap, Materialize, Font Awesome, etc.), then sometimes the tool will attempt to also validate these, even though it's not part of your own actual code that you wrote. You are not required to validate the external libraries or frameworks!
-
-⚠️ --- END --- ⚠️
-
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
-| Directory | File                                                                                 | URL                     | Screenshot                                                   | Notes                    |
-| --------- | ------------------------------------------------------------------------------------ | ----------------------- | ------------------------------------------------------------ | ------------------------ |
-| static    | [style.css](https://github.com/EllisBale/stay_hollow/blob/main/static/css/style.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-static-style.png) | ⚠️ Notes (if applicable) |
+| Directory        | File                                                                                                                         | URL                                                                                             | Screenshot                                                      | Notes     |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------- |
+| base.css         | [base.css](https://github.com/EllisBale/stay_hollow/blob/main/static/css/base.css)                                           | [Link](https://stay-hollow-9b3793ea0059.herokuapp.com/static/css/base.css)                      | ![screenshot](docs/testing_imgs/css_valid/css_base.png)         | No Issues |
+| home.css         | [home.css](https://github.com/EllisBale/stay_hollow/blob/main/home/static/home/css/home.css)                                 | [Link](https://stay-hollow-9b3793ea0059.herokuapp.com/static/home/css/home.css)                 | ![screenshot](docs/testing_imgs/css_valid/css_home.png)         | No Issues |
+| listings.css     | [listings.css](https://github.com/EllisBale/stay_hollow/blob/main/listings/static/listings/css/listings.css)                 | [Link](https://stay-hollow-9b3793ea0059.herokuapp.com/static/listings/css/listings.css)         | ![screenshot](docs/testing_imgs/css_valid/css_listing.png)      | No Issues |
+| manage.css       | [manage.css](https://github.com/EllisBale/stay_hollow/blob/main/management/static/management/css/manage.css)                 | [Link](https://stay-hollow-9b3793ea0059.herokuapp.com/static/management/css/manage.css)         | ![screenshot](docs/testing_imgs/css_valid/css_manage.png)       | No Issues |
+| user_account.css | [user_account.css](https://github.com/EllisBale/stay_hollow/blob/main/user_account/static/user_account/css/user_account.css) | [Link](https://stay-hollow-9b3793ea0059.herokuapp.com/static/user_account/css/user_account.css) | ![screenshot](docs/testing_imgs/css_valid/css_user_account.png) | No Issues |
 
 ### JavaScript
 
