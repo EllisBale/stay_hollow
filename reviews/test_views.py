@@ -80,7 +80,7 @@ class AddReviewViewTests(TestCase):
         self.assertContains(response, "form")
 
     # -------------------------
-    #  User with paid booking can access
+    #  Valid POST create review
     # -------------------------
 
     def test_user_with_paid_booking_can_view_form(self):
@@ -104,4 +104,3 @@ class AddReviewViewTests(TestCase):
             response,
             reverse("property_detail", args=[self.property.id])
         )
-

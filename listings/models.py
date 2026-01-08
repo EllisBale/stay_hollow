@@ -77,7 +77,7 @@ class Property(models.Model):
     
     main_image = CloudinaryField(
         "image",
-        default="placeholder",
+        default="placeholder.jpg",
         folder="property_images",
     )
 
