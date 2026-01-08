@@ -32,9 +32,3 @@ def create_booking(request, property_id):
         "form": form,
         "property": property_obj,
     })
-
-
-
-@login_required
-def booking_success(request):
-    return render(request, "bookings/booking_success.html")
