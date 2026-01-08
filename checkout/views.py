@@ -44,7 +44,7 @@ def checkout(request, booking_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    booking = get_object_or_404(Booking, pk=booking_id)
+    booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
 
 
     # Handles form submission (POST)
