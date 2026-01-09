@@ -208,6 +208,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | As an Admin,         | I want to add, edit, or remove property listings                               | so I can control what’s shown on the website.                              |
 | As an Admin,         | I want to view and manage user accounts                                        | so I can assist customers when needed.                                     |
 | As an Admin,         | I want to moderate or remove inappropriate reviews,                            | so that I can maintain the platform’s reputation.                          |
+| As an Admin,         | I want to view and manage user bookings                                        | so I can assist customers when needed.                                     |
 
 ## Features
 
