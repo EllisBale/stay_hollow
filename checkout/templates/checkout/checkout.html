@@ -4,32 +4,47 @@
 
 {% block content %}
 <div class="container py-5 text-center">
-    <h1 class="text-center">Checkout</h1>
+    <div class="row">
+        <div class="col-12 col-md-7 card py-3 rounded-0 border-0 order-2 order-md-1">
+            <h1 class="text-center">Checkout</h1>
+            <form id="payment-form" method="POST">
+                {% csrf_token %}
 
-    <form id="payment-form" method="POST">
-        {% csrf_token %}
+                {{ order_form|crispy }}
 
-        {{ order_form|crispy }}
+                <fieldset class="px-3 mt-4">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
 
-        <fieldset class="px-3 mt-4">
-            <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                    <!-- The Stripe card element goes here -->
+                    <div id="card-element" class="mb-3"></div>
 
-            <!-- The Stripe card element goes here -->
-            <div id="card-element" class="mb-3"></div>
+                    <!-- Error messages -->
+                    <div id="card-errors" class="text-danger mb-3" role="alert"></div>
 
-            <!-- Error messages -->
-            <div id="card-errors" class="text-danger mb-3" role="alert"></div>
+                    <!-- Hidden client secret -->
+                    <input type="hidden" id="client_secret" name="client_secret" value="{{ client_secret }}">
 
-            <!-- Hidden client secret -->
-            <input type="hidden" id="client_secret" name="client_secret" value="{{ client_secret }}">
+                </fieldset>
 
-        </fieldset>
+                <button id="submit-button" type="submit" class="btn btn-primary mt-3">
+                    Complete Payment £{{ booking.total_price}}
+                </button>
+            </form>
+        </div>
 
-        <button id="submit-button" type="submit" class="btn btn-primary mt-3">
-            Complete Payment £{{ booking.total_price}}
-        </button>
+        <div class="col-12 col-md-5 px-lg-5 py-lg-5 mb-5 mb-lg-0    mt-5 mt-md-0 order-1 order-md-2">
+            <div class="card rounded-0 border-0 py-3 px-3 py-md-5 px-md-5">
+                <h2 class="pb-3"> Booking Summary </h2>
+                <p>Property: {{ booking.property }}</p>
+                <p> Check in: {{ booking.check_in }} </p>
+                <p> Check Out: {{ booking.check_out }} </p>
+                <hr>
+                <p><strong>Total Payment: £{{ booking.total_price}}</strong> </p>
+                <hr>
+            </div>
 
-    </form>
+        </div>
+    </div>
 </div>
 
 <script src="https://js.stripe.com/v3/"></script>
