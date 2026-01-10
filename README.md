@@ -119,7 +119,7 @@ The platform provides an admin interface that allows administrators and managers
     - Links to Home, Listings, Destinations, Contact, Account, About, Manage and Logout.
 
 - **Hierarchy**:
-  - Prominent product categories and filters for easy navigation.
+  - Well-structured holiday categories and filters for seamless browsing.
 
 **User Flow**
 
@@ -145,15 +145,16 @@ The platform provides an admin interface that allows administrators and managers
 
 The website primarily uses light colours, mainly shade of white with slightly darker accents. For the navigation bar, I chose `#2F6F3E`, a type of green that is associated with nature and relaxation and complements well with a holiday letting website. The navbar button background colours include `#ffffff` and transparent, helping maintain a clean and simple design. The text colours on the page are mainly black to maintain a good contrast ratio with the background and ensure readability.
 
-I used [coolors.co](https://coolors.co/2f6f3e-f3f1f1-245a32-e8e7e7) to generate my colour palette.
+I used [coolors.co](https://coolors.co/2f6f3e-f3f1f1-1f2f24-245a32-e8e7e7) to generate my colour palette.
 
 - `#0a0a0a` primary text and headings.
 - `#f3f1f1` body background.
 - `#2F6F3E` Navbar and transparent button background.
-- `#245A32;` Book Now button.
-- `#E8E7E7;` Light gray background for some sections.
+- `#245A32` Book Now button.
+- `#E8E7E7` Light gray background for some sections.
+- `#1f2f24` Dark green for footer background colour.
 
-![screenshot](documentation/coolors.png)
+![screenshot](docs/readme_imgs/colours.png)
 
 ### Typography
 
