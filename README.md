@@ -413,24 +413,18 @@ source: [Mermaid](https://mermaid.live/edit#pako:eNqdVm1vmzAQ_ivIUr-1FaQhS_mWLax
 
 ### GitHub Projects
 
-⚠️ TIP ⚠️
-
-Consider adding screenshots of your Projects Board(s), Issues (open and closed), and Milestone tasks.
-
-⚠️ --- END ---⚠️
-
 [GitHub Projects](https://www.github.com/EllisBale/stay_hollow/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
-![screenshot](documentation/gh-projects.png)
+![screenshot](docs/readme_imgs/github_project.png)
 
 ### GitHub Issues
 
 [GitHub Issues](https://www.github.com/EllisBale/stay_hollow/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
 
-| Link                                                                                                                                                                                                                                                                        | Screenshot                                        |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug)             | ![screenshot](documentation/gh-issues-open.png)   |
-| [![GitHub closed issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
+| Link                                                                                                                                                                                                                                                                        | Screenshot                                              |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [![GitHub issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug)             | ![screenshot](docs/readme_imgs/close_github_issues.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](docs/readme_imgs/github_issues.png)       |
 
 ### MoSCoW Prioritization
 
@@ -722,6 +716,18 @@ There are no remaining major differences between the local version when compared
 #### Listing images used:
 
 - [Hero Image](https://pixabay.com/photos/building-interior-design-furnitures-8484196/) by 23555986
+
+- [England Destination Image](https://pixabay.com/photos/lake-district-england-countryside-4098349/) by Northern_Punkie
+
+- [Scotland Destination Image](https://pixabay.com/photos/scotland-mountains-road-lonely-4276144/) by McRonny
+
+- [Wales Destination Image ](https://pixabay.com/photos/coast-ocean-cliffs-beach-wales-4537432/) by diego_torres
+
+- [Edinburgh Destination Image](https://pixabay.com/photos/edinburgh-castle-edinburgh-castle-997077/) by Walkerssk
+
+- [Dorset Destination Image](https://pixabay.com/photos/bay-ship-ocean-dorset-england-1787065/) by diego_torres
+
+- [Cornwall Destination Image](https://pixabay.com/id/photos/cornwall-lanskap-pesisir-2391906/) by Kathy_Büscher
 
 - [Whitwave House](https://pixabay.com/photos/architecture-render-external-design-1477101/) by Giovanni_cg
 
