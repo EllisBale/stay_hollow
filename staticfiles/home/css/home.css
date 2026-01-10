@@ -54,6 +54,33 @@ aside.alert.my-0.alert-success.rounded-0.text-center.popup {
     background: none;
 }
 
+
+#search-button {
+    font-size: 1.1rem;
+}
+
+
+.clear-button {
+    background-color:#252222a8;
+    border: 0;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.clear-button:hover {
+    color: #fff;
+    background-color:#252222cb;
+}
+
+.clear-button:active {
+    border: 0;
+    color: #fff !important;
+    background-color:#252222a8 !important;
+}
+
+
 /* ===== Card ===== */
 
 .card-img-top { 
