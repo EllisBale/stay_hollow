@@ -4,6 +4,8 @@
     {% trans "Email Addresses" %}
 {% endblock head_title %}
 {% block content %}
+<div class="container py-5 text-center">
+    <div class="card rounded-0 border-0 py-5">
     {% element h1 %}
         {% trans "Email Addresses" %}
     {% endelement %}
@@ -72,6 +74,8 @@
             {% endslot %}
         {% endelement %}
     {% endif %}
+    </div>
+</div>
 {% endblock content %}
 {% block extra_body %}
     <script src="{% static 'account/js/account.js' %}"></script>
