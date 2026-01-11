@@ -178,40 +178,28 @@ I've tested my deployed project to check for responsiveness issues.
 
 ## Browser Compatibility
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various browsers. Consider testing at least 3 different browsers, if available on your system. You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
-
-Recommended browsers to consider:
-
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-
-**IMPORTANT**: You must provide screenshots of the browsers you've tested, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time. Some of these are paid services, but some are free. If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Page             | Chrome                                                            | Firefox                                                            | Safari                                                            | Notes             |
-| ---------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------- | ----------------- |
-| Register         | ![screenshot](documentation/browsers/chrome-register.png)         | ![screenshot](documentation/browsers/firefox-register.png)         | ![screenshot](documentation/browsers/safari-register.png)         | Works as expected |
-| Login            | ![screenshot](documentation/browsers/chrome-login.png)            | ![screenshot](documentation/browsers/firefox-login.png)            | ![screenshot](documentation/browsers/safari-login.png)            | Works as expected |
-| Profile          | ![screenshot](documentation/browsers/chrome-profile.png)          | ![screenshot](documentation/browsers/firefox-profile.png)          | ![screenshot](documentation/browsers/safari-profile.png)          | Works as expected |
-| Home             | ![screenshot](documentation/browsers/chrome-home.png)             | ![screenshot](documentation/browsers/firefox-home.png)             | ![screenshot](documentation/browsers/safari-home.png)             | Works as expected |
-| Products         | ![screenshot](documentation/browsers/chrome-products.png)         | ![screenshot](documentation/browsers/firefox-products.png)         | ![screenshot](documentation/browsers/safari-products.png)         | Works as expected |
-| Product Details  | ![screenshot](documentation/browsers/chrome-product-details.png)  | ![screenshot](documentation/browsers/firefox-product-details.png)  | ![screenshot](documentation/browsers/safari-product-details.png)  | Works as expected |
-| Bag              | ![screenshot](documentation/browsers/chrome-bag.png)              | ![screenshot](documentation/browsers/firefox-bag.png)              | ![screenshot](documentation/browsers/safari-bag.png)              | Works as expected |
-| Checkout         | ![screenshot](documentation/browsers/chrome-checkout.png)         | ![screenshot](documentation/browsers/firefox-checkout.png)         | ![screenshot](documentation/browsers/safari-checkout.png)         | Works as expected |
-| Checkout Success | ![screenshot](documentation/browsers/chrome-checkout-success.png) | ![screenshot](documentation/browsers/firefox-checkout-success.png) | ![screenshot](documentation/browsers/safari-checkout-success.png) | Works as expected |
-| Add Product      | ![screenshot](documentation/browsers/chrome-add-product.png)      | ![screenshot](documentation/browsers/firefox-add-product.png)      | ![screenshot](documentation/browsers/safari-add-product.png)      | Works as expected |
-| Edit Product     | ![screenshot](documentation/browsers/chrome-edit-product.png)     | ![screenshot](documentation/browsers/firefox-edit-product.png)     | ![screenshot](documentation/browsers/safari-edit-product.png)     | Works as expected |
-| Newsletter       | ![screenshot](documentation/browsers/chrome-newsletter.png)       | ![screenshot](documentation/browsers/firefox-newsletter.png)       | ![screenshot](documentation/browsers/safari-newsletter.png)       | Works as expected |
-| Contact          | ![screenshot](documentation/browsers/chrome-contact.png)          | ![screenshot](documentation/browsers/firefox-contact.png)          | ![screenshot](documentation/browsers/safari-contact.png)          | Works as expected |
-| 404              | ![screenshot](documentation/browsers/chrome-404.png)              | ![screenshot](documentation/browsers/firefox-404.png)              | ![screenshot](documentation/browsers/safari-404.png)              | Works as expected |
+| Page                | Chrome                                                                    | Firefox                                                                       | Edge                                                                    | Notes             |
+| ------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------- |
+| Register            | ![screenshot](docs/testing_imgs/browser_test/register_chrome.png)         | ![screenshot](docs/testing_imgs/browser_test/register_firefox.png)            | ![screenshot](docs/testing_imgs/browser_test/register_edge.png)         | Works as expected |
+| Login               | ![screenshot](docs/testing_imgs/browser_test/login_chrome.png)            | ![screenshot](docs/testing_imgs/browser_test/login_firefox.png)               | ![screenshot](docs/testing_imgs/browser_test/login_edge.png)            | Works as expected |
+| Logout              | ![screenshot](docs/testing_imgs/browser_test/logout_chrome.png)           | ![screenshot](docs/testing_imgs/browser_test/logout_firefox.png)              | ![screenshot](docs/testing_imgs/browser_test/logout_edge.png)           | Works as expected |
+| Home                | ![screenshot](docs/testing_imgs/browser_test/home_chrome.png)             | ![screenshot](docs/testing_imgs/browser_test/home_firefox.png)                | ![screenshot](docs/testing_imgs/browser_test/home_edge.png)             | Works as expected |
+| Listings List       | ![screenshot](docs/testing_imgs/browser_test/listings_chrome.png)         | ![screenshot](docs/testing_imgs/browser_test/listings_firefox.png)            | ![screenshot](docs/testing_imgs/browser_test/listings_edge.png)         | Works as expected |
+| Listing Details     | ![screenshot](docs/testing_imgs/browser_test/listings_detail_chrome.png)  | ![screenshot](docs/testing_imgs/browser_test/listings_detail_firefox.png)     | ![screenshot](docs/testing_imgs/browser_test/listings_detail_edge.png)  | Works as expected |
+| Contact             | ![screenshot](docs/testing_imgs/browser_test/contact_chrome.png)          | ![screenshot](docs/testing_imgs/browser_test/contact_firefox.png)             | ![screenshot](docs/testing_imgs/browser_test/contact_edge.png)          | Works as expected |
+| About               | ![screenshot](docs/testing_imgs/browser_test/about_chrome.png)            | ![screenshot](docs/testing_imgs/browser_test/about_firefox.png)               | ![screenshot](docs/testing_imgs/browser_test/about_edge.png)            | Works as expected |
+| Order History       | ![screenshot](docs/testing_imgs/browser_test/order_history_chrome.png)    | ![screenshot](docs/testing_imgs/browser_test/order_history_firefox.png)       | ![screenshot](docs/testing_imgs/browser_test/order_history_edge.png)    | Works as expected |
+| Booking Date        | ![screenshot](docs/testing_imgs/browser_test/booking_date_chrome.png)     | ![screenshot](docs/testing_imgs/browser_test/booking_date_firefox.png)        | ![screenshot](docs/testing_imgs/browser_test/booking_date_edge.png)     | Works as expected |
+| Checkout            | ![screenshot](docs/testing_imgs/browser_test/checkout_chrome.png)         | ![screenshot](docs/testing_imgs/browser_test/checkout_firefox.png)            | ![screenshot](docs/testing_imgs/browser_test/checkout_edge.png)         | Works as expected |
+| Checkout success    | ![screenshot](docs/testing_imgs/browser_test/checkout_success_chrome.png) | ![screenshot](docs/testing_imgs/browser_test/checkout_success_firefox.png)    | ![screenshot](docs/testing_imgs/browser_test/checkout_success_edge.png) | Works as expected |
+| Management Overview | ![screenshot](docs/testing_imgs/browser_test/overview_chrome.png)         | ![screenshot](docs/testing_imgs/browser_test/management_overview_firefox.png) | ![screenshot](docs/testing_imgs/browser_test/overview_edge.png)         | Works as expected |
+| Management Listings | ![screenshot](docs/testing_imgs/browser_test/manage_listings_chrome.png)  | ![screenshot](docs/testing_imgs/browser_test/management_listings_firefox.png) | ![screenshot](docs/testing_imgs/browser_test/manage_listings_edge.png)  | Works as expected |
+| Management Booking  | ![screenshot](docs/testing_imgs/browser_test/manage_bookings_chrome.png)  | ![screenshot](docs/testing_imgs/browser_test/manage_bookings_firefox.png)     | ![screenshot](docs/testing_imgs/browser_test/manage_bookings_edge.png)  | Works as expected |
+| Management Users    | ![screenshot](docs/testing_imgs/browser_test/manage_users_chrome.png)     | ![screenshot](docs/testing_imgs/browser_test/management_user_firefox.png)     | ![screenshot](docs/testing_imgs/browser_test/manage_users_edge.png)     | Works as expected |
+| Management Reviews  | ![screenshot](docs/testing_imgs/browser_test/manage_reviews_chrome.png)   | ![screenshot](docs/testing_imgs/browser_test/management_review_firefox.png)   | ![screenshot](docs/testing_imgs/browser_test/manage_reviews_edge.png)   | Works as expected |
+| 404                 | ![screenshot](docs/testing_imgs/browser_test/404_chrome.png)              | ![screenshot](docs/testing_imgs/browser_test/404_firefox.png)                 | ![screenshot](docs/testing_imgs/browser_test/404_edge.png)              | Works as expected |
 
 ## Lighthouse Audit
 
