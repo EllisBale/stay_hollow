@@ -16,9 +16,9 @@
             <p><strong>Total paid:</strong> £{{ order.order_total  }}</p>
          </div>
 
-         
+
     <p class="mt-4">
-        We've sent a confirmation email to {{ user.email }} with full details.
+        We've sent a confirmation email to {{ order.email }} with full details.
     </p>
 
     <a href="{% url 'home' %}" class="btn btn-primary mt-3">

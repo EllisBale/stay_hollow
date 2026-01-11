@@ -4,12 +4,13 @@
 
 {% block content %}
 <div class="container py-5 text-center">
-    <h1 class="text-center">Add Review</h1>
+    <h1 class="text-center mb-5">Add Review</h1>
 
     <form  method="POST">
         {% csrf_token %}
-        {{ review_form|crispy }}
-
+            <div class="d-flex gap-4 justify-content-center">
+                {{ review_form|crispy }}
+            </div>
         <button type="submit" class="btn btn-primary mt-3">
             Complete Review
         </button>
