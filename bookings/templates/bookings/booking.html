@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+ {% block title %} Booking Date {% endblock %}
+
 {% block content %}
 <div class="container py-5 text-center">
-    <h1>Book {{ property.property_name }}</h1>
+    <h1 class="mb-5">Book {{ property.property_name }}</h1>
 
     <form method="POST">
         {% csrf_token %}

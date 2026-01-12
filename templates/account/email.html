@@ -3,6 +3,8 @@
 {% block head_title %}
     {% trans "Email Addresses" %}
 {% endblock head_title %}
+
+{% block title %} Manage Email {% endblock %}
 {% block content %}
 <div class="container py-5 text-center">
     <div class="card rounded-0 border-0 py-5">
@@ -42,15 +44,28 @@
                 {% endfor %}
             {% endslot %}
             {% slot actions %}
-                {% element button type="submit" name="action_primary" %}
-                    {% trans 'Make Primary' %}
-                {% endelement %}
-                {% element button tags="secondary" type="submit" name="action_send" %}
-                    {% trans 'Re-send Verification' %}
-                {% endelement %}
-                {% element button tags="danger,delete" type="submit" name="action_remove" %}
-                    {% trans 'Remove' %}
-                {% endelement %}
+                <div class="mb-5 pt-2">
+                    <button
+                        type="submit"
+                        name="action_primary"
+                        class="btn btn-primary px-4">
+                        Make Primary
+                    </button>
+
+                    <button
+                        type="submit"
+                        name="action_send"
+                        class="btn btn-outline-secondary px-4">
+                        Re-send Verification
+                    </button>
+
+                    <button
+                        type="submit"
+                        name="action_remove"
+                        class="btn btn-outline-danger px-4">
+                        Remove
+                    </button>
+                
             {% endslot %}
         {% endelement %}
     {% else %}
@@ -58,7 +73,9 @@
     {% endif %}
     {% if can_add_email %}
         {% element h2 %}
-            {% trans "Add Email Address" %}
+            <div class="mt-5">
+                {% trans "Add Email Address" %}
+            </div>
         {% endelement %}
         {% url 'account_email' as action_url %}
         {% element form form=form method="post" action=action_url tags="email,add" %}
@@ -68,9 +85,12 @@
                 {% endelement %}
             {% endslot %}
             {% slot actions %}
-                {% element button name="action_add" type="submit" %}
-                    {% trans "Add Email" %}
-                {% endelement %}
+                    <button
+                        type="submit"
+                        name="action_add"
+                        class="btn btn-success px-4">
+                        Remove
+                    </button>
             {% endslot %}
         {% endelement %}
     {% endif %}
