@@ -54,10 +54,10 @@ class OrderModelTest(TestCase):
         )
 
 
-    # --------------------
-    # Uniqueness Test
-    # --------------------
     def test_order_number_is_unique(self):
+        """
+        Test Uniqueness 
+        """
         order2 = Order.objects.create(
             user=self.user,
             booking=Booking.objects.create(

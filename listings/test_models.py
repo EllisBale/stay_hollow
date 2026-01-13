@@ -20,14 +20,14 @@ class DestinationModelTest(TestCase):
             name="England",
             slug=""
         )
-        self.assertEqual(destination.slug, "ocean-view")
+        self.assertEqual(destination.slug, "england")
 
     def test_string_representation(self):
         destination = Destination.objects.create(
             name="England",
             slug="engalnd"
         )
-        self.assertEqual(str(destination), "Beach")
+        self.assertEqual(str(destination), "England")
 
 
 class PropertyModelTest(TestCase):

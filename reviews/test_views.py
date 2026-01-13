@@ -37,18 +37,21 @@ class AddReviewViewTests(TestCase):
 
         self.url = reverse("add_review", args=[self.property.id])
 
-    # -------------------------
-    #  Login required
-    # -------------------------
+ 
+
     def test_add_review_requires_login(self):
+        """
+        Test user require login
+        """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 302)
 
     
-    # -------------------------
-    #  User without booking blocked
-    # -------------------------
+
     def test_management_non_staff_redirects_home(self):
+        """
+        Test non staff users are redirected
+        """
 
         logged_in = self.client.login(username="bob", password="pass123")
         self.assertTrue(logged_in)
@@ -60,11 +63,11 @@ class AddReviewViewTests(TestCase):
             reverse("property_detail", kwargs={"pk": self.property.id})
         )
 
-    # -------------------------
-    #  User with paid booking can access
-    # -------------------------
 
     def test_user_with_paid_booking_can_view_form(self):
+        """
+        Test user with paid booking can access
+        """
         Booking.objects.create(
             property=self.property,
             user=self.user,
@@ -79,11 +82,11 @@ class AddReviewViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "form")
 
-    # -------------------------
-    #  Valid POST create review
-    # -------------------------
 
-    def test_user_with_paid_booking_can_view_form(self):
+    def test_user_with_paid_booking_can_submit_review(self):
+        """
+        Test user with paid booking can submit review
+        """
         Booking.objects.create(
             property=self.property,
             user=self.user,

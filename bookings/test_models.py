@@ -42,6 +42,9 @@ class BookingModelTest(TestCase):
         )
 
     def test_prevents_overlapping_paid_bookings(self):
+        """
+        Test booking overlapping
+        """
         self.booking.is_paid = True
         self.booking.save()
 

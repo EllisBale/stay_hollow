@@ -3,9 +3,7 @@ from django.urls import reverse
 
 
 class TestHomeViews(TestCase):
-    """
-    Test for Home Page.
-    """
+
     def test_home_page(self):
         """
         Test if Home Page returns status code 200.
