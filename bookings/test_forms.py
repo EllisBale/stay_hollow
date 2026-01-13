@@ -5,7 +5,6 @@ from datetime import timedelta
 from bookings.forms import BookingForm
 
 
-
 class BookingFormTest(TestCase):
 
     def test_booking_form_is_valid(self):
@@ -14,7 +13,7 @@ class BookingFormTest(TestCase):
         """
         form = BookingForm(data={
             "check_in": timezone.now().date(),
-            "check_out": (timezone.now() + timedelta(days=1)).date(), 
+            "check_out": (timezone.now() + timedelta(days=1)).date(),
             "guests": 1,
         })
 

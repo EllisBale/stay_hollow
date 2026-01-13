@@ -53,10 +53,9 @@ class OrderModelTest(TestCase):
             stripe_payment_intent="pi_test_123",
         )
 
-
     def test_order_number_is_unique(self):
         """
-        Test Uniqueness 
+        Test Uniqueness
         """
         order2 = Order.objects.create(
             user=self.user,

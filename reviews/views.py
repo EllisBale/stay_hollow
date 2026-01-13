@@ -26,7 +26,7 @@ def add_review(request, property_id):
     if not booking:
         messages.error(request, "You cannot review this property.")
         return redirect("property_detail", pk=property_obj.id)
-    
+
     if request.method == "POST":
         review_form = ReviewForm(request.POST)
         if review_form .is_valid():
@@ -34,13 +34,13 @@ def add_review(request, property_id):
             review.booking = booking
             review.user = request.user
             review.save()
-            
+
             messages.success(request, "Review Submitted!")
             return redirect("property_detail", pk=property_obj.id)
     else:
         review_form = ReviewForm()
 
     return render(request, "reviews/add_review.html", {
-        "review_form": review_form ,
+        "review_form": review_form,
         "property": property_obj,
     })

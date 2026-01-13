@@ -1,6 +1,6 @@
 from decimal import Decimal
 from django.test import TestCase
-from listings.models import Amenity, Destination, Property, PropertyImage
+from listings.models import Amenity, Destination, Property
 
 
 class AmenityModelTest(TestCase):

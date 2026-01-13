@@ -34,19 +34,19 @@ class BookingViewTests(TestCase):
 
         self.url = reverse("create_booking", args=[self.property.id])
 
-    # ----------------------------
-    # Booking page loads
-    # ----------------------------
     def test_booking_page_loads(self):
+        """
+        Test if booking page loads
+        """
         response = self.client.get(self.url)
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "bookings/booking.html")
 
-    # ----------------------------------------
-    # POST creates booking and redirects
-    # ----------------------------------------
     def test_booking_post_creates_booking(self):
+        """
+        Test booking create
+        """
         post_data = {
             "check_in": date.today() + timedelta(days=1),
             "check_out": date.today() + timedelta(days=3),
@@ -54,7 +54,6 @@ class BookingViewTests(TestCase):
         }
 
         response = self.client.post(self.url, post_data)
-
 
         self.assertEqual(Booking.objects.count(), 1)
 

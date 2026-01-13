@@ -16,8 +16,6 @@ def property_list(request):
     query = None
     selected_destinations = None
 
-
-
     if request.GET:
 
         if "destinations" in request.GET:
@@ -25,18 +23,25 @@ def property_list(request):
             destinations_param = request.GET.get("destinations")
             if destinations_param:
                 destinations_names = destinations_param.split(",")
-                selected_destinations = Destination.objects.filter(name__in=destinations_names)
-
-                properties = properties.filter(
-                    Q(destinations__name__in=destinations_names) |
-                    Q(destinations__parent_destination__name__in=destinations_names)
+                selected_destinations = Destination.objects.filter(
+                    name__in=destinations_names
                 )
 
+                is_dest = Q(destinations__name__in=destinations_names)
+                is_parent = Q(
+                    destinations__parent_destination__name__in=
+                    destinations_names
+                )
+                properties = properties.filter(is_dest | is_parent).distinct()
 
         if "q" in request.GET:
             query = request.GET["q"]
             if not query:
-                messages.error(request, "You didn't enter any search criterial")
+                messages.error(
+                    request,
+                    "You didn't enter any search criterial"
+                )
+
                 return redirect(reverse('properties'))
 
             queries = (
@@ -53,10 +58,14 @@ def property_list(request):
         sortby = request.GET.get("sort")
 
         if sortby == "price_asc":
-            properties = properties.order_by("price_per_night")
+            properties = properties.order_by(
+                "price_per_night"
+            )
 
         elif sortby == "price_desc":
-             properties = properties.order_by("-price_per_night")
+            properties = properties.order_by(
+                "-price_per_night"
+            )
 
         elif sortby == "newest":
             properties = properties.order_by("-id")
@@ -66,7 +75,6 @@ def property_list(request):
     page_obj = paginator.get_page(page_number)
 
     property_total = properties.count()
-
 
     context = {
         "search_term": query,
@@ -98,14 +106,11 @@ def property_detail(request, pk):
 
         ).exists()
 
-    
     reviews = Review.objects.filter(
         booking__property=property_obj
     )
 
     reviews_preview = reviews[:3]
-
-
 
     context = {
         "property": property_obj,

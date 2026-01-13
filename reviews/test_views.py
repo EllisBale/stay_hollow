@@ -37,16 +37,12 @@ class AddReviewViewTests(TestCase):
 
         self.url = reverse("add_review", args=[self.property.id])
 
- 
-
     def test_add_review_requires_login(self):
         """
         Test user require login
         """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 302)
-
-    
 
     def test_management_non_staff_redirects_home(self):
         """
@@ -62,7 +58,6 @@ class AddReviewViewTests(TestCase):
             response,
             reverse("property_detail", kwargs={"pk": self.property.id})
         )
-
 
     def test_user_with_paid_booking_can_view_form(self):
         """
@@ -81,7 +76,6 @@ class AddReviewViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "form")
-
 
     def test_user_with_paid_booking_can_submit_review(self):
         """

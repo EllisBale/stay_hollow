@@ -13,11 +13,11 @@ class UserFormTest(TestCase):
         """
 
         form = UserForm(data={
-            "username": "John_Doe" ,
-            "email" : "test@example.com",
-            "first_name" : "John",
-            "last_name" : "Doe",
-            "is_staff" : False,
+            "username": "John_Doe",
+            "email": "test@example.com",
+            "first_name": "John",
+            "last_name": "Doe",
+            "is_staff": False,
         })
 
         self.assertTrue(form.is_valid(), form.errors)
@@ -48,12 +48,12 @@ class BookingFormTest(TestCase):
         Test booking form is valid
         """
         form = BookingForm(data={
-            "property" : self.property.id,
-            "user" : self.user.id,
+            "property": self.property.id,
+            "user": self.user.id,
             "check_in": timezone.now().date(),
             "check_out": (timezone.now() + timedelta(days=1)).date(),
-            "guests" : "1",
-            "total_price" : 200,
+            "guests": "1",
+            "total_price": 200,
         })
 
         self.assertTrue(form.is_valid(), form.errors)

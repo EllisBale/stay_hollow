@@ -16,7 +16,6 @@ class Amenity(models.Model):
         return self.name
 
 
-
 class Destination(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
@@ -41,7 +40,7 @@ class Destination(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
@@ -74,61 +73,76 @@ class Property(models.Model):
             MaxValueValidator(30),
         ]
     )
-    
+
     main_image = CloudinaryField(
         "image",
         folder="property_images",
-        blank = True,
-        null = True,
+        blank=True,
+        null=True,
     )
 
     description = models.TextField(blank=True, null=True)
-    
 
     latitude = models.DecimalField(
         max_digits=18,
         decimal_places=14,
         null=True,
         blank=True,
-        help_text="Paste only the numeric latitude value. Right-click on Google Maps => Copy the first set of numbers and paste in here."
-
+        help_text="Paste only the numeric latitude value. "
+        "Right-click on Google Maps => "
+        "Copy the first set of numbers and paste in here."
     )
+
     longitude = models.DecimalField(
         max_digits=18,
         decimal_places=14,
         null=True,
         blank=True,
-        help_text="Paste only the numeric longitude value. Right-click on Google Maps => Copy the second set of numbers and paste in here."
+        help_text="Paste only the numeric longitude value. "
+        "Right-click on Google Maps => "
+        "Copy the second set of numbers and paste in here."
     )
 
-    amenities = models.ManyToManyField(Amenity, blank=True, related_name="properties")
-    is_featured = models.BooleanField(default=False, help_text="Mark yes for property to be featured on Homepage")
+    amenities = models.ManyToManyField(
+        Amenity,
+        blank=True,
+        related_name="properties"
+    )
+    is_featured = models.BooleanField(
+        default=False,
+        help_text="Mark yes for property to be featured on Homepage")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ["-is_featured", "-created_at"]
 
-
     def formatted_price(self):
         """
-        Return price per night and formats it 
+        Return price per night and formats it
         for templates
         """
-        return f"{self.price_per_night:,.0f}"    
+        return f"{self.price_per_night:,.0f}"
 
     def __str__(self):
         return self.property_name
-    
+
     def maps_url(self):
         """
-        Return Google Maps link based on 
+        Return Google Maps link based on
         latitude and longitude
         """
-        return f"https://www.google.com/maps/search/?api=1&query={self.latitude},{self.longitude}"
+        return (
+            f"https://www.google.com/maps/search/?api=1"
+            f"&query={self.latitude},{self.longitude}"
+        )
 
 
 class PropertyImage(models.Model):
-    property = models.ForeignKey(Property, on_delete=models.CASCADE, related_name="extra_images")
+    property = models.ForeignKey(
+        Property,
+        on_delete=models.CASCADE,
+        related_name="extra_images"
+    )
     image = CloudinaryField(
         "image",
         folder="property_images",
@@ -137,6 +151,3 @@ class PropertyImage(models.Model):
 
     def __str__(self):
         return f"Extra Image for {self.property.property_name}"
-
-
-

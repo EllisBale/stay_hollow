@@ -22,7 +22,7 @@ class StripeWH_Handler:
         cust_email = order.email
         if not cust_email:
             return
-        
+
         booking = order.booking
 
         subject = render_to_string(
@@ -31,7 +31,11 @@ class StripeWH_Handler:
         )
         body = render_to_string(
             "checkout/confirmation_emails/confirmation_email_body.txt",
-            {"order": order, "booking": booking, "contact_email": settings.DEFAULT_FROM_EMAIL},
+            {
+                "order": order,
+                "booking": booking,
+                "contact_email": settings.DEFAULT_FROM_EMAIL
+            },
         )
 
         send_mail(
@@ -40,7 +44,6 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
         )
-
 
     def handle_event(self, event):
         """
@@ -99,7 +102,6 @@ class StripeWH_Handler:
             content=f"Webhook received: {event['type']} | SUCCESS",
             status=200
         )
-
 
     def handle_payment_intent_payment_failed(self, event):
         """

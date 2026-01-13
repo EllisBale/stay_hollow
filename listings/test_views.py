@@ -11,4 +11,3 @@ class PropertyViewsTestCase(TestCase):
         """
         response = self.client.get(reverse("properties"))
         self.assertEqual(response.status_code, 200)
-

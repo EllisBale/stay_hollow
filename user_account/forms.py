@@ -10,7 +10,7 @@ class CustomSignupForm(SignupForm):
     )
     last_name = forms.CharField(
         max_length=30,
-        label="Last Name", 
+        label="Last Name",
         required=True
     )
 

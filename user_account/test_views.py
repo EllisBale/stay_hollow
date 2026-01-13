@@ -12,7 +12,6 @@ class TestOrderHistoryViews(TestCase):
         )
         self.client.login(username="testuser", password="password123")
 
-
     def test_order_history_page(self):
         """
         Test if order history Page returns status code 200.

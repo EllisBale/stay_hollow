@@ -29,12 +29,14 @@ def cache_checkout_data(request):
         })
 
         return HttpResponse(status=200)
-    
+
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be' \
+        messages.error(
+            request,
+            'Sorry, your payment cannot be '
             'processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-    
+
 
 @login_required
 def checkout(request, booking_id):
@@ -45,7 +47,6 @@ def checkout(request, booking_id):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     booking = get_object_or_404(Booking, pk=booking_id, user=request.user)
-
 
     # Handles form submission (POST)
     if request.method == "POST":
@@ -79,10 +80,9 @@ def checkout(request, booking_id):
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]
             ))
-        
+
         else:
             messages.error(request, "There was an error with form.")
-
 
     else:
         # Handles GET request
@@ -122,7 +122,7 @@ def checkout_success(request, order_number):
         order_number=order_number,
         user=request.user
         )
-    
+
     booking = order.booking
     booking.is_paid = True
     booking.save()

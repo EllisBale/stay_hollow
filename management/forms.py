@@ -15,6 +15,7 @@ class UserForm(forms.ModelForm):
             "is_staff"
         ]
 
+
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
@@ -26,6 +27,7 @@ class BookingForm(forms.ModelForm):
             "guests",
             "total_price",
         ]
+
 
 class ListingForm(forms.ModelForm):
     class Meta:
@@ -43,6 +45,7 @@ class ListingForm(forms.ModelForm):
             "amenities",
             "is_featured",
         ]
+
 
 class ImagesForm(forms.ModelForm):
     class Meta:

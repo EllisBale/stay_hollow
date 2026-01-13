@@ -45,7 +45,7 @@ class ManagementDashboardTests(TestCase):
             check_out=date.today() + timedelta(days=3),
             guests=2,
             is_paid=True,
-)
+        )
 
         self.review = Review.objects.create(
             booking=self.booking,

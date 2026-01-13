@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Review
 from user_account.forms import CustomSignupForm
 
+
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = (
@@ -10,7 +11,7 @@ class ReviewAdmin(admin.ModelAdmin):
         "user__email",
         "booking",
         "property_name",
-        "rating", 
+        "rating",
         "created_at",
     )
     list_filter = (

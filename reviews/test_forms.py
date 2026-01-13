@@ -9,7 +9,7 @@ class ReviewFormTest(TestCase):
         Test if review form is valid
         """
         form = ReviewForm(data={
-            "rating" : 5,
+            "rating": 5,
             "comment": "Great property!"
         })
 

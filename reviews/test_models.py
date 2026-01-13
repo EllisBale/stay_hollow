@@ -41,7 +41,6 @@ class ReviewModelTests(TestCase):
             is_paid=True,
         )
 
-
     def test_review_create(self):
         review = Review.objects.create(
             booking=self.booking,

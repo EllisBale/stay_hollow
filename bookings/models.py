@@ -24,7 +24,11 @@ class Booking(models.Model):
             MaxValueValidator(10),
         ]
     )
-    total_price = models.DecimalField(max_digits=8, decimal_places=2, blank=True)
+    total_price = models.DecimalField(
+        max_digits=8,
+        decimal_places=2,
+        blank=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     is_paid = models.BooleanField(default=False)
 
@@ -38,14 +42,14 @@ class Booking(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.user.username} booking for {self.property.property_name}"
-
+        return f"{self.user.username} booking for {
+            self.property.property_name
+        }"
 
     def clean(self):
         """
         Prevents user from double bookings by checking for overlap.
         """
-
         if not self.property_id:
             return
 
@@ -60,18 +64,17 @@ class Booking(models.Model):
             overlapping = overlapping.exclude(pk=self.pk)
 
         if overlapping.exists():
-            raise ValidationError("This Property is already booked for these dates.")
-
+            raise ValidationError(
+                "This Property is already booked for these dates."
+            )
 
     def number_of_nights(self):
         """Return total number of nights booked"""
         return (self.check_out - self.check_in).days
 
-
     def calculate_total_price(self):
         """Calculate total price based on property nightly rate"""
         return self.number_of_nights() * self.property.price_per_night
-
 
     def save(self, *args, **kwargs):
 
