@@ -39,7 +39,7 @@ def add_review(request, property_id):
             return redirect("property_detail", pk=property_obj.id)
     else:
         review_form = ReviewForm()
-    
+
     return render(request, "reviews/add_review.html", {
         "review_form": review_form ,
         "property": property_obj,

@@ -9,7 +9,7 @@
   <div class="carousel-inner">
     {% for img in property.extra_images.all %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-        <img src="{{ img.image.url }}" class="d-block carousel-img" alt="{{ img.property }}">
+        <img src="{{ img.image.url }}" class="d-block carousel-img" alt="{{ img.property }}" {% if forloop.first %} fetchpriority="high" {% else %} loading="lazy" decoding="async" {% endif %} >
         </div>
     {% endfor %}
     

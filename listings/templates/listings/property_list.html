@@ -32,7 +32,7 @@
         <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex mb-5">
           <a href="{% url 'property_detail' property.id %}"> 
             <div class="card shadow-sm h-100">
-              <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}">
+              <img src="{{ property.main_image.url }}" class="card-img-top" alt="{{ property.property_name }}" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">{{ property.property_name }}</h3>
                 {% if property.destinations.parent_destination %}
