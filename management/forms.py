@@ -4,7 +4,6 @@ from bookings.models import Booking
 from listings.models import Property, PropertyImage
 
 
-
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
@@ -50,6 +49,10 @@ class ImagesForm(forms.ModelForm):
         model = PropertyImage
         fields = [
             "image",
-
         ]
 
+    def clean_main_image(self):
+        image = self.cleaned_data.get("image")
+        if not image:
+            return None
+        return image

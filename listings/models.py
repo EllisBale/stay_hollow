@@ -77,8 +77,9 @@ class Property(models.Model):
     
     main_image = CloudinaryField(
         "image",
-        default="placeholder.jpg",
         folder="property_images",
+        blank = True,
+        null = True,
     )
 
     description = models.TextField(blank=True, null=True)

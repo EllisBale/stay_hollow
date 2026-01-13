@@ -137,10 +137,9 @@ def listing_create(request):
           add_image = ImagesForm(request.POST, request.FILES)
 
           if create_form.is_valid() and add_image.is_valid():
+
                property = create_form.save()
-
                image = add_image.save(commit=False)
-
                image.property = property
                image.save()
 
@@ -179,10 +178,10 @@ def listing_update(request, pk):
 
                listing_form.save()
 
-               image = images_form.save(commit=False)
-               image.property = listing
-               image.save()
-
+               if request.FILES.get("image"):
+                    image = images_form.save(commit=False)
+                    image.property = listing
+                    image.save()
 
                messages.success(request, "Property Updated Successfully")
                return redirect("listings_list")
