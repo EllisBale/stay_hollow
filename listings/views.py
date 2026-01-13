@@ -29,8 +29,7 @@ def property_list(request):
 
                 is_dest = Q(destinations__name__in=destinations_names)
                 is_parent = Q(
-                    destinations__parent_destination__name__in=
-                    destinations_names
+                    destinations__parent_destination__name__in=destinations_names
                 )
                 properties = properties.filter(is_dest | is_parent).distinct()
 

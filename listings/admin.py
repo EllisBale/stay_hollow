@@ -10,6 +10,7 @@ class DestinationAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     list_filter = ("parent_destination",)
 
+
 class PropertyImage(admin.TabularInline):
     model = PropertyImage
     extra = 1
@@ -18,7 +19,14 @@ class PropertyImage(admin.TabularInline):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     inlines = [PropertyImage]
-    list_display = ("property_name", "price_per_night", "guests", "bedrooms", "is_featured", "created_at")
+    list_display = (
+        "property_name",
+        "price_per_night",
+        "guests",
+        "bedrooms",
+        "is_featured",
+        "created_at"
+    )
     list_filter = ("is_featured",)
     search_fields = ("property_name",)
 
