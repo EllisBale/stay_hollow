@@ -58,7 +58,10 @@ footer  a {color: #fff !important;}
     z-index: 999;
 }
 
-.logo-img {height: 30px;}
+.logo-img {
+    height: 30px;
+    width: auto;
+}
 
 .nav-link {color: #ffffff;}
 

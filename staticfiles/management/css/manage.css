@@ -6,9 +6,14 @@ main.mb-5 {
     margin-bottom: 0px !important;
 }
 
-ul {
+a {
+    color: #000;
+}
+
+.container.d-lg-none {
     text-decoration: underline;
 }
+
 
 .offcanvas {z-index: 1;}
 
@@ -24,6 +29,7 @@ ul {
 
 .sidebar-div {
     position: fixed;
+    text-decoration: underline;
 }
 
 /* ===== Overview Card ===== */
