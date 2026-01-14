@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block title %} Checkout Success {% endblock %}
+
+{% block extra_meta %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
 {% block content %}
     <div class="container py-5 text-center">
         <h1 class="mb-3"> Booking Confirmed </h1>

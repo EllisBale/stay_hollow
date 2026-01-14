@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+  <meta name="description" content="Escape to amazing properties around the UK when booking with Stay Hollow. Discover luxury homes with all the benefits you need such as swimming pools, wifi and pet-friendly.">
+{% endblock %}
+
 {% block extra_css %}
 <link href="{% static 'home/css/home.css' %}" rel="stylesheet">
 {% endblock %}

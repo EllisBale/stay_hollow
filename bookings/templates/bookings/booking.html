@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
- {% block title %} Booking Date {% endblock %}
+{% block title %} Booking Date {% endblock %}
+
+{% block extra_meta %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
 
 {% block content %}
 <div class="container py-5 text-center">

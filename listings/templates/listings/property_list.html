@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+  <meta name="description" content="Explore our amazing selection of properties around the UK on Stay Hollow. Our luxury homes are made to make your perfect 2026 getaway effortless and unforgettable.">
+{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'listings/css/listings.css' %}">
 {% endblock %}

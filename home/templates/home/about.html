@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+  <meta name="description" content="Discover Stay Hollow: Your trusted UK holiday booking platform with reliable properties. Book your 2026 escape today!">
+{% endblock %}
+
 {% block extra_css %}
 <link href="{% static 'home/css/home.css' %}" rel="stylesheet">
 {% endblock %}
@@ -10,7 +14,7 @@
 {% endblock %}
 
     
- {% block title %} About {% endblock %}
+{% block title %} About {% endblock %}
 
 {% block content %}
   <div class="container py-5 px-5">

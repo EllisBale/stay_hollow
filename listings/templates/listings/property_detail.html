@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+  <meta name="description" content="Stay at {{ property.property_name }} in {{ property.destinations }}. This {{ property.bedrooms }} bed home features premium amenities for an amazing 2026 stay. Book now with Stay Hollow!">
+{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'listings/css/listings.css' %}">
 {% endblock %}

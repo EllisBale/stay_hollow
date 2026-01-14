@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'user_account/css/user_account.css' %}">
 {% endblock %}
 
 {% block title %} Order History {% endblock %}
+
+{% block extra_meta %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
 {% block content %}
 
 <div class="container py-5">
     <h1 class="mb-5 text-center"> Order History </h1>
+    {% if not orders %}
+        <h3 class="mt-5 text-center"> You haven't made any bookings yet.</h3>
+    {% else %}
     <h2> Recent Orders </h2>
     <div class="table-responsive">
         <table class="table">
@@ -34,5 +43,6 @@
             </tbody>
         </table>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
