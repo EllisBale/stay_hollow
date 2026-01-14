@@ -1,3 +1,15 @@
+footer.mt-5 {
+    margin-top: 0px !important;
+}
+
+main.mb-5 {
+    margin-bottom: 0px !important;
+}
+
+ul {
+    text-decoration: underline;
+}
+
 .offcanvas {z-index: 1;}
 
 .nav-item {list-style: none;}
@@ -10,8 +22,9 @@
     background-color: #ffffff !important;
 }
 
-.sidebar-div {position: fixed;}
-
+.sidebar-div {
+    position: fixed;
+}
 
 /* ===== Overview Card ===== */
 .card {
