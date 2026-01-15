@@ -7,7 +7,7 @@ Developer: ([EllisBale](https://www.github.com/EllisBale))
 [![GitHub repo size](https://img.shields.io/github/repo-size/EllisBale/stay_hollow)](https://www.github.com/EllisBale/stay_hollow)
 [![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://stay-hollow-9b3793ea0059.herokuapp.com)
 
-![screenshot](documentation/mockup.png)
+![screenshot](docs/readme_imgs/website_image.png)
 
 source: [stay_hollow amiresponsive](https://ui.dev/amiresponsive?url=https://stay-hollow-9b3793ea0059.herokuapp.com)
 
