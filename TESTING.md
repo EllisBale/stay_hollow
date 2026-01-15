@@ -170,34 +170,32 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports. Avoid testing the local version (Gitpod/VSCode/etc.), as this can have knock-on effects for performance. If you don't have "Lighthouse" in your Developer Tools, it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Unless your project is a single-page application (SPA), you should test Lighthouse Audit results for all of your pages, for both _mobile_ and _desktop_.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
-| Page             | Mobile                                                              | Desktop                                                              |
-| ---------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Register         | ![screenshot](documentation/lighthouse/mobile-register.png)         | ![screenshot](documentation/lighthouse/desktop-register.png)         |
-| Login            | ![screenshot](documentation/lighthouse/mobile-login.png)            | ![screenshot](documentation/lighthouse/desktop-login.png)            |
-| Profile          | ![screenshot](documentation/lighthouse/mobile-profile.png)          | ![screenshot](documentation/lighthouse/desktop-profile.png)          |
-| Home             | ![screenshot](documentation/lighthouse/mobile-home.png)             | ![screenshot](documentation/lighthouse/desktop-home.png)             |
-| Products         | ![screenshot](documentation/lighthouse/mobile-products.png)         | ![screenshot](documentation/lighthouse/desktop-products.png)         |
-| Product Details  | ![screenshot](documentation/lighthouse/mobile-product-details.png)  | ![screenshot](documentation/lighthouse/desktop-product-details.png)  |
-| Bag              | ![screenshot](documentation/lighthouse/mobile-bag.png)              | ![screenshot](documentation/lighthouse/desktop-bag.png)              |
-| Checkout         | ![screenshot](documentation/lighthouse/mobile-checkout.png)         | ![screenshot](documentation/lighthouse/desktop-checkout.png)         |
-| Checkout Success | ![screenshot](documentation/lighthouse/mobile-checkout-success.png) | ![screenshot](documentation/lighthouse/desktop-checkout-success.png) |
-| Add Product      | ![screenshot](documentation/lighthouse/mobile-add-product.png)      | ![screenshot](documentation/lighthouse/desktop-add-product.png)      |
-| Edit Product     | ![screenshot](documentation/lighthouse/mobile-edit-product.png)     | ![screenshot](documentation/lighthouse/desktop-edit-product.png)     |
-| Newsletter       | ![screenshot](documentation/lighthouse/mobile-newsletter.png)       | ![screenshot](documentation/lighthouse/desktop-newsletter.png)       |
-| Contact          | ![screenshot](documentation/lighthouse/mobile-contact.png)          | ![screenshot](documentation/lighthouse/desktop-contact.png)          |
-| 404              | ![screenshot](documentation/lighthouse/mobile-404.png)              | ![screenshot](documentation/lighthouse/desktop-404.png)              |
+| Page                 | Mobile                                                                       | Desktop                                                                       |
+| -------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Register             | ![screenshot](docs/testing_imgs/lighthouse_test/signup_mobile.png)           | ![screenshot](docs/testing_imgs/lighthouse_test/signup_desktop.png)           |
+| Login                | ![screenshot](docs/testing_imgs/lighthouse_test/login_mobile.png)            | ![screenshot](docs/testing_imgs/lighthouse_test/login_desktop.png)            |
+| Home                 | ![screenshot](docs/testing_imgs/lighthouse_test/home_mobile.png)             | ![screenshot](docs/testing_imgs/lighthouse_test/home_desktop.png)             |
+| About                | ![screenshot](docs/testing_imgs/lighthouse_test/about_mobile.png)            | ![screenshot](docs/testing_imgs/lighthouse_test/about_desktop.png)            |
+| Contact              | ![screenshot](docs/testing_imgs/lighthouse_test/contact_mobile.png)          | ![screenshot](docs/testing_imgs/lighthouse_test/contact_desktop.png)          |
+| Listings             | ![screenshot](docs/testing_imgs/lighthouse_test/listings_mobile.png)         | ![screenshot](docs/testing_imgs/lighthouse_test/listings_desktop.png)         |
+| Listings Details     | ![screenshot](docs/testing_imgs/lighthouse_test/listings_detail_mobile.png)  | ![screenshot](docs/testing_imgs/lighthouse_test/listings_detail_desktop.png)  |
+| Booking Date         | ![screenshot](docs/testing_imgs/lighthouse_test/booking_date_mobile.png)     | ![screenshot](docs/testing_imgs/lighthouse_test/booking_date_desktop.png)     |
+| Checkout             | ![screenshot](docs/testing_imgs/lighthouse_test/checkout_mobile.png)         | ![screenshot](docs/testing_imgs/lighthouse_test/checkout_desktop.png)         |
+| Checkout Success     | ![screenshot](docs/testing_imgs/lighthouse_test/checkout_success_mobile.png) | ![screenshot](docs/testing_imgs/lighthouse_test/checkout_success_desktop.png) |
+| Order History        | ![screenshot](docs/testing_imgs/lighthouse_test/order_history_mobile.png)    | ![screenshot](docs/testing_imgs/lighthouse_test/order_history_dekstop.png)    |
+| Password Reset       | ![screenshot](docs/testing_imgs/lighthouse_test/password_reset_mobile.png)   | ![screenshot](docs/testing_imgs/lighthouse_test/password_reset_desktop.png)   |
+| Manage Email         | ![screenshot](docs/testing_imgs/lighthouse_test/email_mobile.png)            | ![screenshot](docs/testing_imgs/lighthouse_test/email_desktop.png)            |
+| Manage Overview      | ![screenshot](docs/testing_imgs/lighthouse_test/overview_mobile.png)         | ![screenshot](docs/testing_imgs/lighthouse_test/overview_desktop.png)         |
+| Manage Listings      | ![screenshot](docs/testing_imgs/lighthouse_test/manage_listings_mobile.png)  | ![screenshot](docs/testing_imgs/lighthouse_test/manage_listings_desktop.png)  |
+| Manage Bookings      | ![screenshot](docs/testing_imgs/lighthouse_test/manage_bookings_mobile.png)  | ![screenshot](docs/testing_imgs/lighthouse_test/manage_bookings_desktop.png)  |
+| Manage Users         | ![screenshot](docs/testing_imgs/lighthouse_test/manage_users_mobile.png)     | ![screenshot](docs/testing_imgs/lighthouse_test/manage_users_desktop.png)     |
+| Manage Reviews       | ![screenshot](docs/testing_imgs/lighthouse_test/manage_reviews_mobile.png)   | ![screenshot](docs/testing_imgs/lighthouse_test/manage_reviews_desktop.png)   |
+| Manage Listings Form | ![screenshot](docs/testing_imgs/lighthouse_test/listings_form_mobile.png)    | ![screenshot](docs/testing_imgs/lighthouse_test/listings_form_desktop.png)    |
+| Manage Bookings Form | ![screenshot](docs/testing_imgs/lighthouse_test/booking_form_mobile.png)     | ![screenshot](docs/testing_imgs/lighthouse_test/booking_form_desktop.png)     |
+| Manage User Form     | ![screenshot](docs/testing_imgs/lighthouse_test/user_form_mobile.png)        | ![screenshot](docs/testing_imgs/lighthouse_test/user_form_desktop.png)        |
+| 404                  | ![screenshot](docs/testing_imgs/lighthouse_test/404_mobile.png)              | ![screenshot](docs/testing_imgs/lighthouse_test/404_desktop.png)              |
 
 ## Defensive Programming
 
