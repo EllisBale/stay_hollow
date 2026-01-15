@@ -247,22 +247,23 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ### Future Features
 
-- **Product Reviews & Ratings**: Allow customers to leave reviews and rate products, with admin moderation. Display average ratings and review counts on product pages.
-- **Wishlist Functionality**: Enable users to save products to a personal wishlist for future purchases. Notify users if wishlist items go on sale or are back in stock.
-- **Product Recommendations**: Implement a "Customers who bought this also bought" or "You might also like" feature to suggest related products.
-- **Live Chat Support**: Provide real-time customer support through an integrated live chat or chatbot.
-- **Abandoned Cart Recovery**: Automatically send emails to users who add items to their cart but don't complete the purchase, offering discounts or reminders.
-- **Discount Codes and Vouchers**: Allow the admin to create discount codes or vouchers for promotions and marketing campaigns.
-- **Loyalty Program**: Introduce a points-based loyalty system where customers earn points for purchases, which can be redeemed for discounts.
-- **Product Inventory Alerts**: Notify customers when out-of-stock items are back in stock, or when low inventory is approaching.
-- **Multi-Currency and Multi-Language Support**: Expand the application to support multiple currencies and languages to reach a global audience.
-- **Product Bundles**: Offer discounted product bundles (e.g., buy 3 for the price of 2) or custom product kits.
-- **Social Media Integration**: Enable users to share products directly to social media platforms or implement a social login for quick account creation.
-- **Shipping Tracking Integration**: Provide real-time shipping updates and tracking information directly within the user’s order history.
-- **Advanced Analytics Dashboard for Admin**: Offer an in-depth dashboard that displays sales trends, popular products, customer behavior, and more.
-- **Subscription-Based Products**: Allow users to subscribe to certain products (e.g., monthly deliveries of consumables like coffee or skincare products).
-- **Product Video Demos**: Support product videos to better showcase features, especially for high-tech or complex items.
-- **Mobile App**: Develop a mobile app for iOS and Android, providing users with a more optimized shopping experience on mobile devices.
+- Booked Dates Calendar (Flatpickr): Allow users to view available and unavailable dates within the date picker. Booked dates would be clearly indicated and unselectable which would help users identify available booking dates.
+
+- Management Pages Searchbar: Allow staff/admin users to be able to search details such as user, property, review and booking to save time scrolling for a specific item in the database.
+
+- User Reviews: Allow users to view and review properties they booked directly from a review page, removing the need to locate the property again on the listings page.
+
+- Property Availability Management: Allow staff/admin users to manually block dates for maintenance or private use.
+
+- Contact Form: Allow users to contact the website on a form on contact page.
+
+- Custom Delete Modal: Add a custom modal for delete button on management pages instead of JavaScript alert function for better user experience.
+
+- Improved Destination Filter Dropdown: Add a custom dropdown menu that allows users to filter properties by cities and towns rather than only by country, improving user experience.
+
+- Checkout Processing indicator: Add a throbber animation while checkout details are being validated and submitted, showing users that their booking is being processed.
+
+- Advanced Property Search: Implement an improved search bar that allows users to filter properties by location, price range, and other criteria simultaneously.
 
 ## Tools & Technologies
 
