@@ -21,7 +21,7 @@ class Booking(models.Model):
         default=1,
         validators=[
             MinValueValidator(1),
-            MaxValueValidator(10),
+            MaxValueValidator(30),
         ]
     )
     total_price = models.DecimalField(

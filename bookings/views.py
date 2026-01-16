@@ -11,7 +11,7 @@ def create_booking(request, property_id):
     property_obj = get_object_or_404(Property, pk=property_id)
 
     if request.method == "POST":
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, property_obj=property_obj)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
@@ -26,7 +26,7 @@ def create_booking(request, property_id):
                 messages.error(request, "This date has already been booked.")
 
     else:
-        form = BookingForm()
+        form = BookingForm(property_obj=property_obj)
 
     return render(request, "bookings/booking.html", {
         "form": form,
