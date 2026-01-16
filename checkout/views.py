@@ -129,5 +129,5 @@ def checkout_success(request, order_number):
 
     return render(request, 'checkout/checkout_success.html', {
         'order': order,
-        'booking': booking
+        'booking': booking,
     })

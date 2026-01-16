@@ -15,7 +15,7 @@
          <div class="card p-4">
             <h2> Booking Summary</h2>
             <p class="pt-3"> <strong>Reference:</strong> {{ order.order_number }}</p>
-            <p class="pt-3"> <strong>Property:</strong> {{ booking.property }}</p>
+            <p class="pt-3"><strong>Property:</strong> <a href="{% url 'property_detail' booking.property.id %}">{{ booking.property }}</a></p>
             <p class="pt-3"> <strong>Check-in:</strong> {{ booking.check_in }}</p>
             <p class="pt-3"> <strong>Check-out:</strong> {{ booking.check_out }}</p>
             <p><strong>Guests:</strong> {{ booking.guests }}</p>
