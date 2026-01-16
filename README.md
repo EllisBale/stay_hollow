@@ -417,16 +417,16 @@ source: [Mermaid](https://mermaid.live/edit#pako:eNqdVm1vmzAQ_ivIUr-1FaQhS_mWLax
 
 [GitHub Projects](https://www.github.com/EllisBale/stay_hollow/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
-![screenshot](docs/readme_imgs/github_project.png)
+![screenshot](docs/readme_imgs/user_stories.png)
 
 ### GitHub Issues
 
 [GitHub Issues](https://www.github.com/EllisBale/stay_hollow/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
 
-| Link                                                                                                                                                                                                                                                                        | Screenshot                                              |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug)             | ![screenshot](docs/readme_imgs/close_github_issues.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](docs/readme_imgs/github_issues.png)       |
+| Link                                                                                                                                                                                                                                                                        | Screenshot                                        |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [![GitHub issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug)             | ![screenshot](docs/readme_imgs/open_issues.png)   |
+| [![GitHub closed issues](https://img.shields.io/github/issues-search/EllisBale/stay_hollow?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/EllisBale/stay_hollow/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](docs/readme_imgs/github_issues.png) |
 
 ### MoSCoW Prioritization
 
